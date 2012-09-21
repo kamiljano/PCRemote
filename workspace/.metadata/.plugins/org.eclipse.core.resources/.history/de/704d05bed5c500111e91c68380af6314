@@ -1,0 +1,58 @@
+package rmi.communication;
+
+import java.io.Serializable;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+public class Client implements CallbackInterface, Serializable{
+
+	private static final long serialVersionUID = 2814819641885978028L;
+
+	private static int ClientVersion = 1;
+	
+	private ClientInterface inter;
+	private Registry registry;
+	
+	public Client() throws Exception
+	{
+		registry = LocateRegistry.getRegistry(null);
+        inter = (ClientInterface) registry.lookup("ClowdyServer");
+	}
+	
+	public void login() throws Exception 
+	{
+		ClientInfo info = new ClientInfo(System.getProperty("os.name"), System.getProperty("os.version"), System.getProperty("os.arch"), System.getProperty("user.name"), InetAddress.getLocalHost().getHostName(),InetAddress.getLocalHost().getHostAddress(),getMyMacAddress(),ClientVersion);
+		inter.login(info);
+	}
+	
+	private String getMyMacAddress()
+	{
+		try
+		{
+			InetAddress ip = InetAddress.getLocalHost();
+			NetworkInterface network = NetworkInterface.getByInetAddress(ip);
+			byte[] mac = network.getHardwareAddress();
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < mac.length; i++)
+				sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));
+			return sb.toString();
+		}
+		catch(Exception e)
+		{
+			return null;
+		}
+	}
+
+	public void callbacktest() throws Exception
+	{
+		inter.callbackTest(this);
+	}
+	@Override
+	public void callback() throws RemoteException {
+		System.out.println("asdf");
+		
+	}
+}

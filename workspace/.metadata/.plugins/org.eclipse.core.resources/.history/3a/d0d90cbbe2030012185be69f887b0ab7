@@ -1,0 +1,5 @@
+package pcremote.activities;
+
+public class AboutActivity extends Activity{
+
+}

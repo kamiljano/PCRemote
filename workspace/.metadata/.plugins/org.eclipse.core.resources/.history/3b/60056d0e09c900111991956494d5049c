@@ -1,0 +1,33 @@
+import rmi.communication.Client;
+import client.platformdependant.PlatformDependant;
+import client.updating.Plugin;
+
+public class Main {
+	public static void main (String [] args)
+	{
+		try
+		{
+			PlatformDependant.getInstance().install();
+		}
+		catch(Exception e){e.printStackTrace(); System.out.println("Continuing without installation");}
+		Plugin.placePluginDir(PlatformDependant.getInstance().getHomeDirectory());
+		while (true)
+		{
+			try
+			{
+				Client c = new Client();
+				c.updateClient();
+				c.updatePlugins();
+				Plugin.executePermanentPlugins();
+				c.login();
+				System.out.println("logged in");
+				c.communicate();
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				break begin;
+			}
+		}
+	}
+}

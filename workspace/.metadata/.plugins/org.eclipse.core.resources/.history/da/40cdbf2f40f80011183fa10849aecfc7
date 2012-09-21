@@ -1,0 +1,12 @@
+package main
+
+import "fmt"
+
+func test(a, b string) (string, string) {
+	return a,b
+}
+
+func main() {
+	const f int
+	fmt.Println("asdf")
+}

@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func test(a, b string) (string, string) {
+	return a,b
+}
+
+
+func main() {
+	for i := 0; i<5; i++ {
+		fmt.Println("trolololo")
+	}
+	
+}

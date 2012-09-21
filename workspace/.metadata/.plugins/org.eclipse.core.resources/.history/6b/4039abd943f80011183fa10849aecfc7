@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+func test(a, b string) (string, string) {
+	return a,b
+}
+
+
+func main() {
+	
+	b char
+	b='c'
+	if a := 5; a>0 {
+		fmt.Println("trolololo")
+	}
+	
+}

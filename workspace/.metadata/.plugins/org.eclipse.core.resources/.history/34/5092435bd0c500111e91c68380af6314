@@ -1,0 +1,8 @@
+package rmi.communication;
+
+
+public interface ClientInterface extends java.rmi.Remote{
+
+	public void login(ClientInfo info) throws java.rmi.RemoteException;
+	
+}

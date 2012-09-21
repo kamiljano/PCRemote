@@ -1,0 +1,13 @@
+package main
+
+import "fmt"
+
+func test(a, b string) (string, string) {
+	return a,b
+}
+
+
+func main() {
+	a:=3
+	fmt.Println(a)
+}

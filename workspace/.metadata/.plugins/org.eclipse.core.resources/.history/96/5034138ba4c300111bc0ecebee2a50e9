@@ -1,0 +1,18 @@
+import java.rmi.Naming;
+
+
+
+
+
+public class Main {
+
+	public static void main(String [] args) throws Exception
+	{
+		//Server s = new Server();
+		//s.start();
+		ClientInterface internew ClientImplementation();
+		Naming.rebind("rmi://localhost:1099/ClowdyServer", inter);
+		System.out.println("Server running");
+	}
+	
+}

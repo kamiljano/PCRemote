@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+func test(a, b string) (string, string) {
+	return a,b
+}
+
+type Vertex struct{
+	x int
+	y int
+
+}
+
+func main() {
+	v type Vertex
+	v.x=5
+	if a := 5; a>0 {
+		fmt.Println(z)
+	}
+	
+}

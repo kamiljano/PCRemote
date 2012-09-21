@@ -1,0 +1,30 @@
+1341162070267	Copy compilation units
+1341162098881	Delete elements
+1341162116030	Move compilation unit
+1341162127373	Delete element
+1341391684720	Move compilation unit
+1341391699871	Move compilation units
+1341394485478	Delete element
+1341394897404	Rename package 'rmi.server'
+1341394912726	Rename package 'rmi.server'
+1341394921862	Move compilation unit
+1341394928028	Move compilation unit
+1341418375193	Move compilation units
+1341418507453	Move compilation unit
+1341418541510	Move compilation unit
+1341429536268	Delete element
+1341430291991	Rename type 'Log'
+1341481246093	Delete element
+1341481248933	Move package
+1341485647996	Move compilation unit
+1341486143729	Move package
+1341486503208	Move compilation unit
+1341488416488	Rename method 'getRunnable'
+1341517064807	Rename type 'DirContent'
+1341601812325	Rename type 'ArrStringContent'
+1341602205475	Rename type 'ObjectContent'
+1341659969365	Rename type 'StringArrContent'
+1341660118731	Rename field 'dir'
+1341660127095	Rename field 'fiel'
+1341663188351	Rename type 'ByteArrContainer'
+1341686019173	Rename type 'Client'

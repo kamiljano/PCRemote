@@ -1,0 +1,36 @@
+package pcremote.activities;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+
+public class MediaActivity extends Activity {
+
+	@Override
+	public void onCreate(Bundle bund)
+	{
+		super.onCreate(bund);
+		this.setContentView(R.layout.media_activity);
+	}
+	
+	public void prevCliked(View v)
+	{
+		
+	}
+	public void nextCliked(View v)
+	{
+		
+	}
+	public void playCliked(View v)
+	{
+		
+	}
+	public void minusCliked(View v)
+	{
+		
+	}
+	public void plusCliked(View v)
+	{
+		
+	}
+}

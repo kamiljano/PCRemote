@@ -1,0 +1,5 @@
+package pcremote.custom;
+
+public class SendingThread {
+
+}

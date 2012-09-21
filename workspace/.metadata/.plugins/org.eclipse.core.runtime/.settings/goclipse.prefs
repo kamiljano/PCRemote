@@ -1,0 +1,5 @@
+com.googlecode.goclipse.compiler.path=C\:\\Go\\bin\\go.exe
+com.googlecode.goclipse.documentor.path=C\:\\Go\\bin\\godoc.exe
+com.googlecode.goclipse.formatter.path=C\:\\Go\\bin\\gofmt.exe
+com.googlecode.goclipse.goroot=C\:\\Go
+eclipse.preferences.version=1

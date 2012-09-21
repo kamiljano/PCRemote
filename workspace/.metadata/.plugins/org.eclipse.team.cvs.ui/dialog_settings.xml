@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SharingWizard">
+	</section>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_PATH_ID">
+			<item value="milka/clowdy.git"/>
+			<item value="milka"/>
+			<item value="clowdy.googlecode.com"/>
+			<item value="head"/>
+		</list>
+		<list key="ConfigurationWizardMainPage.STORE_HOSTNAME_ID">
+			<item value="milka.unfuddle.com"/>
+			<item value="git@milka.unfuddle.com"/>
+			<item value="clowdy.googlecode.com"/>
+		</list>
+		<list key="ConfigurationWizardMainPage.STORE_USERNAME_ID">
+			<item value="git"/>
+			<item value="milka"/>
+			<item value="donkamillo89"/>
+		</list>
+	</section>
+</section>

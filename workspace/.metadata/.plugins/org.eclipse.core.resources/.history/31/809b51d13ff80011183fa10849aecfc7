@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+func test(a, b string) (string, string) {
+	return a,b
+}
+
+func main() {
+	var a,b=6,4
+	b++
+	var s string
+	fmt.Println(a,s)
+}

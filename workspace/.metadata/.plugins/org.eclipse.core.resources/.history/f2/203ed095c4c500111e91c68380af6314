@@ -1,0 +1,42 @@
+package rmi.communication;
+
+import java.net.InetAddress;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+public class Client {
+
+	private ClientInterface inter;
+	private Registry registry;
+	
+	public Client() throws Exception
+	{
+		registry = LocateRegistry.getRegistry(null);
+        inter = (ClientInterface) registry.lookup("ClowdyServer");
+	}
+	
+	public void login() throws Exception 
+	{
+		ClientInfo info = new ClientInfo(System.getProperty("os.name"), System.getProperty("os.version"), System.getProperty("os.arch"), "", InetAddress.getLocalHost().getHostName(),InetAddress.getLocalHost().getHostAddress(),getMyMacAddress(),1);
+		inter.login(info);
+	}
+	
+	private String getMyMacAddress()
+	{
+		try
+		{
+			InetAddress ip = InetAddress.getLocalHost();
+			NetworkInterface network = NetworkInterface.getByInetAddress(ip);
+			byte[] mac = network.getHardwareAddress();
+			System.out.print("Current MAC address : ");
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < mac.length; i++)
+				sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));
+			return sb.toString();
+		}
+		catch(Exception e)
+		{
+			return null;
+		}
+	}
+}

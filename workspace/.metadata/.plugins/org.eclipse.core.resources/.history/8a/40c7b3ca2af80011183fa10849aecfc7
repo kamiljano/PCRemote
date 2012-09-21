@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+func test() int {
+	return 5
+}
+
+func main() {
+	a := 1
+	b := 8
+	a := b
+	fmt.Println( a)
+}

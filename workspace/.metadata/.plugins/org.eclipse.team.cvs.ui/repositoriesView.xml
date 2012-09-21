@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories-view>
+	<repository id=":pserver:donkamillo89@code.google.com/git/clowdy:head">
+		<module path="/">
+		</module>
+	</repository>
+	<repository id=":pserver:donkamillo89@code.google.com/git/clowdy:df">
+		<module path="/">
+		</module>
+	</repository>
+	<repository id=":pserver:donkamillo89@code.google.com/git/clowdy:code.google.com/git/clowdy">
+		<module path="/">
+		</module>
+	</repository>
+</repositories-view>

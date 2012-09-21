@@ -1,0 +1,22 @@
+package rmi.communication;
+
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+public class Client {
+
+	private ClientInterface inter;
+	private Registry registry;
+	
+	public Client() throws Exception
+	{
+		registry = LocateRegistry.getRegistry();
+        inter = (ClientInterface) registry.lookup("rmi://localhost/ClowdyServer");
+	}
+	
+	public void login()
+	{
+		ClientInfo info = new ClientInfo("", "", "", "", "");
+		inter.login(info);
+	}
+}

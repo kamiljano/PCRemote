@@ -1,0 +1,12 @@
+package main
+
+import "fmt"
+
+func test() int {
+	return 5
+}
+
+func main() {
+	a := test()
+	fmt.Println(a, b)
+}

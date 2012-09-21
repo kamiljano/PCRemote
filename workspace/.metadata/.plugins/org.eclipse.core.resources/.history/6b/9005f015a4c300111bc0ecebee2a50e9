@@ -1,0 +1,20 @@
+
+
+import java.rmi.RemoteException;
+
+public class Server {
+	
+	private ClientInterface inter;
+	private String host = "localhost";
+	private int port = 1099;
+	
+	public Server() throws RemoteException
+	{
+		inter = new ClientImplementation();
+	}
+	
+	public void start() throws Exception
+	{
+		Naming.rebind("rmi://" + host + ":" + port + "/ClowdyServer", inter);
+	}
+}

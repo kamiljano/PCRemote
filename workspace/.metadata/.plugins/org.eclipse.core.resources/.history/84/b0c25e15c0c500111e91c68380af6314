@@ -1,0 +1,15 @@
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+import rmi.communication.ClientInterface;
+
+public class Main {
+	public static void main (String [] args) throws Exception
+	{
+            //Client c = new Client();
+            //c.login();
+		Registry registry = LocateRegistry.getRegistry(null);
+        ClientInterface inter = (ClientInterface) registry.lookup("ClowdyServer");
+        inter.login(null);
+	}
+}

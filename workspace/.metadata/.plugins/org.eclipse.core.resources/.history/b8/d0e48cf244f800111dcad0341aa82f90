@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+func test(a, b string) (string, string) {
+	return a,b
+}
+
+type Vertex struct{
+	a int
+	b int
+
+}
+
+func main() {
+	z:=5+4i
+	if a := 5; a>0 {
+		fmt.Println(z)
+	}
+	
+}

@@ -1,0 +1,189 @@
+package pcremote.custom;
+
+import pcremote.activities.R;
+import android.content.Context;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.BaseInputConnection;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
+
+public class KeyboardButton extends ImageView implements Editable{
+
+	public KeyboardButton(Context context) {
+		super(context);
+		init();
+	}
+	
+	public KeyboardButton(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		init();
+	}
+	public KeyboardButton(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		init();
+	}
+	
+	private void init()
+	{
+		this.setFocusable(true);
+		this.setFocusableInTouchMode(true);
+		/*this.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				InputMethodManager imm = (InputMethodManager) KeyboardButton.this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+				imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+			}
+		});*/
+		EditText t=new EditText(this);
+		this.setImageResource(R.drawable.keyboard_icon);
+	}
+	
+	@Override
+	public boolean onKeyUp(int keycode, KeyEvent event)
+	{
+		super.onKeyUp(keycode, event);
+		Log.v("trolololo", "button pressed");
+		return true;
+	}
+	
+	@Override
+	public boolean onCheckIsTextEditor ()
+	{
+		return true;
+	}
+	
+	@Override
+	public InputConnection onCreateInputConnection (EditorInfo outAttrs)
+	{
+		Log.v("trolololo", "Keyboard connection created");
+        BaseInputConnection fic = new BaseInputConnection(this, false);
+        outAttrs.actionLabel = null;
+        outAttrs.inputType = InputType.TYPE_NULL;
+        outAttrs.imeOptions = EditorInfo.IME_ACTION_NEXT;
+        return fic;
+	}
+
+	public char charAt(int arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int length() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public CharSequence subSequence(int arg0, int arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void getChars(int arg0, int arg1, char[] arg2, int arg3) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void removeSpan(Object arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setSpan(Object arg0, int arg1, int arg2, int arg3) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getSpanEnd(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getSpanFlags(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getSpanStart(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public <T> T[] getSpans(int arg0, int arg1, Class<T> arg2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int nextSpanTransition(int arg0, int arg1, Class arg2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Editable append(CharSequence arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Editable append(char arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Editable append(CharSequence arg0, int arg1, int arg2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clearSpans() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Editable delete(int arg0, int arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public InputFilter[] getFilters() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Editable insert(int arg0, CharSequence arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Editable insert(int arg0, CharSequence arg1, int arg2, int arg3) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Editable replace(int arg0, int arg1, CharSequence arg2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Editable replace(int arg0, int arg1, CharSequence arg2, int arg3,
+			int arg4) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setFilters(InputFilter[] arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+}

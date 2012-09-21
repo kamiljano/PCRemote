@@ -1,0 +1,22 @@
+package rmi.communication;
+
+import java.io.Serializable;
+
+public class ClientInfo implements Serializable{
+	
+	private String os;
+	private String osVer;
+	private String osArch;
+	private String user;
+	private String mac;
+	
+	public ClientInfo (String os, String osVer, String osArch, String user, String mac)
+	{
+		this.os = os;
+		this.osVer = osVer;
+		this.osArch = osArch;
+		this.user = user;
+		this.mac = mac;
+	}
+	
+}
