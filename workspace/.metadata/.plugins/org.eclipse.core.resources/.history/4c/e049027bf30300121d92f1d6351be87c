@@ -1,0 +1,47 @@
+package pcremote.activities;
+
+import pcremote.storage.PreferencesStorage;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.SeekBar;
+import android.widget.Toast;
+
+public class PreferencesActivity extends Activity{
+
+	private SeekBar cursorSens;
+	
+	@Override
+	public void onCreate(Bundle bund)
+	{
+		super.onCreate(bund);
+		setContentView(R.layout.preferences_activity);
+		cursorSens = (SeekBar)findViewById(R.id.cursorSens);
+		cursorSens.setOnSeekBarChangeListener(cursorSensListener);
+	}
+	
+	private SeekBar.OnSeekBarChangeListener cursorSensListener = new SeekBar.OnSeekBarChangeListener() {
+		
+		public void onStopTrackingTouch(SeekBar seekBar) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		public void onStartTrackingTouch(SeekBar seekBar) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		public void onProgressChanged(SeekBar seekBar, int progress,
+				boolean fromUser) {
+			Toast.makeText(PreferencesActivity.this, Integer.toString(progress), Toast.LENGTH_SHORT).show();
+			
+		}
+	};
+	
+	@Override
+	public void onStop()
+	{
+		super.onStop();
+		PreferencesStorage.savePreferences(cursorSens.getProgress()/100);
+	}
+}

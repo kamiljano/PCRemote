@@ -1,0 +1,14 @@
+package pcremote.activities;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class PreferencesActivity extends Activity{
+
+	@Override
+	public void onCreate(Bundle bund)
+	{
+		super.onCreate(bund);
+		setContentView(R.id.preferences_activity);
+	}
+}

@@ -1,0 +1,55 @@
+package pcremote.activities;
+
+import pcremote.storage.Preferences;
+import pcremote.storage.PreferencesStorage;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.SeekBar;
+import android.widget.Toast;
+
+public class PreferencesActivity extends Activity{
+
+	private SeekBar cursorSens, scrollSens;
+	
+	@Override
+	public void onCreate(Bundle bund)
+	{
+		super.onCreate(bund);
+		setContentView(R.layout.preferences_activity);
+		cursorSens = (SeekBar)findViewById(R.id.cursorSens);
+		scrollSens = (SeekBar)findViewById(R.id.scrollSens);
+		scrollSens.setMax(10);
+		try
+		{
+			Preferences p = PreferencesStorage.getPreferences();
+			setPreferences(p);
+		}
+		catch(Exception e)
+		{
+			Preferences p = Preferences.getDefaultPreferences();
+			setPreferences(p);
+		}
+	}
+	
+	private void setPreferences(Preferences p)
+	{
+		cursorSens.setProgress((int)(p.cursorSensitvity * 100));
+		scrollSens.setProgress(p.scrollSensitivity);
+	}
+	
+	
+	@Override
+	public void onStop()
+	{
+		super.onStop();
+		PreferencesStorage.setContext(this);
+		try
+		{
+			PreferencesStorage.savePreferences((float)(cursorSens.getProgress()/100.0), (byte)scrollSens.getProgress());
+		}
+		catch (Exception e)
+		{
+			Toast.makeText(this, getString(R.string.prefsStoreFail), Toast.LENGTH_SHORT).show();
+		}
+	}
+}

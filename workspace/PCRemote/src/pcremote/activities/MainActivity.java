@@ -1,11 +1,13 @@
 package pcremote.activities;
 
+import pcremote.storage.Preferences;
+import pcremote.storage.PreferencesStorage;
 import pcremote.storage.ServersStorage;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,6 +17,15 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        try
+        {
+        	Preferences p = PreferencesStorage.getPreferences();
+        	p.setUp();
+        }
+        catch(Exception e)
+        {
+        	Preferences.setUpDefaultPreferences();
+        }
         goToServers();
     }
     
@@ -62,5 +73,10 @@ public class MainActivity extends Activity {
     public void goToAbout(View v)
     {
     	this.startActivity(new Intent(this, AboutActivity.class));
+    }
+    
+    public void goToPreferences(View v)
+    {
+    	this.startActivity(new Intent(this, PreferencesActivity.class));
     }
 }

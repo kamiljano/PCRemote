@@ -1,5 +1,0 @@
-package pcremote.custom;
-
-public class CustomInputConnection implements BaseInputConnection{
-
-}

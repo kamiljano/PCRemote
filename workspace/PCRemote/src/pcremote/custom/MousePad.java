@@ -155,6 +155,7 @@ public class MousePad extends View {
 	long lastDownTime;
 	private float downx, downy;
 	int steps;
+	
 	@Override
 	public boolean onTouchEvent(MotionEvent ev)
 	{

@@ -9,5 +9,6 @@ public class AboutActivity extends Activity{
 	public void onCreate(Bundle bund)
 	{
 		super.onCreate(bund);
+		setContentView(R.layout.about_activity);
 	}
 }

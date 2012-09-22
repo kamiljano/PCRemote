@@ -19,7 +19,7 @@
     <string name="remove">Remove</string>
     <string name="info">Info</string>
     <string name="serverInfo">Server info</string>
-	<string name="noServerSelected">No server has been selected yet</string>
+	<string name="noServerSelected">No server has yet been selected</string>
     <string name="connecting">Connecting. Please wait...</string>
     <string name="connectionFail">Unable to connect to server</string>
     <string name="connected">Connected</string>
@@ -34,5 +34,10 @@
     <string name="next">Next</string>
     <string name="play">Play</string>
     <string name="pause">Pause</string>
-    
+    <string name="aboutText">Project created by Kamil Janowski in year 2012 as his Engineering Final Project.
+        I know it might not look that perfect, but still, the important thing is that it actually works, right? :D</string>
+    <string name="cursorSens">Cursor sensitivity</string>
+    <string name="prefsStoreFail">Failed to store preferences</string>
+    <string name="scrollSens">Scroll sensitivity</string>
+    <string name="rightClickTime">Right click time</string>
 </resources>

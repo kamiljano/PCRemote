@@ -1,0 +1,28 @@
+package pcremote.storage;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+import android.content.Context;
+
+public class PreferencesStorage {
+
+	private static final String file = "preferences.conf";
+	private static Context con;
+	private static Lock fileAccess = new ReentrantLock();
+	
+	public static void setContext(Context c)
+	{
+		this.con = c'
+	}
+	
+	public static float getCursorSensitivity()
+	{
+		return 0;
+	}
+	
+	public static void setCursorSensitivity(float s)
+	{
+		
+	}
+}

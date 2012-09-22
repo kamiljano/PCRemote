@@ -1,0 +1,6 @@
+package pcremote.storage;
+
+public class Preferences {
+
+	float cursorSens = 0.5;
+}

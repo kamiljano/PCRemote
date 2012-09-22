@@ -2,17 +2,12 @@ package pcremote.custom;
 
 import java.io.OutputStream;
 
-import pcremote.activities.R;
 import pcremote.custom.MouseScroll.Orientation;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 public class MouseController extends ViewGroup{
 

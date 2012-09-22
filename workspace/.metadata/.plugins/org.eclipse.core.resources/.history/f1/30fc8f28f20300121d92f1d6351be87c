@@ -1,0 +1,14 @@
+package pcremote.storage;
+
+public class PreferencesStorage {
+
+	public static float getCursorSensitivity()
+	{
+		return 0;
+	}
+	
+	public static void setCursorSensitivity()
+	{
+		
+	}
+}

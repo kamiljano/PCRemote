@@ -67,4 +67,7 @@
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1348229366878_64" label="Window Working Set" name="Aggregate for window 1348229366878"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1348230380603_65" label="Window Working Set" name="Aggregate for window 1348230380603"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1348230546969_66" label="Window Working Set" name="Aggregate for window 1348230546969"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1348232630148_67" label="Window Working Set" name="Aggregate for window 1348232630147"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1348241905616_68" label="Window Working Set" name="Aggregate for window 1348241905616"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1348296991168_69" label="Window Working Set" name="Aggregate for window 1348296991168"/>
 </workingSetManager>

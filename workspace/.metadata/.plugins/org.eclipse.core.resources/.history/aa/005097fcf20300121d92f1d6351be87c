@@ -1,0 +1,63 @@
+package pcremote.storage;
+
+import java.io.FileInputStream;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import android.content.Context;
+
+public class PreferencesStorage {
+
+	private static final String FileName = "preferences.conf";
+	private static Context con;
+	private static Lock fileAccess = new ReentrantLock();
+	
+	public static void setContext(Context c)
+	{
+		con = c;
+	}
+	
+	public static float getCursorSensitivity()
+	{
+		return 0;
+	}
+	
+	public static void savePreferences(float cursorSens)
+	{
+		fileAccess.lock();
+		DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = dbfac.newDocumentBuilder();
+        Document doc = null;
+        Element root = null;
+
+		doc = docBuilder.newDocument();
+		root = doc.createElement("preferences");
+		doc.appendChild(root);
+		
+		Element child = doc.createElement("touchpad");
+		child.setAttribute("cursorSensitivity", Integer.toString(cursorSens));
+		root.appendChild(child);
+		
+		TransformerFactory transfac = TransformerFactory.newInstance();
+        Transformer trans = transfac.newTransformer();
+        trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        trans.setOutputProperty(OutputKeys.INDENT, "yes");
+        
+        StreamResult result = new StreamResult(con.openFileOutput(FileName,Context.MODE_PRIVATE));
+        DOMSource source = new DOMSource(doc);
+        trans.transform(source, result);
+        fileAccess.unlock();
+
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;cursorSens&apos; in &apos;pcremote.storage.Preferences&apos; to &apos;cursorSensitvity&apos;&#x0D;&#x0A;- Original project: &apos;PCRemote&apos;&#x0D;&#x0A;- Original element: &apos;pcremote.storage.Preferences.cursorSens&apos;&#x0D;&#x0A;- Renamed element: &apos;pcremote.storage.Preferences.cursorSensitvity&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="true" description="Rename field &apos;cursorSens&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;pcremote.storage{Preferences.java[Preferences^cursorSens" name="cursorSensitvity" references="true" setter="false" stamp="1348238162611" textual="false" version="1.0"/>
+</session>
