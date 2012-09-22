@@ -79,4 +79,15 @@ public class MainActivity extends Activity {
     {
     	this.startActivity(new Intent(this, PreferencesActivity.class));
     }
+    
+    @Override
+    public void onDestroy()
+    {
+    	super.onDestroy();
+    	try
+    	{
+    		ServersStorage.getSocket().close();
+    	}
+    	catch(Exception e){}
+    }
 }

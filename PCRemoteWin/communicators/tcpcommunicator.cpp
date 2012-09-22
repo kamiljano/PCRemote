@@ -91,9 +91,39 @@ void TcpCommunicator::process()
     case 1:
         scroll(arr[1], arr[2]);
         break;
-    /*case 2:
-        moveMouse(arr[1], arr[2]);
-        break;*/
+    case 2:
+        switch (arr[1])
+        {
+        case 1: //click
+            switch (arr[2])
+            {
+            case 1:
+                leftMouseButton();
+                break;
+            case 2:
+                rightMouseButton();
+                break;
+            }
+            break;
+        case 2: //button down
+            switch (arr[2])
+            {
+            case 1:
+                leftMouseButtonDown();
+                break;
+            }
+            break;
+        case 3: //button down
+            switch (arr[2])
+            {
+            case 1:
+                leftMouseButtonUp();
+                break;
+            }
+
+            break;
+        }
+        break;
     case 3:
         leftMouseButton();
         break;

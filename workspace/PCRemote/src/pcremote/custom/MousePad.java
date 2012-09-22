@@ -31,6 +31,7 @@ public class MousePad extends View {
 	private Thread sendingThread;
 	
 	private static int longClickTime = 1000;
+	private static int buttonDownTime = 400;
 	private Handler handle = new Handler();
 	
 	public MousePad(Context context) {
@@ -143,6 +144,33 @@ public class MousePad extends View {
 		sendingThread.start();
 	}
 	
+	private void leftButtonDown()
+	{
+		try{
+			OutputStream o =((MouseController)getParent()).getOutputStream();
+			o.write(new byte[]{2,2,1});
+			o.flush();
+			leftButtonDown = true;
+			Log.i("trolololo", "left button down");
+		}
+		catch(Exception e){
+			Toast.makeText(MousePad.this.getContext(), MousePad.this.getContext().getString(R.string.connectionLost), Toast.LENGTH_SHORT).show();
+		}
+	}
+	private void leftButtonUp()
+	{
+		try{
+			OutputStream o =((MouseController)getParent()).getOutputStream();
+			o.write(new byte[]{2,3,1});
+			o.flush();
+			leftButtonDown = false;
+			Log.i("trolololo", "left button up");
+		}
+		catch(Exception e){
+			Toast.makeText(MousePad.this.getContext(), MousePad.this.getContext().getString(R.string.connectionLost), Toast.LENGTH_SHORT).show();
+		}
+	}
+	
 	@Override
 	protected void finalize() throws Throwable
 	{
@@ -151,10 +179,12 @@ public class MousePad extends View {
 	}
 	
 	private float x,y;
-	int lastAction = MotionEvent.ACTION_UP;
-	long lastDownTime;
+	private int lastAction = MotionEvent.ACTION_UP;
+	private long lastDownTime, lastUpTime;
 	private float downx, downy;
-	int steps;
+	private int steps;
+	private Thread longClickThread;
+	private boolean leftButtonDown = false;
 	
 	@Override
 	public boolean onTouchEvent(MotionEvent ev)
@@ -163,22 +193,50 @@ public class MousePad extends View {
 		{
 			if (Calendar.getInstance().getTimeInMillis() - lastDownTime < longClickTime)
 			{
-				Log.v("trolololo", "short click");
+				//Log.v("trolololo", "short click");
 				this.performClick();
 			}
-			else
+			/*else
 			{
 				Log.v("trolololo", "long click");
 				this.performLongClick();
-			}
+			}*/
 		}
 		lastAction = ev.getAction();
-		if (ev.getAction() == MotionEvent.ACTION_DOWN)
+		if (ev.getAction() == MotionEvent.ACTION_UP)
+		{
+			lastUpTime = Calendar.getInstance().getTimeInMillis();
+			if (leftButtonDown)
+			{
+				leftButtonUp();
+			}
+		}
+		else if (ev.getAction() == MotionEvent.ACTION_DOWN)
 		{
 			x = ev.getX();
 			y = ev.getY();
 			steps = 0;
 			lastDownTime = Calendar.getInstance().getTimeInMillis();
+			if (Calendar.getInstance().getTimeInMillis() - lastUpTime < buttonDownTime)
+			{
+				//Log.v("trolololo", "left button down");
+				leftButtonDown();
+			}
+			//else
+			{
+				longClickThread = new Thread(new Runnable(){
+	
+					public void run() {
+						try
+						{
+							Thread.sleep(longClickTime);
+						}
+						catch(Exception e){return;}
+						if (lastAction == MotionEvent.ACTION_DOWN || (lastAction == MotionEvent.ACTION_MOVE && steps < 3))
+							performLongClick();
+					}});
+				longClickThread.start();
+			}
 		}
 		else if (ev.getAction() == MotionEvent.ACTION_MOVE)
 		{

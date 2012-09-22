@@ -43,6 +43,17 @@ void AbstractCommunicator::leftMouseButton()
     mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);
 }
 
+void AbstractCommunicator::leftMouseButtonDown()
+{
+    cout<<"left mouse button down"<<endl;
+    mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);
+}
+void AbstractCommunicator::leftMouseButtonUp()
+{
+    cout<<"left mouse button up"<<endl;
+    mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);
+}
+
 void AbstractCommunicator::rightMouseButton()
 {
     mouse_event(MOUSEEVENTF_RIGHTDOWN,0,0,0,0);

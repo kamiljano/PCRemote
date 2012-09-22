@@ -7749,3 +7749,6 @@ Caused by: org.eclipse.swt.SWTError: Item not added
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
 	... 129 more
+
+!ENTRY org.eclipse.ui 2 2 2012-09-22 11:32:51.032
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)

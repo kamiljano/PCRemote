@@ -34,6 +34,8 @@ protected:
     virtual void moveMouse(int x, int y);
     virtual void scroll(char orientation, char val);
     virtual void leftMouseButton();
+    virtual void leftMouseButtonDown();
+    virtual void leftMouseButtonUp();
     virtual void rightMouseButton();
     virtual void newClientInformation(char type);
     virtual void useKeyboard(char state, char key);
