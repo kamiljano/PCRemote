@@ -6,6 +6,7 @@
 #include <QThread>
 #include "slidingwindow.h"
 #include <iostream>
+#include <QHBoxLayout>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ signals:
 class MessageWindow : public SlidingWindow
 {
 
-
+    QHBoxLayout *layout;
     QLabel *label;
     Timeout * timeout;
     void initMessage();

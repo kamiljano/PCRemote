@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tray.h'
 **
-** Created: Sat 22. Sep 10:55:59 2012
+** Created: Thu Sep 27 18:04:02 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_Tray[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,6 +35,8 @@ static const uint qt_meta_data_Tray[] = {
       57,    5,    5,    5, 0x0a,
       71,    5,    5,    5, 0x0a,
       88,    5,    5,    5, 0x0a,
+     108,  105,    5,    5, 0x0a,
+     137,    5,    5,    5, 0x0a,
 
        0        // eod
 };
@@ -42,7 +44,8 @@ static const uint qt_meta_data_Tray[] = {
 static const char qt_meta_stringdata_Tray[] = {
     "Tray\0\0reason\0activate(QSystemTrayIcon::ActivationReason)\0"
     "exitClicked()\0optionsClicked()\0"
-    "getInfoClicked()\0"
+    "getInfoClicked()\0cv\0setClientsView(ClientsView*)\0"
+    "aboutClicked()\0"
 };
 
 void Tray::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -55,6 +58,8 @@ void Tray::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         case 1: _t->exitClicked(); break;
         case 2: _t->optionsClicked(); break;
         case 3: _t->getInfoClicked(); break;
+        case 4: _t->setClientsView((*reinterpret_cast< ClientsView*(*)>(_a[1]))); break;
+        case 5: _t->aboutClicked(); break;
         default: ;
         }
     }
@@ -92,9 +97,9 @@ int Tray::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }

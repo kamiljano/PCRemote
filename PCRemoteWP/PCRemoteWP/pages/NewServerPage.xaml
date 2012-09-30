@@ -1,0 +1,34 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PCRemoteWP.Servers"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Name="stackPanel1" >
+            <TextBlock Height="30" Name="textBlock1" Text="Name" />
+            <TextBox Height="71" Name="tName" Text="" Width="460" Margin="0,0,0,30" />
+            <TextBlock Height="30" Name="textBlock2" Text="Address" />
+            <TextBox Height="71" Name="tAddress" Text="" Width="460" />
+            <TextBlock Height="30" Name="textBlock3" Text="Port" />
+            <TextBox InputScope="Number" Height="71" Name="tPort" Text="1234" Width="460" />
+        </StackPanel>
+        <Button Content="Add" Grid.Row="1" Name="button1" Click="button1_Click" />
+    </Grid>
+</phone:PhoneApplicationPage>

@@ -11,7 +11,8 @@ TARGET = PCRemote
 TEMPLATE = app
 LIBS += "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\user32.lib" \
         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\Shell32.lib" \
-        -lws2_32
+
+INCLUDEPATH += "../server_plugin/server_plugin/"
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -19,13 +20,19 @@ SOURCES += main.cpp\
     communicators/abstractcommunicator.cpp \
     communicators/tcpcommunicator.cpp \
     slidingwindow.cpp \
-    messagewindow.cpp
+    messagewindow.cpp \
+    Widgets/clientsview.cpp \
+    Widgets/mediaserver.cpp
 
 HEADERS  += mainwindow.h \
     communicators/abstractcommunicator.h \
     communicators/tcpcommunicator.h \
     slidingwindow.h \
     messagewindow.h \
-    tray.h
+    tray.h \
+    Widgets/clientsview.h \
+    Widgets/mediaserver.h \
+    ../server_plugin/server_plugin/server_plugin.h
 
-FORMS +=
+RESOURCES += \
+    ResImages.qrc

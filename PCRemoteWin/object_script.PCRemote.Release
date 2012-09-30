@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\tray.o
+./release\abstractcommunicator.o
+./release\tcpcommunicator.o
+./release\slidingwindow.o
+./release\messagewindow.o
+./release\moc_tcpcommunicator.o
+./release\moc_slidingwindow.o
+./release\moc_messagewindow.o
+./release\moc_tray.o
+);

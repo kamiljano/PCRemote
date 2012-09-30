@@ -10,6 +10,8 @@
 #include <QCursor>
 #include <iostream>
 #include "communicators/tcpcommunicator.h"
+#include "Widgets/clientsview.h"
+//#include "aboutwindow.h"
 
 using namespace std;
 
@@ -21,6 +23,7 @@ private:
     QMenu * trayMenu;
     QRect ScreenSize;
     AbstractCommunicator * communicator;
+    //AboutWindow *aboutw;
 public:
 
     Tray(QWidget * parent);
@@ -33,6 +36,8 @@ public slots:
     void exitClicked();
     void optionsClicked();
     void getInfoClicked();
+    void setClientsView(ClientsView *cv);
+    void aboutClicked();
 };
 
 #endif // TRAY_H

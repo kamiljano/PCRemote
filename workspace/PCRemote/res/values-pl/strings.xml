@@ -1,0 +1,40 @@
+<resources>
+
+    <string name="menu_settings">Opcje</string>
+    <string name="remote">Pilot</string>
+    <string name="servers">Serwery</string>
+    <string name="preferences">Preferencje</string>
+    <string name="help">Pomoc</string>
+    <string name="addServer">Dodaj server</string>
+    <string name="name">Nazwa</string>
+    <string name="address">Adres</string>
+    <string name="port">Port</string>
+    <string name="add">Dodaj</string>
+    <string name="serverNameHint">Nazwa wyświetlana na liście serwerów</string>
+    <string name="serverAddressHint">Adres IP lub DNS komputera, którym chcesz sterować</string>
+    <string name="serverPortHint">Port używany przez serwer zaintalowany na twoim komputerze</string>
+    <string name="remove">Usuń</string>
+    <string name="info">Info</string>
+    <string name="serverInfo">Info o serwerze</string>
+	<string name="noServerSelected">Nie wybrałeś jeszcze żadnego serwera</string>
+    <string name="connecting">Łączenie, proszę czekać...</string>
+    <string name="connectionFail">Nie można połączyć z serwerem</string>
+    <string name="connected">Połączono</string>
+    <string name="mouseInfo">Dotknij, żeby sterować kursorem</string>
+    <string name="connectionLost">Brak komunikacji z serwerem</string>
+    <string name="edit">Edytuj</string>
+    <string name="save">Zapisz</string>
+    <string name="keyboard">Klawiatura</string>
+    <string name="mousepad">Myszka</string>
+    <string name="media">Media</string>
+    <string name="prev">Poprzedni</string>
+    <string name="next">Następny</string>
+    <string name="play">Odtwórz</string>
+    <string name="pause">Pauza</string>
+    <string name="aboutText">Projekt stworzony przez Kamila Janowskiego w roku 2012 jako jego praca inżynierska :D \n
+        Może cały program nie wygląda aż tak powalająco jakby mógł, ale liczy się, że działa dobrze, tak? :D</string>
+    <string name="cursorSens">Czułość kursora</string>
+    <string name="prefsStoreFail">Błąd podczas zapisywania preferencji</string>
+    <string name="scrollSens">Czułość scrolla</string>
+    <string name="rightClickTime">Czas do prawego przycisku</string>
+</resources>

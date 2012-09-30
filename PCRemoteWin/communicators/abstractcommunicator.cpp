@@ -2,6 +2,7 @@
 
 AbstractCommunicator::AbstractCommunicator()
 {
+    clientsView = NULL;
 }
 
 void AbstractCommunicator::moveMouse(int x, int y)
@@ -33,7 +34,7 @@ void AbstractCommunicator::scroll(char o, char v)
     if (o == 1)
         mouse_event(MOUSEEVENTF_WHEEL,0,0, v * SCROLL_MULTIPLY, 0);
     else
-        mouse_event(MOUSEEVENTF_HWHEEL,0,0, v * SCROLL_MULTIPLY, 0);
+        mouse_event(0x01000,0,0, v * SCROLL_MULTIPLY, 0); //horizontal wheel
 }
 
 void AbstractCommunicator::leftMouseButton()
@@ -63,7 +64,10 @@ void AbstractCommunicator::rightMouseButton()
 void AbstractCommunicator::newClientInformation(char type)
 {
     if (type == 1)
+    {
         message.showAndroidClientAddedMessage();
+        this->addNoClient();
+    }
 }
 
 AbstractCommunicator::KeyRep AbstractCommunicator::translateKeycode(char c)
@@ -143,7 +147,7 @@ AbstractCommunicator::KeyRep AbstractCommunicator::translateKeycode(char c)
     case B9:
         return KeyRep(0x39,0);
     case DOT:
-        return KeyRep(VK_OEM_PERIOD, 0);
+        return KeyRep(0xBE, 0);
     case SEMICOLON:
         return KeyRep(VK_OEM_1,0);
     case SLASH:
@@ -153,9 +157,9 @@ AbstractCommunicator::KeyRep AbstractCommunicator::translateKeycode(char c)
     case ENTER:
         return KeyRep(VK_RETURN, 0);
     case COMA:
-        return KeyRep(VK_OEM_COMMA, 0);
+        return KeyRep(0xBC, 0);
     case MINUS:
-        return KeyRep(VK_OEM_MINUS,0);
+        return KeyRep(0xBD,0);
     case TILDA:
         return KeyRep(VK_OEM_3,0);
     case SQUAREBRACKET1:
@@ -187,15 +191,15 @@ AbstractCommunicator::KeyRep AbstractCommunicator::translateKeycode(char c)
     case CAPSLOCK:
         return KeyRep(VK_CAPITAL, 0);
     case VOLUP:
-        return KeyRep(VK_VOLUME_UP, 0);
+        return KeyRep(0xAF, 0);
     case VOLDOWN:
-        return KeyRep(VK_VOLUME_DOWN, 0);
+        return KeyRep(0xAE, 0);
     case MEDIAPREV:
-        return KeyRep(VK_MEDIA_PREV_TRACK, 0);
+        return KeyRep(0xB1, 0);
     case MEDIANEXT:
-        return KeyRep(VK_MEDIA_NEXT_TRACK, 0);
+        return KeyRep(0xB0, 0);
     case MEDIAPLAY:
-        return KeyRep(VK_MEDIA_PLAY_PAUSE, 0);
+        return KeyRep(0xB3, 0);
     }
     return KeyRep(-1,-1);
 }
@@ -244,4 +248,20 @@ void AbstractCommunicator::useKeyboard(char state, char key)
         else
             keybd_event(k.code, k.scan,KEYEVENTF_KEYUP,0);
     }
+}
+
+void AbstractCommunicator::setClientsView(ClientsView *cv)
+{
+    this->clientsView = cv;
+}
+
+void AbstractCommunicator::addNoClient()
+{
+    if (clientsView != 0 )
+        clientsView->addClient();
+}
+void AbstractCommunicator::removeNoClient()
+{
+    if (clientsView != 0 )
+        clientsView->removeClient();
 }

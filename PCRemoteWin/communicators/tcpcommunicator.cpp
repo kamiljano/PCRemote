@@ -16,10 +16,10 @@ TcpCommunicator::~TcpCommunicator()
 
 void TcpCommunicator::Listen()
 {
-    if (!server->listen(QHostAddress::Any, port))
-        throw std::exception("Failed to listen");
-    if (!udpSocket->bind(port, QUdpSocket::ShareAddress))
-        throw std::exception("Failed to bind");
+    if (!server->listen(QHostAddress::Any, port)){}
+       // throw std::exception("Failed to listen");
+    if (!udpSocket->bind(port, QUdpSocket::ShareAddress)){}
+       // throw std::exception("Failed to bind");
     connect(udpSocket,SIGNAL(readyRead()), this, SLOT(processUDP()));
     cout<<"Listening started"<<endl;
 
@@ -77,6 +77,7 @@ void TcpCommunicator::removeClient()
     QTcpSocket *s= qobject_cast<QTcpSocket*>(sender());
     cout<<"Client disconnected"<<endl;
     message.clientDisconnectedMessage();
+    removeNoClient();
 }
 
 void TcpCommunicator::process()

@@ -4,7 +4,6 @@ import pcremote.custom.MouseController;
 import pcremote.storage.ServersStorage;
 import android.app.Activity;
 import android.content.Intent;
-import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;

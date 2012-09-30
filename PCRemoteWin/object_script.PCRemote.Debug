@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\tray.o
+./debug\abstractcommunicator.o
+./debug\tcpcommunicator.o
+./debug\slidingwindow.o
+./debug\messagewindow.o
+./debug\moc_tcpcommunicator.o
+./debug\moc_slidingwindow.o
+./debug\moc_messagewindow.o
+./debug\moc_tray.o
+);

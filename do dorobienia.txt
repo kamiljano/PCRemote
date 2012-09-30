@@ -1,0 +1,10 @@
+﻿do dorobienia:
+- autowykrywanie serwerów
+- wtyczki do popularnych odtwarzaczy
+- gamepad
+- opcja "usuń wszystkie serwery"
+- opcje na serwerze
+- niech to główne okienko może coś wyświetla!
+- niech te okienka na serwerze wysówają się z innej strony
+- na serwerze globalne skróty klawiszowe i obsługa mediów
+- może kafelek windowsowy? :P
