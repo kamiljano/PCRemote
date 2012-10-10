@@ -6,12 +6,8 @@
 #include <QLabel>
 //#include "tray.h"
 
-//!!!!!!!!!!!!!!!!!!!!!windows libraries
-#ifdef OS_WINDOWS
 #include <Windows.h>
 #include <Shellapi.h>
-#endif
-
 
 #define DEFAULT_WIDTH 200
 #define DEFAULT_HEIGHT 100

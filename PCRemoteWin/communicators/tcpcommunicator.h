@@ -13,10 +13,6 @@
 #include <QNetworkAddressEntry>
 #include <iostream>
 
-#ifdef OS_WINDOWS
-#include <windows.h>
-#endif
-
 #define BUFLEN 300
 
 using namespace std;

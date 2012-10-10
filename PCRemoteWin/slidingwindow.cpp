@@ -24,12 +24,13 @@ SlidingWindow::~SlidingWindow()
 
 SlidingWindow::TaskbarData SlidingWindow::getTaskbarData()
 {
+    TaskbarData td;
     HWND hwnd =  FindWindowA("Shell_TrayWnd", NULL );
     APPBARDATA barData;
     barData.cbSize           =  sizeof(APPBARDATA);
     barData.hWnd             =  hwnd;
     SHAppBarMessage( ABM_GETTASKBARPOS, &barData );
-    TaskbarData td;
+
     if (barData.rc.left == 0)//albo na górze, albo po lewej, albo na dole
     {
         if (barData.rc.right > barData.rc.bottom)

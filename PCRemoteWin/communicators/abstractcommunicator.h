@@ -5,9 +5,7 @@
 #include "../messagewindow.h"
 #include "../Widgets/clientsview.h"
 
-#ifdef OS_WINDOWS
 #include <Windows.h>
-#endif
 
 #define SCROLL_MULTIPLY -100
 #define MOUSE_MULTIPLY 10

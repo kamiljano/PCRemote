@@ -10,7 +10,7 @@ QT       += core gui \
 TARGET = PCRemote
 TEMPLATE = app
 
-win64{
+win32{
 LIBS += "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\user32.lib" \
         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\Shell32.lib"
 }
