@@ -36,6 +36,7 @@ public:
     virtual ~MessageWindow();
     void showMessage(QString str);
     void showAndroidClientAddedMessage();
+    void showWPClientAddedMessage();
     void clientDisconnectedMessage();
     
 };

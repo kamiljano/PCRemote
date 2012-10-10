@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="PCRemoteWP.MainPage"
+    x:Class="PCRemoteWP.pages.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -23,7 +23,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="Remote" Grid.Row="0" Grid.Column="0" Name="bremote" />
+        <Button Content="Remote" Grid.Row="0" Grid.Column="0" Name="bremote" Click="bremote_Click" />
         <Button Content="Preferences" Grid.Column="0" Grid.Row="1" Name="bconfig" />
         <Button Content="Servers" Grid.Column="1" Grid.Row="0" Name="bserver" Click="bserver_Click" />
         <Button Content="Help" Grid.Column="1" Grid.Row="1" Name="bhelp" />

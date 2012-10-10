@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
-namespace PCRemoteWP
+namespace PCRemoteWP.pages
 {
     public partial class MainPage : PhoneApplicationPage
     {
@@ -43,6 +43,11 @@ namespace PCRemoteWP
         private void bserver_Click(object sender, RoutedEventArgs e)
         {
             goToServers();
+        }
+
+        private void bremote_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/pages/MousePage.xaml", UriKind.Relative));
         }
     }
 }

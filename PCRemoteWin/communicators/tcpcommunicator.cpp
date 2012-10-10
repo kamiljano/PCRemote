@@ -1,4 +1,4 @@
-#include "TcpCommunicator.h"
+#include "tcpcommunicator.h"
 
 TcpCommunicator::TcpCommunicator(QObject * parent) : AbstractCommunicator()
 {
@@ -90,7 +90,8 @@ void TcpCommunicator::process()
     switch(arr[0])
     {
     case 1:
-        scroll(arr[1], arr[2]);
+        //scroll(arr[1], arr[2]);
+        cout<<"Scroll: "<<(int)arr[1]<<"    "<<(int)arr[2]<<endl;
         break;
     case 2:
         switch (arr[1])

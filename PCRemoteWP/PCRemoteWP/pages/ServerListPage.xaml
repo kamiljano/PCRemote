@@ -1,11 +1,12 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="PCRemoteWP.ServerList"
+    x:Class="PCRemoteWP.pages.ServerList"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -13,12 +14,57 @@
     mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
     shell:SystemTray.IsVisible="True">
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="PageTitle" Text="Servers" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        <ScrollViewer Name="scrollViewer1" >
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="PageTitle"  Grid.Row="0" Grid.Column="0" Text="Servers" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        <!--<ScrollViewer Name="scrollViewer1" Grid.Row="1">
             <StackPanel Name="stack" />
-        </ScrollViewer>
-    </StackPanel>
+        </ScrollViewer>-->
+        <ListBox Name="listbox" Grid.Row="1" Grid.Column="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <toolkit:ContextMenuService.ContextMenu>
+                            <toolkit:ContextMenu>
+                                <toolkit:MenuItem Header="Remove" Click="MenuItem_Click_1" />
+                                <toolkit:MenuItem Header="Show" />
+                            </toolkit:ContextMenu>
+                        </toolkit:ContextMenuService.ContextMenu>
+                        <Button Click="Button_Click" Width="460">
+                            <Button.Content>
+                                <Grid x:Name="LayoutRoot" Background="Transparent">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="400" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Name: " Grid.Row="0" Grid.Column ="0"/>
+                                    <TextBlock Text="{Binding Name}" Grid.Row="0" Grid.Column="1" Name="Name"/>
+                                    <TextBlock Text="Address: " Grid.Row="1" Grid.Column="0" />
+                                    <TextBlock Text="{Binding Address}" Grid.Row="1" Grid.Column="1" Name="Address" />
+                                    <TextBlock Text="Address: " Grid.Row="2" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Port}" Grid.Row="2" Grid.Column="1" Name="Port"/>
+                                </Grid>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Add" Name="button1" Grid.Row="2" Click="button1_Click" />
+
+    </Grid>
 
 </phone:PhoneApplicationPage>

@@ -1,10 +1,13 @@
 #ifndef ABSTRACTCOMMUNICATOR_H
 #define ABSTRACTCOMMUNICATOR_H
 #include <QCursor>
-#include <Windows.h>
 #include <iostream>
 #include "../messagewindow.h"
 #include "../Widgets/clientsview.h"
+
+#ifdef OS_WINDOWS
+#include <Windows.h>
+#endif
 
 #define SCROLL_MULTIPLY -100
 #define MOUSE_MULTIPLY 10

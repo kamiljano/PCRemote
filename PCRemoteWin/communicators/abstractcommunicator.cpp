@@ -9,9 +9,6 @@ void AbstractCommunicator::moveMouse(int x, int y)
 {
     static int oldx = cursor.pos().x(), oldy = cursor.pos().y();
     cout<<"move: "<<x<<"   "<<y<<endl;
-    //oldx += (x * MOUSE_MULTIPLY);
-    //oldy += (y * MOUSE_MULTIPLY);
-    //cursor.setPos(oldx, oldy);
     int destx = oldx + (x * MOUSE_MULTIPLY);
     int desty = oldy + (y * MOUSE_MULTIPLY);
     int xdx = destx > oldx ? 1 : -1;
@@ -23,8 +20,6 @@ void AbstractCommunicator::moveMouse(int x, int y)
         if (oldy != desty)
             oldy += ydy;
         cursor.setPos(oldx, oldy);
-        //mouse_event(MOUSEEVENTF_MOVE, oldx, oldy,0,0);
-        //QThread::usleep(5);
     }
 }
 
@@ -32,46 +27,63 @@ void AbstractCommunicator::scroll(char o, char v)
 {
     cout<<"scroll: "<<(int)o<<"   "<<(int)v<<endl;
     if (o == 1)
+    {
+        #ifdef OS_WINDOWS
         mouse_event(MOUSEEVENTF_WHEEL,0,0, v * SCROLL_MULTIPLY, 0);
-    else
-        mouse_event(0x01000,0,0, v * SCROLL_MULTIPLY, 0); //horizontal wheel
+        #endif
+    }
+    else //horizontal wheel
+    {
+        #ifdef OS_WINDOWS
+        mouse_event(0x01000,0,0, v * SCROLL_MULTIPLY, 0);
+        #endif
+    }
 }
 
 void AbstractCommunicator::leftMouseButton()
 {
     cout<<"left mouse button click"<<endl;
+    #ifdef OS_WINDOWS
     mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);
     mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);
+    #endif
 }
 
 void AbstractCommunicator::leftMouseButtonDown()
 {
     cout<<"left mouse button down"<<endl;
+    #ifdef OS_WINDOWS
     mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);
+    #endif
 }
 void AbstractCommunicator::leftMouseButtonUp()
 {
     cout<<"left mouse button up"<<endl;
+    #ifdef OS_WINDOWS
     mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);
+    #endif
 }
 
 void AbstractCommunicator::rightMouseButton()
 {
+    #ifdef OS_WINDOWS
     mouse_event(MOUSEEVENTF_RIGHTDOWN,0,0,0,0);
     mouse_event(MOUSEEVENTF_RIGHTUP,0,0,0,0);
+    #endif
 }
 
 void AbstractCommunicator::newClientInformation(char type)
 {
     if (type == 1)
-    {
         message.showAndroidClientAddedMessage();
-        this->addNoClient();
-    }
+    else
+        message.showWPClientAddedMessage();
+    this->addNoClient();
 }
 
 AbstractCommunicator::KeyRep AbstractCommunicator::translateKeycode(char c)
 {
+    #ifdef OS_WINDOWS
     switch(c)
     {
     case A:
@@ -201,6 +213,7 @@ AbstractCommunicator::KeyRep AbstractCommunicator::translateKeycode(char c)
     case MEDIAPLAY:
         return KeyRep(0xB3, 0);
     }
+    #endif
     return KeyRep(-1,-1);
 }
 void AbstractCommunicator::useKeyboard(char state, char key)
@@ -216,8 +229,10 @@ void AbstractCommunicator::useKeyboard(char state, char key)
     }
     if (state == 3)
     {
+        #ifdef OS_WINDOWS
         keybd_event(k.code, k.scan,0,0);
         keybd_event(k.code, k.scan,KEYEVENTF_KEYUP,0);
+        #endif
     }
     else if (state == 1)
     {
@@ -227,26 +242,41 @@ void AbstractCommunicator::useKeyboard(char state, char key)
             {
                 shift = true;
                 lastShift = k;
+
+                #ifdef OS_WINDOWS
                 keybd_event(k.code, k.scan,0,0);
+                #endif
             }
             else
             {
                 shift = false;
+                #ifdef OS_WINDOWS
                 keybd_event(lastShift.code, lastShift.scan,KEYEVENTF_KEYUP,0);
+                #endif
             }
         }
         else
+        {
+            #ifdef OS_WINDOWS
             keybd_event(k.code, k.scan,0,0);
+            #endif
+        }
     }
     else
     {
         if (key == LSHIFT || key == RSHIFT)
         {
             shift = false;
+            #ifdef OS_WINDOWS
             keybd_event(lastShift.code, lastShift.scan,KEYEVENTF_KEYUP,0);
+            #endif
         }
         else
+        {
+            #ifdef OS_WINDOWS
             keybd_event(k.code, k.scan,KEYEVENTF_KEYUP,0);
+            #endif
+        }
     }
 }
 

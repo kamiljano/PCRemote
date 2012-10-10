@@ -63,7 +63,7 @@
           <tags>persp.actionSet:adt.actionSet.avdManager</tags>
           <tags>persp.actionSet:adt.actionSet.lint</tags>
           <tags>persp.actionSet:com.googlecode.goclipse.hiddenActionSet</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_DFvrkcQaEeGox-OK9J8dkg" selectedElement="_DFvrksQaEeGox-OK9J8dkg" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_DFvrkcQaEeGox-OK9J8dkg" selectedElement="_DFwSpMQaEeGox-OK9J8dkg" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_DFvrksQaEeGox-OK9J8dkg" elementId="left" containerData="2445" selectedElement="_DFvrk8QaEeGox-OK9J8dkg">
               <tags>newtablook</tags>
               <tags>org.eclipse.e4.primaryNavigationStack</tags>
@@ -203,11 +203,16 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_DFAEsMQaEeGox-OK9J8dkg" elementId="org.eclipse.ui.editorss" selectedElement="_DFArwMQaEeGox-OK9J8dkg">
-      <children xsi:type="basic:PartStack" xmi:id="_DFArwMQaEeGox-OK9J8dkg" elementId="org.eclipse.e4.primaryDataStack">
+      <children xsi:type="basic:PartStack" xmi:id="_DFArwMQaEeGox-OK9J8dkg" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_4aKlUBBaEeKtP6WKaFiG-g">
         <tags>newtablook</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <children xsi:type="advanced:Placeholder" xmi:id="_S4U3kPP-EeGombH2IzLmUw" elementId="Drag Placerholder" toBeRendered="false"/>
+        <children xsi:type="basic:Part" xmi:id="_4aKlUBBaEeKtP6WKaFiG-g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="messages.txt" iconURI="platform:/plugin/org.eclipse.ui.editors//icons/full/obj16/file_obj.gif" tooltip="PCRemote/messages.txt" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.ui.DefaultTextEditor&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PCRemote/messages.txt&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;884&quot; selectionTopPixel=&quot;210&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_DFZGQMQaEeGox-OK9J8dkg" elementId="org.eclipse.jdt.ui.PackageExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Package Explorer" iconURI="platform:/plugin/org.eclipse.jdt.ui//icons/full/eview16/package.gif" tooltip="Workspace" closeable="true">

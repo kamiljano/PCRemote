@@ -1,10 +1,16 @@
-﻿<xapCache source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\PCRemoteWP.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="30-Sep-12 5:00:33 PM">
+﻿<xapCache source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\PCRemoteWP.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="09-Oct-12 9:37:38 PM">
   <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="30-Sep-12 4:08:02 PM" />
   <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Background.png" archivePath="Background.png" lastWriteTime="22-Sep-12 11:36:30 AM" />
   <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="22-Sep-12 11:36:30 AM" />
-  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.dll" archivePath="PCRemoteWP.dll" lastWriteTime="30-Sep-12 5:00:33 PM" />
+  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.dll" archivePath="PCRemoteWP.dll" lastWriteTime="09-Oct-12 9:37:38 PM" />
+  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\packages\MvvmLight.4.1.23.0\lib\sl4-windowsphone71\GalaSoft.MvvmLight.Extras.WP71.dll" archivePath="GalaSoft.MvvmLight.Extras.WP71.dll" lastWriteTime="04-Oct-12 6:21:29 PM" />
+  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\packages\MvvmLight.4.1.23.0\lib\sl4-windowsphone71\GalaSoft.MvvmLight.WP71.dll" archivePath="GalaSoft.MvvmLight.WP71.dll" lastWriteTime="04-Oct-12 6:21:29 PM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.0\Toolkit\Nov10\Bin\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="02-Nov-10 2:36:16 PM" />
+  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\packages\MvvmLight.4.1.23.0\lib\sl4-windowsphone71\Microsoft.Practices.ServiceLocation.dll" archivePath="Microsoft.Practices.ServiceLocation.dll" lastWriteTime="04-Oct-12 6:21:29 PM" />
+  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\packages\MvvmLight.4.1.23.0\lib\sl4-windowsphone71\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="04-Oct-12 6:21:29 PM" />
+  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\MVVMLight.Nuget.Readme.txt" archivePath="MVVMLight.Nuget.Readme.txt" lastWriteTime="04-Oct-12 6:21:31 PM" />
   <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="22-Sep-12 11:36:30 AM" />
-  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="27-Sep-12 8:02:01 PM" />
+  <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="07-Oct-12 10:48:27 AM" />
   <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="22-Sep-12 11:36:30 AM" />
   <file source="D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="22-Sep-12 11:36:30 AM" />
 </xapCache>

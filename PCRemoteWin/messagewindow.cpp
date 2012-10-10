@@ -54,6 +54,19 @@ void MessageWindow::showAndroidClientAddedMessage()
     timeout->start();
 }
 
+void MessageWindow::showWPClientAddedMessage()
+{
+    if (label == NULL)
+    {
+        label = new QLabel(this);
+        layout->addWidget(label,0,Qt::AlignCenter);
+    }
+    initMessage();
+    label->setText("Windows Phone client added");
+    this->setVisible(true);
+    timeout->start();
+}
+
 void MessageWindow::clientDisconnectedMessage()
 {
     if (label == NULL)

@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
-namespace PCRemoteWP
+namespace PCRemoteWP.pages
 {
     public partial class Servers : PhoneApplicationPage
     {
@@ -54,6 +54,16 @@ namespace PCRemoteWP
                 MessageBox.Show("Failed to save server information");
                 return;
             }
+            string msg;
+            try
+            {
+                if (NavigationContext.QueryString.TryGetValue("rm", out msg))
+                {
+                    if (msg.ToLower().Equals("true"))
+                        NavigationService.RemoveBackEntry();
+                }
+            }
+            catch { }
             NavigationService.Navigate(new Uri("/pages/ServerListPage.xaml?rm=true", UriKind.Relative));
         }
     }

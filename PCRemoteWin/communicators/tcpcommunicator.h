@@ -11,8 +11,11 @@
 #include <QHostInfo>
 #include <QNetworkInterface>
 #include <QNetworkAddressEntry>
-#include <windows.h>
 #include <iostream>
+
+#ifdef OS_WINDOWS
+#include <windows.h>
+#endif
 
 #define BUFLEN 300
 
