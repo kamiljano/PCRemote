@@ -15,8 +15,6 @@ LIBS += "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\user32.lib" \
         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\Shell32.lib"
 }
 
-INCLUDEPATH += "../server_plugin/server_plugin/"
-
 SOURCES += main.cpp\
         mainwindow.cpp \
     tray.cpp \
@@ -26,7 +24,9 @@ SOURCES += main.cpp\
     messagewindow.cpp \
     Widgets/clientsview.cpp \
     Widgets/mediaserver.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    configdialog.cpp \
+    Widgets/mediacontroller.cpp
 
 HEADERS  += mainwindow.h \
     communicators/abstractcommunicator.h \
@@ -37,10 +37,14 @@ HEADERS  += mainwindow.h \
     Widgets/clientsview.h \
     Widgets/mediaserver.h \
     ../server_plugin/server_plugin/server_plugin.h \
-    aboutdialog.h
+    aboutdialog.h \
+    configdialog.h \
+    Widgets/mediacontroller.h \
+    export/ServerMediaPlugin.h
 
 RESOURCES += \
     ResImages.qrc
 
 FORMS += \
-    aboutdialog.ui
+    aboutdialog.ui \
+    configdialog.ui

@@ -3,6 +3,12 @@
 MediaServer::MediaServer(QWidget *parent) :
     QWidget(parent)
 {
+    layout = new QVBoxLayout;
+    MediaController *mc = new MediaController();
+    layout->addWidget(mc);
+    mcs.push_back(mc);
+    this->setLayout(layout);
+
     plugins = NULL;
     listPlugins();
 }
@@ -21,9 +27,9 @@ void MediaServer::listPlugins()
         filters <<"*.dll";
         QStringList list = dir.entryList(filters, QDir::Files);
         QListIterator<QString> i(list);
-        typedef Server_plugin* (*getInstanceFunction)();
+        typedef ServerMediaPlugin* (*getInstanceFunction)();
         pluglen = list.size();
-        plugins = new Server_plugin * [pluglen];
+        plugins = new ServerMediaPlugin * [pluglen];
         for (int ii = 0; ii<pluglen; ii++)
         {
             plugins [ii] = 0;
@@ -56,6 +62,10 @@ MediaServer::~MediaServer()
                 delete plugins[i];
         delete [] plugins;
     }
+    delete layout;
+    for (int i = 0; i<mcs.count(); i++)
+        delete mcs[i];
+    mcs.clear();
 }
 
 void MediaServer::start()

@@ -216,7 +216,6 @@ AbstractCommunicator::KeyRep AbstractCommunicator::translateKeycode(char c)
 }
 void AbstractCommunicator::useKeyboard(char state, char key)
 {
-
     static bool shift = false;
     static KeyRep lastShift(-1,-1);
     KeyRep k = translateKeycode(key);
@@ -227,10 +226,8 @@ void AbstractCommunicator::useKeyboard(char state, char key)
     }
     if (state == 3)
     {
-
         keybd_event(k.code, k.scan,0,0);
         keybd_event(k.code, k.scan,KEYEVENTF_KEYUP,0);
-
     }
     else if (state == 1)
     {

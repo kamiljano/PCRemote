@@ -5,6 +5,7 @@ Tray::Tray(QWidget *parent) :
 {
     QIcon i("icon.svg");
     aboutw = NULL;
+    configDial = NULL;
     icon = new QSystemTrayIcon((QObject*)parent);
     icon->setIcon(i);
     trayMenu = new QMenu();
@@ -13,7 +14,6 @@ Tray::Tray(QWidget *parent) :
     trayMenu->addAction(tr("About"),this, SLOT(aboutClicked()));
     trayMenu->addAction(tr("Exit"), this, SLOT(exitClicked()));
     icon->setContextMenu(trayMenu);
-    //config = new ConfigWindow;
     connect(icon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(activate(QSystemTrayIcon::ActivationReason)));
     communicator = new TcpCommunicator;
     communicator->Listen();
@@ -26,6 +26,8 @@ Tray::~Tray()
     delete communicator;
     if (aboutw != NULL)
         delete aboutw;
+    if (configDial != NULL)
+        delete configDial;
 }
 
 void Tray::Show()
@@ -62,8 +64,9 @@ void Tray::exitClicked()
 
 void Tray::optionsClicked()
 {
-    //communicator->moveMouse(10,10);
-    //config->setVisible(true);
+    if (configDial == NULL)
+        configDial = new ConfigDialog((QWidget*)this->parent());
+    configDial->show();
 }
 
 void Tray::getInfoClicked()

@@ -3,7 +3,7 @@
 
 #include "plugin_winamp_global.h"
 #include <QString>
-#include "server_plugin.h"
+#include "ServerMediaPlugin.h"
 #include <Windows.h>
 #include <QThread>
 #include <iostream>
@@ -25,25 +25,30 @@ public:
     HWND getHandler() {return hwnd; }
     void setEnd() { end = true; }
     void setStart() {end = false; }
-signals:
-    void winampConnected(QString);
-    void winampDisconnected(QString);
 };
 
-class PLUGIN_WINAMPSHARED_EXPORT Plugin_winamp : public Server_plugin {
+class PLUGIN_WINAMPSHARED_EXPORT Plugin_winamp : public ServerMediaPlugin {
+    Q_OBJECT
     HWND hwnd;
     Waiter *waiter;
+    bool connected;
 public:
     Plugin_winamp();
-    virtual void start();
-    virtual void stop();
+    void start();
+    void stop();
     ~Plugin_winamp();
-    virtual QString playerName(){return NAME;}
-    virtual QString getTrack();
-    virtual void pause();
-    virtual void play();
-    virtual void next();
-    virtual void previous();
+    QString playerName(){return NAME;}
+    void pause();
+    void play();
+    void next();
+    void previous();
+    QPixmap getLogo();
+    bool isPlaying();
+    QString currentTrack();
+    bool isConnected();
+public slots:
+    void winampDetectedSlot();
+    void winampGoneSlot();
 };
 
 extern "C" PLUGIN_WINAMPSHARED_EXPORT Plugin_winamp* getPluginInstance();

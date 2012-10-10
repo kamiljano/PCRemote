@@ -4,15 +4,14 @@
 #
 #-------------------------------------------------
 
-QT       -= gui
+#QT += core gui
 
 TARGET = plugin_winamp
 TEMPLATE = lib
 
-INCLUDEPATH += "../../server_plugin/server_plugin/"
+INCLUDEPATH += ../../PCRemoteWin/export/
 
-LIBS += ../../server_plugin/server_plugin/debug/server_plugin.lib \
-        "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\user32.lib" \
+LIBS += "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.0A/Lib/user32.lib"
 
 DEFINES += PLUGIN_WINAMP_LIBRARY
 
@@ -20,7 +19,7 @@ SOURCES += plugin_winamp.cpp
 
 HEADERS += plugin_winamp.h\
         plugin_winamp_global.h \
-    ../../server_plugin/server_plugin/server_plugin.h
+        ../../PCRemoteWin/export/ServerMediaPlugin.h
 
 symbian {
     MMP_RULES += EXPORTUNFROZEN

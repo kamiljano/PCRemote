@@ -12,6 +12,7 @@
 #include "communicators/tcpcommunicator.h"
 #include "Widgets/clientsview.h"
 #include "aboutdialog.h"
+#include "configdialog.h"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ private:
     QRect ScreenSize;
     AbstractCommunicator * communicator;
     AboutDialog *aboutw;
+    ConfigDialog *configDial;
 public:
 
     Tray(QWidget * parent);
