@@ -59,21 +59,27 @@ void SlidingWindow::Show()
     switch (td.position)
     {
     case TaskbarData::TOP:
-        animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X, 0 - this->height(),this->width(),this->height()));
-        animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X,MARGIN_Y + td.y2,this->width(),this->height()));
-        //animation->setStartValue(QRect(td.x2, MARGIN_Y + td.y2,this->width(),MARGIN_Y + td.y2 + this->height()));
-        //animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X, MARGIN_Y + td.y2,td.x2 - MARGIN_X,MARGIN_Y + td.y2 + this->height()));
+        //animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X, 0 - this->height(),this->width(),this->height()));
+        //animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X,MARGIN_Y + td.y2,this->width(),this->height()));
+        animation->setStartValue(QRect(td.x2, MARGIN_Y + td.y2,this->width(),this->height()));
+        animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X, MARGIN_Y + td.y2,this->width(),this->height()));
         break;
     case TaskbarData::BOTTOM:
-        animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X, td.y2, this->width(), this->height()));
+        //animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X, td.y2, this->width(), this->height()));
+        //animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X, td.y2 - this->height() - MARGIN_Y - (td.y2 - td.y1), this->width(), this->height()));
+        animation->setStartValue(QRect(td.x2, td.y2 - this->height() - MARGIN_Y - (td.y2 - td.y1), this->width(), this->height()));
         animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X, td.y2 - this->height() - MARGIN_Y - (td.y2 - td.y1), this->width(), this->height()));
         break;
     case TaskbarData::LEFT:
-        animation->setStartValue(QRect(0 - this->width(), td.y2 - this->height() - MARGIN_Y,this->width(), this->height()));
+        //animation->setStartValue(QRect(0 - this->width(), td.y2 - this->height() - MARGIN_Y,this->width(), this->height()));
+        //animation->setEndValue(QRect(td.x2 + MARGIN_X, td.y2 - this->height() - MARGIN_Y,this->width(), this->height()));
+        animation->setStartValue(QRect(td.x2 + MARGIN_X, td.y2,this->width(), this->height()));
         animation->setEndValue(QRect(td.x2 + MARGIN_X, td.y2 - this->height() - MARGIN_Y,this->width(), this->height()));
         break;
     case TaskbarData::RIGHT:
-        animation->setStartValue(QRect(td.x2,td.y2 - this->height() - MARGIN_Y,this->width(),this->height()));
+        //animation->setStartValue(QRect(td.x2,td.y2 - this->height() - MARGIN_Y,this->width(),this->height()));
+        //animation->setEndValue(QRect(td.x1 - MARGIN_X - this->width(),td.y2 - this->height() - MARGIN_Y,this->width(),this->height()));
+        animation->setStartValue(QRect(td.x1 - MARGIN_X - this->width(), td.y2,this->width(),this->height()));
         animation->setEndValue(QRect(td.x1 - MARGIN_X - this->width(),td.y2 - this->height() - MARGIN_Y,this->width(),this->height()));
         break;
     }
@@ -87,19 +93,27 @@ void SlidingWindow::Hide()
     switch (td.position)
     {
     case TaskbarData::TOP:
-        animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X, 0 - this->height(),this->width(),this->height()));
-        animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X,MARGIN_Y + td.y2,this->width(),this->height()));
+        //animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X, 0 - this->height(),this->width(),this->height()));
+        //animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X,MARGIN_Y + td.y2,this->width(),this->height()));
+        animation->setEndValue(QRect(td.x2, MARGIN_Y + td.y2,this->width(),this->height()));
+        animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X, MARGIN_Y + td.y2,this->width(),this->height()));
         break;
     case TaskbarData::BOTTOM:
-        animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X, td.y2, this->width(), this->height()));
+        //animation->setEndValue(QRect(td.x2 - this->width() - MARGIN_X, td.y2, this->width(), this->height()));
+        //animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X, td.y2 - this->height() - MARGIN_Y - (td.y2 - td.y1), this->width(), this->height()));
+        animation->setEndValue(QRect(td.x2, td.y2 - this->height() - MARGIN_Y - (td.y2 - td.y1), this->width(), this->height()));
         animation->setStartValue(QRect(td.x2 - this->width() - MARGIN_X, td.y2 - this->height() - MARGIN_Y - (td.y2 - td.y1), this->width(), this->height()));
         break;
     case TaskbarData::LEFT:
-        animation->setEndValue(QRect(0 - this->width(), td.y2 - this->height() - MARGIN_Y,this->width(), this->height()));
+        //animation->setEndValue(QRect(0 - this->width(), td.y2 - this->height() - MARGIN_Y,this->width(), this->height()));
+        //animation->setStartValue(QRect(td.x2 + MARGIN_X, td.y2 - this->height() - MARGIN_Y,this->width(), this->height()));
+        animation->setEndValue(QRect(td.x2 + MARGIN_X, td.y2,this->width(), this->height()));
         animation->setStartValue(QRect(td.x2 + MARGIN_X, td.y2 - this->height() - MARGIN_Y,this->width(), this->height()));
         break;
     case TaskbarData::RIGHT:
-        animation->setEndValue(QRect(td.x2,td.y2 - this->height() - MARGIN_Y,this->width(),this->height()));
+        //animation->setEndValue(QRect(td.x2,td.y2 - this->height() - MARGIN_Y,this->width(),this->height()));
+        //animation->setStartValue(QRect(td.x1 - MARGIN_X - this->width(),td.y2 - this->height() - MARGIN_Y,this->width(),this->height()));
+        animation->setEndValue(QRect(td.x1 - MARGIN_X - this->width(), td.y2,this->width(),this->height()));
         animation->setStartValue(QRect(td.x1 - MARGIN_X - this->width(),td.y2 - this->height() - MARGIN_Y,this->width(),this->height()));
         break;
     }

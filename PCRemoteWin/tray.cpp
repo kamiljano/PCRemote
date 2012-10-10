@@ -4,7 +4,7 @@ Tray::Tray(QWidget *parent) :
     QObject(parent)
 {
     QIcon i("icon.svg");
-    //aboutw = NULL;
+    aboutw = NULL;
     icon = new QSystemTrayIcon((QObject*)parent);
     icon->setIcon(i);
     trayMenu = new QMenu();
@@ -24,8 +24,8 @@ Tray::~Tray()
     delete trayMenu;
     delete icon;
     delete communicator;
-    //if (aboutw != NULL)
-      //  delete aboutw;
+    if (aboutw != NULL)
+        delete aboutw;
 }
 
 void Tray::Show()
@@ -78,7 +78,7 @@ void Tray::setClientsView(ClientsView *cv)
 
 void Tray::aboutClicked()
 {
-    /*if (aboutw == NULL)
-        aboutw = new AboutWindow();
-    aboutw->show();*/
+    if (aboutw == NULL)
+        aboutw = new AboutDialog((QWidget*)this->parent());
+    aboutw->show();
 }

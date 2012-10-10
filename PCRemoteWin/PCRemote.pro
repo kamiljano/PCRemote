@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     slidingwindow.cpp \
     messagewindow.cpp \
     Widgets/clientsview.cpp \
-    Widgets/mediaserver.cpp
+    Widgets/mediaserver.cpp \
+    aboutdialog.cpp
 
 HEADERS  += mainwindow.h \
     communicators/abstractcommunicator.h \
@@ -35,7 +36,11 @@ HEADERS  += mainwindow.h \
     tray.h \
     Widgets/clientsview.h \
     Widgets/mediaserver.h \
-    ../server_plugin/server_plugin/server_plugin.h
+    ../server_plugin/server_plugin/server_plugin.h \
+    aboutdialog.h
 
 RESOURCES += \
     ResImages.qrc
+
+FORMS += \
+    aboutdialog.ui

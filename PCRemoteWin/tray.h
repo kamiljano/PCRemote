@@ -11,7 +11,7 @@
 #include <iostream>
 #include "communicators/tcpcommunicator.h"
 #include "Widgets/clientsview.h"
-//#include "aboutwindow.h"
+#include "aboutdialog.h"
 
 using namespace std;
 
@@ -23,7 +23,7 @@ private:
     QMenu * trayMenu;
     QRect ScreenSize;
     AbstractCommunicator * communicator;
-    //AboutWindow *aboutw;
+    AboutDialog *aboutw;
 public:
 
     Tray(QWidget * parent);
