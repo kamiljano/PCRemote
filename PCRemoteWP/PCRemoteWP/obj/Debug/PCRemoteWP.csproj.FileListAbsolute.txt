@@ -31,3 +31,4 @@ D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\PCRemoteWP.pdb
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.g.resources
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.dll
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.pdb
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\MediaControllerPage.g.i.cs

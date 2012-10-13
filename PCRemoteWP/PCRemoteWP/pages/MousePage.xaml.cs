@@ -29,7 +29,21 @@ namespace PCRemoteWP.pages
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
+            ServersStorage.OnConnectionFailed -= processConnectionFailed;
             this.mouseController.Kill();
         }
+
+        private void processConnectionFailed()
+        {
+            MessageBox.Show("Connection failed");
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            ServersStorage.OnConnectionFailed += processConnectionFailed;
+            ServersStorage.ReestabilishConnection();
+        }
+
     }
 }

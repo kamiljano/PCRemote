@@ -13,6 +13,7 @@ using Microsoft.Phone.Controls;
 using System.Net.Sockets;
 using System.Threading;
 using System.Text;
+using PCRemoteWP.messages;
 
 namespace PCRemoteWP.pages
 {
@@ -112,7 +113,6 @@ namespace PCRemoteWP.pages
             {
                 
                 result = e.SocketError;
-                Console.WriteLine("Connection: " + result.ToString());
 
                 if (!result.Equals(SocketError.Success))
                     Dispatcher.BeginInvoke(delegate() { MessageBox.Show("Failed to connect"); });
@@ -127,14 +127,14 @@ namespace PCRemoteWP.pages
 
             _socket.ConnectAsync(socketEventArg);
 
-            _clientDone.WaitOne(5000);
+            _clientDone.WaitOne(2000);
 
             if (_socket != null && _socket.Connected)
             {
                 SocketAsyncEventArgs toBeSent = new SocketAsyncEventArgs();
                 toBeSent.RemoteEndPoint = _socket.RemoteEndPoint;
                 toBeSent.UserToken = null;
-                byte[] payload = new byte[] { 5, 2 };
+                byte[] payload = IntroductionMessage.GetMessage();
                 toBeSent.SetBuffer(payload, 0, payload.Length);
                 _socket.SendAsync(toBeSent);
                 ServersStorage.ServerSocket = _socket;

@@ -84,6 +84,8 @@
     <Compile Include="controls\MouseScroll.xaml.cs">
       <DependentUpon>MouseScroll.xaml</DependentUpon>
     </Compile>
+    <Compile Include="messages\IntroductionMessage.cs" />
+    <Compile Include="messages\KeyboardEventMessage.cs" />
     <Compile Include="messages\LeftClickMessage.cs" />
     <Compile Include="messages\LeftMouseButtonDownMessage.cs" />
     <Compile Include="messages\LeftMouseButtonUpMessage.cs" />
@@ -99,6 +101,9 @@
     </Compile>
     <Compile Include="pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\MediaControllerPage.xaml.cs">
+      <DependentUpon>MediaControllerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\MousePage.xaml.cs">
       <DependentUpon>MousePage.xaml</DependentUpon>
@@ -148,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\MediaControllerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

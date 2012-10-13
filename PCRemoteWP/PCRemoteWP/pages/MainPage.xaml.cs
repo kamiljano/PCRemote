@@ -47,7 +47,8 @@ namespace PCRemoteWP.pages
 
         private void bremote_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/pages/MousePage.xaml", UriKind.Relative));
+            //NavigationService.Navigate(new Uri("/pages/MousePage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/pages/MediaControllerPage.xaml", UriKind.Relative));
         }
 
         private void bhelp_Click(object sender, RoutedEventArgs e)
