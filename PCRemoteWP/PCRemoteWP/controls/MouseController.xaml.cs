@@ -9,6 +9,7 @@ using System.Threading;
 using PCRemoteWP.messages;
 using System.Net.Sockets;
 using System.Diagnostics;
+using System.Net;
 
 namespace PCRemoteWP.controls
 {
@@ -24,16 +25,40 @@ namespace PCRemoteWP.controls
             InitializeComponent();
             this.scrollY.OnScrolled += processScrollEvent;
             this.scrollX.OnScrolled += processScrollEvent;
-            this.mousepad.OnMouseMove += processMouseMoveEvent;
+            this.mousepad.OnMouseMoveEvent += processMouseMoveEvent;
+            this.mousepad.OnLeftClick += processLeftClick;
+            this.mousepad.OnRightClick += processRightClick;
             st = new Thread(sendingThread);
         }
 
         static MouseController()
         {
             MouseController.ScorllSensitivity = 10;
+            MouseSensitivity = 0.5f;
+            TimeToRightClick = 1500;
         }
 
         public static byte ScorllSensitivity { get; set; }
+        public static float MouseSensitivity { get; set; }
+        public static int TimeToRightClick { get; set; }
+
+        public void processLeftClick()
+        {
+            Debug.WriteLine("Left mouse click");
+            lock (messageQueue)
+            {
+                messageQueue.Enqueue(new LeftClickMessage());
+            }
+        }
+
+        public void processRightClick()
+        {
+            Debug.WriteLine("Right mouse click");
+            lock (messageQueue)
+            {
+                messageQueue.Enqueue(new RightClickMessage());
+            }
+        }
 
         public void processScrollEvent(MouseScroll.orientation o, MouseScroll.dir d)
         {
@@ -41,13 +66,17 @@ namespace PCRemoteWP.controls
                 (d == MouseScroll.dir.Minus ? "minus" : "plus"));
             lock (messageQueue)
             {
-                messageQueue.Enqueue(new ScrollMessage(o, d == MouseScroll.dir.Plus ? MouseController.ScorllSensitivity : (byte)(-1 * MouseController.ScorllSensitivity)));
+                messageQueue.Enqueue(new ScrollMessage(o, d == MouseScroll.dir.Plus ? (sbyte)MouseController.ScorllSensitivity : (sbyte)(-1 * MouseController.ScorllSensitivity)));
             }
         }
 
-        public void processMouseMoveEvent(byte x, byte y)
+        public void processMouseMoveEvent(sbyte x, sbyte y)
         {
-
+            Debug.WriteLine("Mouse moved; x = " + x + "; y = " + y);
+            lock (messageQueue)
+            {
+                messageQueue.Enqueue(new MouseMoveMessage(x, y));
+            }
         }
 
         public void sendingThread()
@@ -64,22 +93,49 @@ namespace PCRemoteWP.controls
                 }
                 if (nm != null)
                 {
-                    Debug.WriteLine("Sending event message");
-                    try
+                    if (nm.NetworkProtocol == Protocol.TCP)                 //sending message via TCP
                     {
-                        SocketAsyncEventArgs toBeSent = new SocketAsyncEventArgs();
-                        toBeSent.RemoteEndPoint = ServersStorage.ServerSocket.RemoteEndPoint;
-                        toBeSent.UserToken = null;
-                        byte[] payload = nm.Message();
-                        toBeSent.SetBuffer(payload, 0, payload.Length);
-                        ServersStorage.ServerSocket.SendAsync(toBeSent);
-                    }
-                    catch {
-                        Debug.WriteLine("Sending failed");
-                        lock (messageQueue)
+                        Debug.WriteLine("Sending event message via TCP");
+                        try
                         {
-                            messageQueue.Clear();
+                            SocketAsyncEventArgs toBeSent = new SocketAsyncEventArgs();
+                            toBeSent.RemoteEndPoint = ServersStorage.ServerSocket.RemoteEndPoint;
+                            toBeSent.UserToken = null;
+                            sbyte [] message = nm.Message();
+                            byte[] payload = new byte[message.Length];
+                            for (int i = 0; i < message.Length; i++)
+                                payload[i] = (byte)message[i];
+                            toBeSent.SetBuffer(payload, 0, payload.Length);
+                            ServersStorage.ServerSocket.SendAsync(toBeSent);
                         }
+                        catch
+                        {
+                            Debug.WriteLine("Sending failed");
+                            lock (messageQueue)
+                            {
+                                messageQueue.Clear();
+                            }
+                        }
+                    }
+                    else                                            //sending message via UDP
+                    {
+                        Debug.WriteLine("Sending event message via UDP");
+                        Socket _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                        SocketAsyncEventArgs socketEventArg = new SocketAsyncEventArgs();
+
+                        socketEventArg.RemoteEndPoint = new DnsEndPoint(ServersStorage.SelectedServer.Address, ServersStorage.SelectedServer.Port);
+                        ManualResetEvent _clientDone = new ManualResetEvent(false);
+                        socketEventArg.Completed += new EventHandler<SocketAsyncEventArgs>(delegate(object s, SocketAsyncEventArgs e)
+                        {
+                            _clientDone.Set();
+                        });
+                        sbyte[] message = nm.Message();
+                        byte[] payload = new byte[message.Length];
+                        for (int i = 0; i < message.Length; i++)
+                            payload[i] = (byte)message[i];
+                        socketEventArg.SetBuffer(payload, 0, payload.Length);
+                        _clientDone.Reset();
+                        _socket.SendToAsync(socketEventArg);
                     }
                 }
             }

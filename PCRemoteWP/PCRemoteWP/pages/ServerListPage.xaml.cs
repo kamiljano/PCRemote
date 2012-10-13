@@ -70,10 +70,11 @@ namespace PCRemoteWP.pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //string name = (((sender as Button).Content as Grid).FindName("Name") as TextBlock).Text;
+            string name = (((sender as Button).Content as Grid).FindName("Name") as TextBlock).Text;
             string address = (((sender as Button).Content as Grid).FindName("Address") as TextBlock).Text;
             string port = (((sender as Button).Content as Grid).FindName("Port") as TextBlock).Text;
             hostName = address;
+            this.host = name;
             portNumber = int.Parse(port);
             if (thread == null || !thread.IsAlive)
             {
@@ -83,11 +84,19 @@ namespace PCRemoteWP.pages
             //MessageBox.Show("test");
         }
 
+        private string host;
         private string hostName;
         private int portNumber;
 
         private void Connect()
         {
+            if (ServersStorage.ServerSocket != null)
+            {
+                ServersStorage.SelectedServer = null;
+                if (ServersStorage.ServerSocket.Connected)
+                    ServersStorage.ServerSocket.Close();
+                ServersStorage.ServerSocket = null;
+            }
             SocketError result = SocketError.Fault;
             Socket _socket = null;
             ManualResetEvent _clientDone = new ManualResetEvent(false);
@@ -129,6 +138,7 @@ namespace PCRemoteWP.pages
                 toBeSent.SetBuffer(payload, 0, payload.Length);
                 _socket.SendAsync(toBeSent);
                 ServersStorage.ServerSocket = _socket;
+                ServersStorage.SelectedServer = new ServerData(host, hostName, portNumber);
             }
         }
     }

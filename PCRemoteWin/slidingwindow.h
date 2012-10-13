@@ -23,7 +23,6 @@ class SlidingWindow : public QWidget
 protected:
     struct TaskbarData {enum Positions {RIGHT, TOP, LEFT, BOTTOM }; Positions position; int x1, x2, y1, y2;};
     TaskbarData getTaskbarData();
-    //Tray * tray;
 public:
     SlidingWindow(QWidget *parent = 0);
     virtual ~SlidingWindow();

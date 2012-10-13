@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace PCRemoteWP.controls
 {
@@ -21,7 +22,7 @@ namespace PCRemoteWP.controls
         public MouseScroll()
         {
             InitializeComponent();
-            Touch.FrameReported += this.Touch_FrameReported;
+            //Touch.FrameReported += this.Touch_FrameReported;
         }
 
         public enum orientation {Horizontal, Vertical};
@@ -30,36 +31,28 @@ namespace PCRemoteWP.controls
 
         double pos;
 
-        private void Touch_FrameReported(object sender, TouchFrameEventArgs e)
+        private void LayoutRoot_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e != null)
+            e.Handled = true;
+            if (ScrollOrientation.Equals(orientation.Horizontal))
+                pos = e.GetPosition(null).X;
+            else
+                pos = e.GetPosition(null).Y;
+        }
+
+        private void LayoutRoot_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (ScrollOrientation.Equals(orientation.Vertical))
             {
-                try
-                {
-                    TouchPointCollection col = e.GetTouchPoints(this);
-                    if (col != null)
-                    {
-                        foreach (TouchPoint tp in col)
-                        {
-                            if (ScrollOrientation.Equals(orientation.Vertical))
-                            {
-                                if (tp.Action.Equals(TouchAction.Down))
-                                    pos = tp.Position.Y;
-                                else if (OnScrolled != null)
-                                    OnScrolled(this.ScrollOrientation, tp.Position.Y > pos ? dir.Plus : dir.Minus);
-                            }
-                            else
-                            {
-                                if (tp.Action.Equals(TouchAction.Down))
-                                    pos = tp.Position.X;
-                                else if (OnScrolled != null)
-                                    OnScrolled(this.ScrollOrientation, tp.Position.X > pos ? dir.Plus : dir.Minus);
-                            }
-                        }
-                    }
-                }
-                catch { }
+                if (OnScrolled != null)
+                    OnScrolled(this.ScrollOrientation, e.GetPosition(null).Y > pos ? dir.Plus : dir.Minus);
+            }
+            else
+            {
+                if (OnScrolled != null)
+                    OnScrolled(this.ScrollOrientation, e.GetPosition(null).X > pos ? dir.Plus : dir.Minus);
             }
         }
+
     }
 }

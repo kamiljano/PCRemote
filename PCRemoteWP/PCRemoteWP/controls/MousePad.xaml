@@ -7,9 +7,9 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    d:DesignHeight="480" d:DesignWidth="480" Background="Red">
+    d:DesignHeight="480" d:DesignWidth="480" Background="Red" MouseLeftButtonDown="UserControl_MouseLeftButtonDown" MouseLeftButtonUp="UserControl_MouseLeftButtonUp">
     
-    <Grid x:Name="LayoutRoot" Background="Red">
+    <Grid x:Name="LayoutRoot" Background="Red" MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown" MouseMove="LayoutRoot_MouseMove">
 
     </Grid>
 </UserControl>

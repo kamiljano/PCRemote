@@ -13,6 +13,7 @@
 #include "Widgets/clientsview.h"
 #include "aboutdialog.h"
 #include "configdialog.h"
+#include "adhocdialog.h"
 
 using namespace std;
 
@@ -26,6 +27,8 @@ private:
     AbstractCommunicator * communicator;
     AboutDialog *aboutw;
     ConfigDialog *configDial;
+    AdHocDialog *adhocdial;
+    QMenu * adhocSubMenu;
 public:
 
     Tray(QWidget * parent);
@@ -40,6 +43,8 @@ public slots:
     void getInfoClicked();
     void setClientsView(ClientsView *cv);
     void aboutClicked();
+    void adHocClicked();
+    void closeAdHocClicked();
 };
 
 #endif // TRAY_H

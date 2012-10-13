@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'messagewindow.h'
 **
-** Created: Wed Oct 10 20:36:13 2012
+** Created: Fri Oct 12 18:50:18 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

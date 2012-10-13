@@ -90,8 +90,8 @@ void TcpCommunicator::process()
     switch(arr[0])
     {
     case 1:
-        //scroll(arr[1], arr[2]);
-        cout<<"Scroll: "<<(int)arr[1]<<"    "<<(int)arr[2]<<endl;
+        scroll(arr[1], arr[2]);
+        //cout<<"Scroll: "<<(int)arr[1]<<"    "<<(int)arr[2]<<endl;
         break;
     case 2:
         switch (arr[1])
@@ -150,7 +150,7 @@ void TcpCommunicator::processUDP()
         QByteArray datagram;
         datagram.resize(udpSocket->pendingDatagramSize());
         udpSocket->readDatagram(datagram.data(), datagram.size());
-        cout<<"mouse move: "<<(int)datagram.at(0)<<" "<<(int)datagram.at(1)<<" "<<(int)datagram.at(2)<<endl;
+        //cout<<"mouse move: "<<(int)datagram.at(0)<<" "<<(int)datagram.at(1)<<" "<<(int)datagram.at(2)<<endl;
         switch(datagram.at(0))
         {
         case 1:

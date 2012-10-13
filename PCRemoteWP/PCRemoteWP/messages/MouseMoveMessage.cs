@@ -13,17 +13,17 @@ namespace PCRemoteWP.messages
 {
     public class MouseMoveMessage : NetworkMessage
     {
-        private byte x, y;
+        private sbyte x, y;
 
-        public MouseMoveMessage(byte x, byte y)
+        public MouseMoveMessage(sbyte x, sbyte y)
         {
             this.x = x;
             this.y = y;
         }
 
-        public byte[] Message()
+        public sbyte[] Message()
         {
-            return new byte[] {1,x,y };
+            return new sbyte[] {1,x,y };
         }
 
         public Protocol NetworkProtocol

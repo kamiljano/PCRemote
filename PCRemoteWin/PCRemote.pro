@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     Widgets/mediaserver.cpp \
     aboutdialog.cpp \
     configdialog.cpp \
-    Widgets/mediacontroller.cpp
+    Widgets/mediacontroller.cpp \
+    adhocdialog.cpp
 
 HEADERS  += mainwindow.h \
     communicators/abstractcommunicator.h \
@@ -40,11 +41,13 @@ HEADERS  += mainwindow.h \
     aboutdialog.h \
     configdialog.h \
     Widgets/mediacontroller.h \
-    export/ServerMediaPlugin.h
+    export/ServerMediaPlugin.h \
+    adhocdialog.h
 
 RESOURCES += \
     ResImages.qrc
 
 FORMS += \
     aboutdialog.ui \
-    configdialog.ui
+    configdialog.ui \
+    adhocdialog.ui

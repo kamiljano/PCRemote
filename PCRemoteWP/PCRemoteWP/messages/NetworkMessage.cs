@@ -9,7 +9,7 @@ namespace PCRemoteWP.messages
 
     interface NetworkMessage
     {
-        byte[] Message() ;
+        sbyte[] Message() ;
 
         Protocol NetworkProtocol { get; }
     }

@@ -14,17 +14,17 @@ namespace PCRemoteWP.messages
 {
     public class ScrollMessage : NetworkMessage
     {
-        byte secondByte;
-        byte thirdByte;
-        public ScrollMessage(MouseScroll.orientation o, byte value)
+        sbyte secondByte;
+        sbyte thirdByte;
+        public ScrollMessage(MouseScroll.orientation o, sbyte value)
         {
-            secondByte = o == MouseScroll.orientation.Horizontal ? (byte)2 : (byte)1;
+            secondByte = o == MouseScroll.orientation.Horizontal ? (sbyte)2 : (sbyte)1;
             thirdByte = value;
         }
 
-        public byte[] Message()
+        public sbyte[] Message()
         {
-            return new byte[] { 1, secondByte, thirdByte};
+            return new sbyte[] { 1, secondByte, thirdByte};
         }
 
         public Protocol NetworkProtocol

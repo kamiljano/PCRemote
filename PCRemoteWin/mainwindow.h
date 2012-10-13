@@ -12,7 +12,6 @@
 
 class MainWindow : public SlidingWindow
 {
-    void focusOutEvent ( QFocusEvent * );
     Tray * tray;
     MediaServer *ms;
     QVBoxLayout *layout;
@@ -21,6 +20,8 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void showTrayIcon();
+protected:
+    void focusOutEvent ( QFocusEvent * );
 };
 
 #endif // MAINWINDOW_H

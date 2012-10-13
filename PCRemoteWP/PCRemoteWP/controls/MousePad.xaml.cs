@@ -9,46 +9,72 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace PCRemoteWP.controls
 {
     public partial class MousePad : UserControl
     {
-        public delegate void MouseMove(byte x, byte y);
-        public event MouseMove OnMouseMove;
+        public delegate void MouseMoveDelegate(sbyte x, sbyte y);
+        public event MouseMoveDelegate OnMouseMoveEvent;
+        public delegate void ClickDelegate();
+        public event ClickDelegate OnLeftClick;
+        public event ClickDelegate OnRightClick;
         private double last_x, last_y;
+        private int steps;
+        private DateTime lastDown;
+        private bool isDown = false;
 
         public MousePad()
         {
             InitializeComponent();
-            Touch.FrameReported += this.Touch_FrameReported;
         }
-        private void Touch_FrameReported(object sender, TouchFrameEventArgs e)
+
+
+        private void LayoutRoot_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e != null)
+            Point p = e.GetPosition(null);
+            last_x = p.X;
+            last_y = p.Y;
+        }
+
+        private void LayoutRoot_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point p = e.GetPosition(null);
+            
+            if (OnMouseMoveEvent != null)
+                OnMouseMoveEvent((sbyte)(MouseController.MouseSensitivity * (p.X - this.last_x)), (sbyte)(MouseController.MouseSensitivity * (p.Y - this.last_y)));
+
+            last_x = p.X;
+            last_y = p.Y;
+            steps ++;
+        }
+
+        private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            steps = 0;
+            lastDown = DateTime.Now;
+            isDown = true;
+            Thread t = new Thread(RightClickThread);
+            t.Start();
+        }
+
+        private void RightClickThread()
+        {
+            try
             {
-                try
-                {
-                    TouchPointCollection col = e.GetTouchPoints(this);
-                    if (col != null)
-                    {
-                        foreach (TouchPoint tp in col)
-                        {
-                            if (tp.Action.Equals(TouchAction.Down))
-                            {
-                                this.last_x = tp.Position.X;
-                                this.last_y = tp.Position.Y;
-                            }
-                            else
-                            {
-                                if (OnMouseMove != null)
-                                    OnMouseMove((byte)(tp.Position.X - this.last_x), (byte)(tp.Position.Y - this.last_y));
-                            }
-                        }
-                    }
-                }
-                catch { }
+                Thread.Sleep(MouseController.TimeToRightClick);
             }
-        }  
+            catch { }
+            if (OnRightClick != null && isDown && steps < 4 && (DateTime.Now - lastDown).TotalMilliseconds >= MouseController.TimeToRightClick)
+                OnRightClick();
+        }
+
+        private void UserControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            isDown = false;
+            if (OnLeftClick != null && steps < 3 && (DateTime.Now - lastDown).TotalMilliseconds < MouseController.TimeToRightClick)
+                OnLeftClick();
+        }
     }
 }

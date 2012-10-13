@@ -8,8 +8,8 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
-    
-    <Grid x:Name="LayoutRoot" Background="Blue">
+
+    <Grid x:Name="LayoutRoot" Background="Blue" MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown" MouseMove="LayoutRoot_MouseMove">
 
     </Grid>
 </UserControl>

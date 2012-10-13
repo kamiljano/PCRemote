@@ -84,6 +84,8 @@
     <Compile Include="controls\MouseScroll.xaml.cs">
       <DependentUpon>MouseScroll.xaml</DependentUpon>
     </Compile>
+    <Compile Include="messages\LeftClickMessage.cs" />
+    <Compile Include="messages\RightClickMessage.cs" />
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
