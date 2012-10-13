@@ -1,7 +1,5 @@
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\ApplicationIcon.png
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\Background.png
-D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\PCRemoteWP.dll
-D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\PCRemoteWP.pdb
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\AppManifest.xaml
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\PCRemoteWP.xap
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\GalaSoft.MvvmLight.Extras.WP71.dll
@@ -21,12 +19,15 @@ D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\Page1.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\MainPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\NewServerPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\ServerListPage.g.i.cs
-D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.g.resources
-D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.dll
-D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.pdb
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\XapCacheFile.xml
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\controls\MouseController.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\controls\MousePad.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\KeyboardPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\MousePage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\controls\MouseScroll.g.i.cs
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\AboutPage.g.i.cs
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\PCRemoteWP.dll
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\PCRemoteWP.pdb
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.g.resources
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.dll
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.pdb

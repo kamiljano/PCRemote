@@ -49,5 +49,10 @@ namespace PCRemoteWP.pages
         {
             NavigationService.Navigate(new Uri("/pages/MousePage.xaml", UriKind.Relative));
         }
+
+        private void bhelp_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/pages/AboutPage.xaml", UriKind.Relative));
+        }
     }
 }

@@ -11,11 +11,11 @@ using System.Windows.Shapes;
 
 namespace PCRemoteWP.messages
 {
-    public class LeftClickMessage : NetworkMessage
+    public class LeftMouseButtonDownMessage : NetworkMessage
     {
         public sbyte[] Message()
         {
-            return new sbyte[] { 2,1,1 };
+            return new sbyte[] { 2, 2, 1 };
         }
 
         public Protocol NetworkProtocol { get { return Protocol.TCP; } }

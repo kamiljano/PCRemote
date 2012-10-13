@@ -16,7 +16,7 @@ namespace PCRemoteWP.messages
 
         public sbyte[] Message()
         {
-            return new sbyte[] { 4 };
+            return new sbyte[] { 2,1,2 };
         }
 
         public Protocol NetworkProtocol { get { return Protocol.TCP; } }

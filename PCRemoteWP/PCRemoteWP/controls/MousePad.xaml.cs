@@ -20,10 +20,13 @@ namespace PCRemoteWP.controls
         public delegate void ClickDelegate();
         public event ClickDelegate OnLeftClick;
         public event ClickDelegate OnRightClick;
+        public event ClickDelegate OnLeftDown;
+        public event ClickDelegate OnLeftUp;
         private double last_x, last_y;
         private int steps;
-        private DateTime lastDown;
+        private DateTime lastDown, lastUp;
         private bool isDown = false;
+        private bool selecting = false;
 
         public MousePad()
         {
@@ -55,8 +58,17 @@ namespace PCRemoteWP.controls
             steps = 0;
             lastDown = DateTime.Now;
             isDown = true;
-            Thread t = new Thread(RightClickThread);
-            t.Start();
+            if ((DateTime.Now - lastUp).TotalMilliseconds < 300)
+            {
+                selecting = true;
+                if (OnLeftDown != null)
+                    OnLeftDown();
+            }
+            else
+            {
+                Thread t = new Thread(RightClickThread);
+                t.Start();
+            }
         }
 
         private void RightClickThread()
@@ -73,7 +85,14 @@ namespace PCRemoteWP.controls
         private void UserControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             isDown = false;
-            if (OnLeftClick != null && steps < 3 && (DateTime.Now - lastDown).TotalMilliseconds < MouseController.TimeToRightClick)
+            lastUp = DateTime.Now;
+            if (selecting)
+            {
+                selecting = false;
+                if (OnLeftUp != null)
+                    OnLeftUp();
+            }
+            else if (OnLeftClick != null && steps < 5 && (DateTime.Now - lastDown).TotalMilliseconds < MouseController.TimeToRightClick)
                 OnLeftClick();
         }
     }

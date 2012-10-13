@@ -18,8 +18,8 @@ namespace PCRemoteWP.controls
         private Thread st;
         private System.Collections.Generic.Queue<NetworkMessage> messageQueue = new System.Collections.Generic.Queue<NetworkMessage>();
         private bool killThread = false;
-
-
+        private SocketAsyncEventArgs tcptoBeSent = new SocketAsyncEventArgs();
+        Socket udpsocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
         public MouseController()
         {
             InitializeComponent();
@@ -28,6 +28,10 @@ namespace PCRemoteWP.controls
             this.mousepad.OnMouseMoveEvent += processMouseMoveEvent;
             this.mousepad.OnLeftClick += processLeftClick;
             this.mousepad.OnRightClick += processRightClick;
+            this.mousepad.OnLeftDown += processLeftDown;
+            this.mousepad.OnLeftUp += processLeftUp;
+            tcptoBeSent.RemoteEndPoint = ServersStorage.ServerSocket.RemoteEndPoint;
+            tcptoBeSent.UserToken = null;
             st = new Thread(sendingThread);
         }
 
@@ -41,6 +45,24 @@ namespace PCRemoteWP.controls
         public static byte ScorllSensitivity { get; set; }
         public static float MouseSensitivity { get; set; }
         public static int TimeToRightClick { get; set; }
+
+        public void processLeftDown()
+        {
+            Debug.WriteLine("Left mouse down");
+            lock (messageQueue)
+            {
+                messageQueue.Enqueue(new LeftMouseButtonDownMessage());
+            }
+        }
+
+        public void processLeftUp()
+        {
+            Debug.WriteLine("Left mouse up");
+            lock (messageQueue)
+            {
+                messageQueue.Enqueue(new LeftMouseButtonUpMessage());
+            }
+        }
 
         public void processLeftClick()
         {
@@ -95,18 +117,15 @@ namespace PCRemoteWP.controls
                 {
                     if (nm.NetworkProtocol == Protocol.TCP)                 //sending message via TCP
                     {
-                        Debug.WriteLine("Sending event message via TCP");
+                        //Debug.WriteLine("Sending event message via TCP");
                         try
                         {
-                            SocketAsyncEventArgs toBeSent = new SocketAsyncEventArgs();
-                            toBeSent.RemoteEndPoint = ServersStorage.ServerSocket.RemoteEndPoint;
-                            toBeSent.UserToken = null;
                             sbyte [] message = nm.Message();
                             byte[] payload = new byte[message.Length];
                             for (int i = 0; i < message.Length; i++)
                                 payload[i] = (byte)message[i];
-                            toBeSent.SetBuffer(payload, 0, payload.Length);
-                            ServersStorage.ServerSocket.SendAsync(toBeSent);
+                            tcptoBeSent.SetBuffer(payload, 0, payload.Length);
+                            ServersStorage.ServerSocket.SendAsync(tcptoBeSent);
                         }
                         catch
                         {
@@ -119,23 +138,19 @@ namespace PCRemoteWP.controls
                     }
                     else                                            //sending message via UDP
                     {
-                        Debug.WriteLine("Sending event message via UDP");
-                        Socket _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                        //Debug.WriteLine("Sending event message via UDP");
+                        
                         SocketAsyncEventArgs socketEventArg = new SocketAsyncEventArgs();
 
                         socketEventArg.RemoteEndPoint = new DnsEndPoint(ServersStorage.SelectedServer.Address, ServersStorage.SelectedServer.Port);
-                        ManualResetEvent _clientDone = new ManualResetEvent(false);
-                        socketEventArg.Completed += new EventHandler<SocketAsyncEventArgs>(delegate(object s, SocketAsyncEventArgs e)
-                        {
-                            _clientDone.Set();
-                        });
+                        //ManualResetEvent _clientDone = new ManualResetEvent(false);
                         sbyte[] message = nm.Message();
                         byte[] payload = new byte[message.Length];
                         for (int i = 0; i < message.Length; i++)
                             payload[i] = (byte)message[i];
                         socketEventArg.SetBuffer(payload, 0, payload.Length);
-                        _clientDone.Reset();
-                        _socket.SendToAsync(socketEventArg);
+                        //_clientDone.Reset();
+                        udpsocket.SendToAsync(socketEventArg);
                     }
                 }
             }
