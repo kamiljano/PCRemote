@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'winampcommunicator.h'
 **
-** Created: Sun Oct 14 09:40:37 2012
+** Created: Sun Oct 14 15:36:36 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -50,7 +50,7 @@ const QMetaObjectExtraData WinampCommunicator::staticMetaObjectExtraData = {
 };
 
 const QMetaObject WinampCommunicator::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_WinampCommunicator,
+    { &ServerMediaPlugin::staticMetaObject, qt_meta_stringdata_WinampCommunicator,
       qt_meta_data_WinampCommunicator, &staticMetaObjectExtraData }
 };
 
@@ -68,12 +68,12 @@ void *WinampCommunicator::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_WinampCommunicator))
         return static_cast<void*>(const_cast< WinampCommunicator*>(this));
-    return QObject::qt_metacast(_clname);
+    return ServerMediaPlugin::qt_metacast(_clname);
 }
 
 int WinampCommunicator::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QObject::qt_metacall(_c, _id, _a);
+    _id = ServerMediaPlugin::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

@@ -1,14 +1,29 @@
 #ifndef WINAMPCOMMUNICATOR_H
 #define WINAMPCOMMUNICATOR_H
 
-#include <QObject>
+#include "export/ServerMediaPlugin.h"
+#include <Windows.h>
+#include <QPixmap>
 
-class WinampCommunicator : public QObject
+#define NAME "Winamp"
+
+class WinampCommunicator : public ServerMediaPlugin
 {
     Q_OBJECT
 public:
     explicit WinampCommunicator(QObject *parent = 0);
-    
+    void start(){}
+    void stop(){}
+    ~WinampCommunicator(){}
+    QString playerName(){return NAME;}
+    void pause(){}
+    void play(){}
+    void next(){}
+    void previous(){}
+    QPixmap getLogo(){return QPixmap();}
+    bool isPlaying(){return false;}
+    QString currentTrack(){return "";}
+    bool isConnected(){return false;}
 signals:
     
 public slots:

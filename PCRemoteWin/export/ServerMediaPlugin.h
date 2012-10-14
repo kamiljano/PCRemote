@@ -1,6 +1,7 @@
 ﻿#ifndef SERVERMEDIAPLUGIN_H
 #define SERVERMEDIAPLUGIN_H
 
+#include <QObject>
 #include <QPixmap>
 
 class ServerMediaPlugin : public QObject {

@@ -1,6 +1,5 @@
 #include "winampcommunicator.h"
 
-WinampCommunicator::WinampCommunicator(QObject *parent) :
-    QObject(parent)
+WinampCommunicator::WinampCommunicator(QObject *parent) : ServerMediaPlugin(parent)
 {
 }

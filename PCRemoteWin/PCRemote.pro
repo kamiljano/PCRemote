@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     Widgets/mediacontroller.cpp \
     adhocdialog.cpp \
     PlayerCommunicators/winampcommunicator.cpp \
-    communicators/networkcommunicator.cpp
+    communicators/networkcommunicator.cpp \
+    configuration.cpp
 
 HEADERS  += mainwindow.h \
     communicators/abstractcommunicator.h \
@@ -44,7 +45,8 @@ HEADERS  += mainwindow.h \
     export/ServerMediaPlugin.h \
     adhocdialog.h \
     PlayerCommunicators/winampcommunicator.h \
-    communicators/networkcommunicator.h
+    communicators/networkcommunicator.h \
+    configuration.h
 
 RESOURCES += \
     ResImages.qrc
