@@ -13,9 +13,9 @@ using Microsoft.Phone.Controls;
 
 namespace PCRemoteWP.pages
 {
-    public partial class Servers : PhoneApplicationPage
+    public partial class NewServerPage : PhoneApplicationPage
     {
-        public Servers()
+        public NewServerPage()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tcpcommunicator.h'
 **
-** Created: Fri Oct 12 18:50:17 2012
+** Created: Sun Oct 14 09:40:37 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

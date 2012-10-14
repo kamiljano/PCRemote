@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="14555cbb-b0dc-4545-b1f4-cd2a157ee734" name="MouseMove" linkedPackageId="e5800072-a5e0-4cf8-9bb6-4e8cdf00d444" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="2590b5bd-3f58-4f8c-bba8-08e5225138b4">
+      <profileInstance Id="6c81e5fe-f3cd-4a64-bad9-9b8f7205e41d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="78948813-34e3-433b-9882-ca61efc826ff">
+      <profileInstance Id="609d3aa2-041c-4544-9cb0-0dead7878e39" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="d26b7b58-cc3a-4a8b-88ef-560345fca961" name="MouseMove" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <ownedCommentsInternal>
+          <comment Id="5ffdb491-134b-4888-af6a-37f237d3d3ea">
+            <elementDefinition Id="4f08188b-a6a0-4316-90c9-77003679a0b2" />
+            <body>Through event</body>
+          </comment>
+          <comment Id="dd089d72-82db-4872-ab4c-0e2e420cf43c">
+            <elementDefinition Id="2a86ee3f-e667-41ff-b64a-65fd731c5abe" />
+            <body>Separate thread</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="f2e9c011-e8f6-40da-a34b-a7e83722e873" />
+        <fragments>
+          <behaviorExecutionSpecification Id="150489f2-2e43-43d6-a5af-df077c462df1" name="BehaviorExecutionSpecification1">
+            <elementDefinition Id="9276a2dd-fba2-4897-9a36-2eb32e20310d" />
+            <coveredLifelines>
+              <lifelineMoniker Id="f1b23c9d-bbe0-4700-9740-c1ae16a46153" LastKnownName="MousePad" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="1467eed6-220b-41e5-b56a-872ad08b1513" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="dfd6739b-b2b1-4892-9e49-242478e3bdbe" LastKnownName="ExecutionOccurrenceSpecification1" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="d0579559-da01-431e-a900-5c455be2641b" LastKnownName="MessageOccurrenceSpecification2" />
+              <messageOccurrenceSpecificationMoniker Id="604b33a0-2bb8-4e39-82ef-da424548611b" LastKnownName="MessageOccurrenceSpecification3" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="dfd6739b-b2b1-4892-9e49-242478e3bdbe" name="ExecutionOccurrenceSpecification1">
+            <elementDefinition Id="329525ca-432b-4d11-b0a9-0e96ec93768f" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="aab16d88-e5ef-486c-b06c-5cce5fa291ba" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="f1b23c9d-bbe0-4700-9740-c1ae16a46153" LastKnownName="MousePad" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="34dbe2e0-1b90-47b3-bac6-4e87931d648c" name="MessageOccurrenceSpecification1">
+            <elementDefinition Id="2db8eee5-5b39-4d12-be0a-818833a75e9b" />
+            <covered>
+              <lifelineMoniker Id="f1431147-67a2-4c54-a688-5e885d1aa8cf" LastKnownName="User" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="d0579559-da01-431e-a900-5c455be2641b" name="MessageOccurrenceSpecification2">
+            <elementDefinition Id="9f55c631-8321-402a-8837-47be668591d0" />
+            <covered>
+              <lifelineMoniker Id="f1b23c9d-bbe0-4700-9740-c1ae16a46153" LastKnownName="MousePad" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="182f40b5-6c7b-4aa3-9ad8-7ddc2af29e0f" name="BehaviorExecutionSpecification2">
+            <elementDefinition Id="53fadd15-cf02-4881-ac6a-387d6f2bc3e5" />
+            <coveredLifelines>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="8a1f9cd5-c031-4b4b-ad6d-2eff48aa2c46" LastKnownName="ExecutionOccurrenceSpecification4" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="5668913f-0352-4720-b48f-b0fd66eae262" LastKnownName="ExecutionOccurrenceSpecification3" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="c75731b9-ea56-4066-a409-49eb1fa54e7d" LastKnownName="MessageOccurrenceSpecification4" />
+              <messageOccurrenceSpecificationMoniker Id="f2c8d750-172e-49b8-b4f0-66221c8ff0a3" LastKnownName="MessageOccurrenceSpecification5" />
+              <executionOccurrenceSpecificationMoniker Id="f904b7e4-5c7c-4a54-b901-936e3433719a" LastKnownName="ExecutionOccurrenceSpecification5" />
+              <executionOccurrenceSpecificationMoniker Id="8b7bfa0e-7a6e-4fd0-959f-7c68c786656a" LastKnownName="ExecutionOccurrenceSpecification6" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="5668913f-0352-4720-b48f-b0fd66eae262" name="ExecutionOccurrenceSpecification3">
+            <elementDefinition Id="347c45ae-e637-4aa4-bdf4-3bfc47f8608f" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="89f65bb0-9880-4266-ba32-4121c0e1f973" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="604b33a0-2bb8-4e39-82ef-da424548611b" name="MessageOccurrenceSpecification3">
+            <elementDefinition Id="078b4123-c073-4080-8c7b-25a04e3bfcae" />
+            <covered>
+              <lifelineMoniker Id="f1b23c9d-bbe0-4700-9740-c1ae16a46153" LastKnownName="MousePad" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="c75731b9-ea56-4066-a409-49eb1fa54e7d" name="MessageOccurrenceSpecification4">
+            <elementDefinition Id="c175066c-1ef8-4142-8e42-41cbfa225fe2" />
+            <covered>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="49088f0a-4330-4783-93c9-ad1af44bb738" name="MessageOccurrenceSpecification7">
+            <elementDefinition Id="6eed83d9-0e65-4121-97d8-9f1b6ffc5b63" />
+            <covered>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="cc651aa3-5000-4788-918d-f020aa33ef80" name="BehaviorExecutionSpecification4">
+            <elementDefinition Id="39338a2b-578a-4a10-a504-3bc1ccde4dcd" />
+            <coveredLifelines>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="11328be4-3aca-48ed-94c6-ac7d17e20b15" LastKnownName="ExecutionOccurrenceSpecification8" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="912864b5-7c2a-474f-9cb4-dc8cb7d8a599" LastKnownName="ExecutionOccurrenceSpecification7" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="fbfbb6ea-3af3-408d-b47c-97db0387af4d" LastKnownName="MessageOccurrenceSpecification8" />
+              <messageOccurrenceSpecificationMoniker Id="4d687d49-1356-4738-a8cd-8d4b8722fae6" LastKnownName="MessageOccurrenceSpecification10" />
+              <executionOccurrenceSpecificationMoniker Id="c8fe41c7-0c8d-4df1-b352-39b1033105f5" LastKnownName="ExecutionOccurrenceSpecification9" />
+              <executionOccurrenceSpecificationMoniker Id="58e99110-fbf1-4893-8e85-56353e3288a1" LastKnownName="ExecutionOccurrenceSpecification10" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="912864b5-7c2a-474f-9cb4-dc8cb7d8a599" name="ExecutionOccurrenceSpecification7">
+            <elementDefinition Id="f4fae0cd-56e0-4a9a-8eae-cbd45a83fc81" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="22b42560-7f42-4613-9e0c-a8f521f5c6be" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="fbfbb6ea-3af3-408d-b47c-97db0387af4d" name="MessageOccurrenceSpecification8">
+            <elementDefinition Id="40c96f12-0a66-4963-a94a-02df58b5efff" />
+            <covered>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="1467eed6-220b-41e5-b56a-872ad08b1513" name="ExecutionOccurrenceSpecification2">
+            <elementDefinition Id="084bac65-32c6-4d8e-a58a-f3bd6388b905" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="2d3848f3-aa79-40e2-bd49-fb082758d52a" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="f1b23c9d-bbe0-4700-9740-c1ae16a46153" LastKnownName="MousePad" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="f2c8d750-172e-49b8-b4f0-66221c8ff0a3" name="MessageOccurrenceSpecification5">
+            <elementDefinition Id="7f5a3513-765d-444e-a63b-c16d1747c923" />
+            <covered>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="34583d64-037a-4457-9cad-0c1e58bf3939" name="BehaviorExecutionSpecification3">
+            <elementDefinition Id="926c7a0f-52a1-418f-bff3-131a79e33aa8" />
+            <coveredLifelines>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="8b7bfa0e-7a6e-4fd0-959f-7c68c786656a" LastKnownName="ExecutionOccurrenceSpecification6" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="f904b7e4-5c7c-4a54-b901-936e3433719a" LastKnownName="ExecutionOccurrenceSpecification5" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="ac17ad8d-e04f-4f19-b0fa-7c93a69d3843" LastKnownName="MessageOccurrenceSpecification6" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="f904b7e4-5c7c-4a54-b901-936e3433719a" name="ExecutionOccurrenceSpecification5">
+            <elementDefinition Id="f707e94d-f1cf-45fe-84ed-354f0a5942c2" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="c31e6834-5821-4fda-ae9b-be34540c2b78" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="ac17ad8d-e04f-4f19-b0fa-7c93a69d3843" name="MessageOccurrenceSpecification6">
+            <elementDefinition Id="42597cee-87b8-40ae-bb8c-db2efcc7789e" />
+            <covered>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="4d687d49-1356-4738-a8cd-8d4b8722fae6" name="MessageOccurrenceSpecification10">
+            <elementDefinition Id="7701855e-d857-484f-9192-be2730d5ad5a" />
+            <covered>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="cbe66f4f-d4e4-47af-a926-2b7187479a8f" name="BehaviorExecutionSpecification5">
+            <elementDefinition Id="3df2bfd6-e37f-49f8-b759-fd58f5cf1185" />
+            <coveredLifelines>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="58e99110-fbf1-4893-8e85-56353e3288a1" LastKnownName="ExecutionOccurrenceSpecification10" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="c8fe41c7-0c8d-4df1-b352-39b1033105f5" LastKnownName="ExecutionOccurrenceSpecification9" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="2ce056ac-81d9-4cc7-a13d-31be250bc47e" LastKnownName="MessageOccurrenceSpecification11" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="c8fe41c7-0c8d-4df1-b352-39b1033105f5" name="ExecutionOccurrenceSpecification9">
+            <elementDefinition Id="3445d2cc-7edb-474e-8e2a-0b0e69f6fa8b" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="748d616d-df22-44bc-bdda-9204437b3f78" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="2ce056ac-81d9-4cc7-a13d-31be250bc47e" name="MessageOccurrenceSpecification11">
+            <elementDefinition Id="52529e85-7839-43f7-a72e-d4c926fdf050" />
+            <covered>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="8b7bfa0e-7a6e-4fd0-959f-7c68c786656a" name="ExecutionOccurrenceSpecification6">
+            <elementDefinition Id="ef101e5d-5398-4d13-a2dd-57d6434f5ebf" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="49aaa965-62c2-4fa3-a3a4-72b10b326157" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="58e99110-fbf1-4893-8e85-56353e3288a1" name="ExecutionOccurrenceSpecification10">
+            <elementDefinition Id="977249a7-20ce-41d2-ab74-ac9245525a74" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="646498cb-1260-4fb4-99d8-9957e8a3beb4" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="8a1f9cd5-c031-4b4b-ad6d-2eff48aa2c46" name="ExecutionOccurrenceSpecification4">
+            <elementDefinition Id="af65aea2-65c6-443c-b285-fda840f50b2f" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="f650ff12-e3f8-4447-b950-82154be8720d" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" LastKnownName="parent : MouseController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="11328be4-3aca-48ed-94c6-ac7d17e20b15" name="ExecutionOccurrenceSpecification8">
+            <elementDefinition Id="1cb7e323-c9f5-4d2b-a4f3-fac6b95bce36" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="b0c8cf71-8920-41eb-a916-375fac36ad8e" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" LastKnownName="parent : MouseController" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="f1431147-67a2-4c54-a688-5e885d1aa8cf" name="User" isActor="true" lifelineDisplayName="User">
+            <elementDefinition Id="96e7c98d-100a-4576-9987-c468c9727002" />
+            <represents>
+              <propertyMoniker Id="40386ab5-9ee3-4017-a8c4-d4dc70c0fdef" />
+            </represents>
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="34dbe2e0-1b90-47b3-bac6-4e87931d648c" LastKnownName="MessageOccurrenceSpecification1" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="f1b23c9d-bbe0-4700-9740-c1ae16a46153" name="MousePad" isActor="false" lifelineDisplayName="MousePad">
+            <elementDefinition Id="c66c068b-71c0-46c2-b889-be43c3c95e54" />
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="dfd6739b-b2b1-4892-9e49-242478e3bdbe" LastKnownName="ExecutionOccurrenceSpecification1" />
+              <executionOccurrenceSpecificationMoniker Id="1467eed6-220b-41e5-b56a-872ad08b1513" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="d2a34cd7-bf36-4b51-af7e-5c3da6b96f78" name="parent : MouseController" isActor="false" lifelineDisplayName="parent : MouseController">
+            <elementDefinition Id="ba28fcdf-8af9-453f-814b-e89f10992d3a" />
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="5668913f-0352-4720-b48f-b0fd66eae262" LastKnownName="ExecutionOccurrenceSpecification3" />
+              <executionOccurrenceSpecificationMoniker Id="8a1f9cd5-c031-4b4b-ad6d-2eff48aa2c46" LastKnownName="ExecutionOccurrenceSpecification4" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="9a9c61d7-a0a8-4b67-b430-4c8daed81d0a" name="parent : MouseController" isActor="false" lifelineDisplayName="parent : MouseController">
+            <elementDefinition Id="40ac56f9-19cc-4b1d-8f93-d0c0a045d82d" />
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="49088f0a-4330-4783-93c9-ad1af44bb738" LastKnownName="MessageOccurrenceSpecification7" />
+              <executionOccurrenceSpecificationMoniker Id="912864b5-7c2a-474f-9cb4-dc8cb7d8a599" LastKnownName="ExecutionOccurrenceSpecification7" />
+              <executionOccurrenceSpecificationMoniker Id="11328be4-3aca-48ed-94c6-ac7d17e20b15" LastKnownName="ExecutionOccurrenceSpecification8" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="5771d5dc-8634-4139-8225-28873310c6f9" name="Slides finger over control" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <elementDefinition Id="f07798f0-e046-4506-b5e1-4eb0f0819cd7" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="34dbe2e0-1b90-47b3-bac6-4e87931d648c" LastKnownName="MessageOccurrenceSpecification1" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="d0579559-da01-431e-a900-5c455be2641b" LastKnownName="MessageOccurrenceSpecification2" />
+            </receiveEvent>
+          </message>
+          <message Id="85d1c522-c708-45a8-b642-d75561e1ff23" name="ProcessMouseMove(x, y)" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <elementDefinition Id="5270efb6-bdd5-4ad2-b973-66f5a702b395" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="604b33a0-2bb8-4e39-82ef-da424548611b" LastKnownName="MessageOccurrenceSpecification3" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="c75731b9-ea56-4066-a409-49eb1fa54e7d" LastKnownName="MessageOccurrenceSpecification4" />
+            </receiveEvent>
+          </message>
+          <message Id="89178ebd-c3d2-4029-b06b-36a169c9ba9b" name="NetworkMessage = messageQueue.Dequeue()" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="true">
+            <elementDefinition Id="73567a8b-eb96-4da7-9d49-82093477ff0f" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="49088f0a-4330-4783-93c9-ad1af44bb738" LastKnownName="MessageOccurrenceSpecification7" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="fbfbb6ea-3af3-408d-b47c-97db0387af4d" LastKnownName="MessageOccurrenceSpecification8" />
+            </receiveEvent>
+          </message>
+          <message Id="de7497a5-e87d-48e3-8d43-b441ccffc5dc" name="messageQueue.Enqueue(new MouseMoveMessage(x, y))" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="true">
+            <elementDefinition Id="ef103c12-add1-4374-98ce-9c0a5585adad" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="f2c8d750-172e-49b8-b4f0-66221c8ff0a3" LastKnownName="MessageOccurrenceSpecification5" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="ac17ad8d-e04f-4f19-b0fa-7c93a69d3843" LastKnownName="MessageOccurrenceSpecification6" />
+            </receiveEvent>
+          </message>
+          <message Id="ed3fb10a-288f-48cd-94a1-f49ebc61fe1a" name="Send(NetworkMessage)" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="true">
+            <elementDefinition Id="a3d7df32-9347-462d-b73c-85649ce2db1f" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="4d687d49-1356-4738-a8cd-8d4b8722fae6" LastKnownName="MessageOccurrenceSpecification10" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="2ce056ac-81d9-4cc7-a13d-31be250bc47e" LastKnownName="MessageOccurrenceSpecification11" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property Id="40386ab5-9ee3-4017-a8c4-d4dc70c0fdef" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="70521313-5b27-4e0c-9019-0dc2f5479644" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4515a217-827e-493c-a303-d25be1b39d95" LastKnownName="User" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4515a217-827e-493c-a303-d25be1b39d95" name="User" isAbstract="false" isLeaf="false" cachedFullName="PCRemoteUML::User">
+        <elementDefinition Id="5906448b-b357-4613-93ff-bfbeee7a7431" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="aab16d88-e5ef-486c-b06c-5cce5fa291ba" name="ExecutionEvent">
+        <elementDefinition Id="6b10ac2b-94c9-4b0e-b475-aa7652c0ce09" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="2d3848f3-aa79-40e2-bd49-fb082758d52a" name="ExecutionEvent">
+        <elementDefinition Id="f773a5d5-7d63-4839-95df-27b5ffefd679" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="89f65bb0-9880-4266-ba32-4121c0e1f973" name="ExecutionEvent">
+        <elementDefinition Id="0443808a-5d5a-47b9-8943-b5dd4ec241b6" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="f650ff12-e3f8-4447-b950-82154be8720d" name="ExecutionEvent">
+        <elementDefinition Id="b755b509-0c42-4cc0-9ce4-4c1bc8e8708c" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="c31e6834-5821-4fda-ae9b-be34540c2b78" name="ExecutionEvent">
+        <elementDefinition Id="d9f1c8eb-d984-47dc-9e88-edc87ca026c5" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="49aaa965-62c2-4fa3-a3a4-72b10b326157" name="ExecutionEvent">
+        <elementDefinition Id="878cfb2b-2b2f-4448-8d45-dc32b19d8be5" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="22b42560-7f42-4613-9e0c-a8f521f5c6be" name="ExecutionEvent">
+        <elementDefinition Id="2cd7edb2-b662-4eba-b14e-5a4ed10c030e" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="b0c8cf71-8920-41eb-a916-375fac36ad8e" name="ExecutionEvent">
+        <elementDefinition Id="e05246ec-ad5c-4fdb-a8e2-c992dc6abf99" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="748d616d-df22-44bc-bdda-9204437b3f78" name="ExecutionEvent">
+        <elementDefinition Id="503489ff-7d69-4aa6-bdb0-e10f484dccbb" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="646498cb-1260-4fb4-99d8-9957e8a3beb4" name="ExecutionEvent">
+        <elementDefinition Id="dc73ab2c-1f2f-4317-85b3-a64bc7810161" />
+      </executionEvent>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="e5800072-a5e0-4cf8-9bb6-4e8cdf00d444" name="PCRemoteUML">
+    <elementDefinition Id="7fd33284-ed25-444a-a95d-ce26d1d0f46c" />
+  </package>
+</SequenceDesignerModel>

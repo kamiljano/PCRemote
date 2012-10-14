@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="db61e234-dff4-41f2-8d1f-5dc24e3762c7" name="UMLUseCaseDiagram1" linkedPackageId="5599d3c3-9a3c-48cb-abb4-15ae98b839b5" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="1854ffb7-e93c-4ed4-97d7-3b471715ade4">
+      <profileInstance Id="6fa90c96-7e34-48a6-95a9-ba1d5a51d8c5" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6b1d3871-94b5-4cab-b1ff-4c9376a51c0e">
+      <profileInstance Id="d266622b-6f76-4e49-9477-b86f5c9cc36b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a2beb385-4a43-411d-8789-662e11128fff" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5906448b-b357-4613-93ff-bfbeee7a7431" />
+        <targetEnds>
+          <association Id="8b71c2f2-2a85-4ab7-b1c9-00574d0b82e4" isDerived="false" sourceEndRoleName="User" targetEndRoleName="MainPage" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="97098aab-cdb7-44d4-afd5-da5923c2bba4" LastKnownName="MainPage" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="06377dd4-f4bf-4395-aa68-257dd03d0d6f" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3afe00ee-4844-4ff9-89e0-d92e3c70ab1b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dbebfe44-109e-4445-8452-14b626f12775" name="MainPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="655c787b-5199-4b23-89f5-a541f7019ad5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ee166a84-86f7-457c-8167-b162b79088ae" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="4cc85c2a-b736-4cdd-a581-430d7386fecc" name="PageNavigation" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6d2885b9-05f6-4d6f-8322-8f9ae980ecf1" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="97098aab-cdb7-44d4-afd5-da5923c2bba4" name="MainPage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2c965c55-3efc-42ca-9ef1-6d622e8a1ffd" />
+        <extendedCases>
+          <extend Id="d9d25df4-6be3-4130-9e37-d4cee288b07b">
+            <useCaseMoniker Id="880034f0-931b-47c9-b9cb-12a20dcbd9db" LastKnownName="ServerListPage" />
+            <elementDefinition Id="1ef2fe5d-3044-4367-8153-1b0e9cd8450a" />
+          </extend>
+          <extend Id="b9df2c17-f5e9-4262-8da1-da8f512b006c">
+            <useCaseMoniker Id="f9b35fa2-13ce-4510-9574-22d03f8eabcb" LastKnownName="RemotePage" />
+            <elementDefinition Id="50b67092-ab4d-4b1f-88b2-73a53ffe9936" />
+          </extend>
+          <extend Id="ea04e05b-930e-4401-80f1-851a6b53cac0">
+            <useCaseMoniker Id="093390aa-3159-4e72-9add-a2d0ce0d7d16" LastKnownName="ConfigPage" />
+            <elementDefinition Id="64e28559-bf82-4dde-925e-a8ab29a6f3d9" />
+          </extend>
+          <extend Id="5b304304-a134-4ed0-a340-5dbf24306648">
+            <useCaseMoniker Id="eb7bdb92-1198-49de-9024-f04bc13e26f2" LastKnownName="AboutPage" />
+            <elementDefinition Id="7d5f08e6-d51c-4e08-abe9-303a83efe61d" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="4cc85c2a-b736-4cdd-a581-430d7386fecc" LastKnownName="PageNavigation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e800344a-c59b-422b-b1a5-06f9839fd738" name="NewServerPage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4a1398f5-cabd-40b2-8398-0135c12e66e2" />
+        <subjects>
+          <subsystemMoniker Id="4cc85c2a-b736-4cdd-a581-430d7386fecc" LastKnownName="PageNavigation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="880034f0-931b-47c9-b9cb-12a20dcbd9db" name="ServerListPage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5e9ce7ce-c721-4eb0-80d5-db69fa3564fe" />
+        <additions>
+          <include Id="bd6fe83d-c9b7-4cd9-a36c-2f69a3ddb400">
+            <useCaseMoniker Id="e800344a-c59b-422b-b1a5-06f9839fd738" LastKnownName="NewServerPage" />
+            <elementDefinition Id="bc1f12a2-f18b-4e35-841d-38d412c3d6c2" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="4cc85c2a-b736-4cdd-a581-430d7386fecc" LastKnownName="PageNavigation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f9b35fa2-13ce-4510-9574-22d03f8eabcb" name="RemotePage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="31825091-ad65-4931-a01a-91b1cd694a69" />
+        <subjects>
+          <subsystemMoniker Id="4cc85c2a-b736-4cdd-a581-430d7386fecc" LastKnownName="PageNavigation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="093390aa-3159-4e72-9add-a2d0ce0d7d16" name="ConfigPage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a8cc080c-150f-42e7-a64a-bce0f194ca0b" />
+        <subjects>
+          <subsystemMoniker Id="4cc85c2a-b736-4cdd-a581-430d7386fecc" LastKnownName="PageNavigation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="eb7bdb92-1198-49de-9024-f04bc13e26f2" name="AboutPage" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cf752ce0-7e15-493d-8524-3717030ea3ac" />
+        <subjects>
+          <subsystemMoniker Id="4cc85c2a-b736-4cdd-a581-430d7386fecc" LastKnownName="PageNavigation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="5599d3c3-9a3c-48cb-abb4-15ae98b839b5" name="PCRemoteUML">
+    <elementDefinition Id="7fd33284-ed25-444a-a95d-ce26d1d0f46c" />
+  </package>
+</useCaseModelRoot>

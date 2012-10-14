@@ -33,7 +33,6 @@ namespace PCRemoteWP.controls
             InitializeComponent();
         }
 
-
         private void LayoutRoot_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(null);

@@ -24,9 +24,9 @@ class TcpCommunicator : public AbstractCommunicator
     Q_OBJECT
     QUdpSocket *udpSocket;
     int port;
+    QTcpServer *server;
 public:
     explicit TcpCommunicator(QObject *parent = 0);
-    QTcpServer *server;
     ~TcpCommunicator();
     void Listen();
     QString getLocalhostInfo();

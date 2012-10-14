@@ -17,12 +17,45 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="ModelDefinition\Package_0946.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_0955.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1046.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1111.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MouseMove.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MouseMove.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MouseMove.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="PCRemoteServer.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="PCRemoteServer.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>PCRemoteServer.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="PCRemoteWP.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PCRemoteWP.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>PCRemoteWP.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="WPPages.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="WPPages.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>WPPages.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\PCRemoteUML.uml">
