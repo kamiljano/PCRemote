@@ -511,6 +511,14 @@
                   <elementDefinition Id="bea9c80d-c006-4fb1-9e12-8e37fcec8aca" />
                 </association>
               </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="05d54768-00c6-4eb7-aeee-1030a7d21840" name="showKeyboardButton" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bfc55cf4-cd1c-4d54-b5fc-0e9ea37a2326" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="df6ea8ee-12e5-48fe-8c05-6ec35843cf12" LastKnownName="Button" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -1199,16 +1207,16 @@
                 </association>
               </targetEnds>
               <ownedOperationsInternal>
-                <operation Id="34f93a69-c486-4429-8aeb-34db29a72da3" name="Save" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="34f93a69-c486-4429-8aeb-34db29a72da3" name="Save" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="cbe9b977-03fc-428d-84b7-8e2e221aca12" />
                 </operation>
-                <operation Id="d98e87b9-d349-4015-9cd2-560b81366f14" name="SerializeToXML" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="d98e87b9-d349-4015-9cd2-560b81366f14" name="SerializeToXML" visibility="Private" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="6f25386c-81a4-4538-9a86-237044d81570" />
                 </operation>
-                <operation Id="b1d06611-ab17-4834-8a89-6e1c1eb183e9" name="DeserializeFromXML" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="b1d06611-ab17-4834-8a89-6e1c1eb183e9" name="DeserializeFromXML" visibility="Private" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="dc702fb7-7f57-422a-9431-28556dda1db0" />
                 </operation>
-                <operation Id="076c6461-4b46-463d-9354-f7250a4be1dd" name="SelectedServer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="076c6461-4b46-463d-9354-f7250a4be1dd" name="SelectedServer" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="9688dc12-689f-49e5-a098-e0e605133b3c" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -1221,7 +1229,7 @@
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="a0874dc3-1fc8-4f35-a99b-eb41a26f21ba" name="ServerSocket" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="a0874dc3-1fc8-4f35-a99b-eb41a26f21ba" name="ServerSocket" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="424e085b-e96e-46fa-b4bc-b98f61897c17" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -1263,6 +1271,11 @@
     <packageHasNamedElement>
       <referencedType Id="a479cf36-e2e5-4c4b-a2d7-4bf92ffcadaf" name="byte" isAbstract="false" isLeaf="false" cachedFullName="byte">
         <elementDefinition Id="9fc5972d-eb7f-4c62-822b-acf43a09f178" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="df6ea8ee-12e5-48fe-8c05-6ec35843cf12" name="Button" isAbstract="false" isLeaf="false" cachedFullName="Button">
+        <elementDefinition Id="ae9933ff-1085-4091-ba01-7699c6312a2d" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

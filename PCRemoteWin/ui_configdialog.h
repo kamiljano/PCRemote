@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'configdialog.ui'
 **
-** Created: Wed Oct 10 20:36:01 2012
+** Created: Sun Oct 14 14:32:10 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -36,7 +36,7 @@ public:
 
     void retranslateUi(QDialog *ConfigDialog)
     {
-        ConfigDialog->setWindowTitle(QApplication::translate("ConfigDialog", "Dialog", 0, QApplication::UnicodeUTF8));
+        ConfigDialog->setWindowTitle(QApplication::translate("ConfigDialog", "Options", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

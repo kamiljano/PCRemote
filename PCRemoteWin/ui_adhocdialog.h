@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'adhocdialog.ui'
 **
-** Created: Sat Oct 13 16:46:20 2012
+** Created: Sun Oct 14 14:32:08 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -95,7 +95,7 @@ public:
 
     void retranslateUi(QDialog *AdHocDialog)
     {
-        AdHocDialog->setWindowTitle(QApplication::translate("AdHocDialog", "Dialog", 0, QApplication::UnicodeUTF8));
+        AdHocDialog->setWindowTitle(QApplication::translate("AdHocDialog", "Ad hoc", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("AdHocDialog", "SSID", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("AdHocDialog", "Password", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("AdHocDialog", "Start", 0, QApplication::UnicodeUTF8));

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="2e994a73-0314-4647-9aa9-62faba417b20" name="serverUsage" linkedPackageId="252902b4-a4d9-4a43-b91b-670e423fe74d" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="31bd8c7c-6f8a-4d8f-bbd9-6df700fc7a6a" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4a76c2f4-198a-481f-b2d5-9999bfd55531" />
+        <targetEnds>
+          <association Id="b35d8a7c-3396-4744-8df1-54f6226aa41c" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Tray" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5bcec0a8-9552-4b1f-b595-c2fcd8e4505f" LastKnownName="Tray" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c9087eeb-eb1e-496e-ad6a-c914a8324c66" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="650b0e7c-3699-4691-877b-e7be67fbb116" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b24cf3ee-3b9d-417e-9207-d245bb299bc0" name="Tray" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7ea3d431-20fd-4fe0-a49f-236351e8d412" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="867c8381-480d-4d8c-ab91-b42d2073172b" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="145e60b7-11fa-4db3-aaac-bbe9dba910e5" name="TrayIconUsage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5bb4c1e4-b382-4f1f-a201-5bbf549381f6" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="5bcec0a8-9552-4b1f-b595-c2fcd8e4505f" name="Tray" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8576eed9-2632-43e6-9fbd-4ae7342f3056" />
+        <extendedCases>
+          <extend Id="94bdba3c-a7d9-4dc9-97db-ec85e1f3cbb5">
+            <useCaseMoniker Id="fe6c2224-64a6-4756-9618-1c8fba5ed9f7" LastKnownName="MainWindow" />
+            <elementDefinition Id="b0af636d-a759-44c3-87f4-39ff58c98303" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="f5c1c104-765c-497f-b9d9-840499913f3d">
+            <useCaseMoniker Id="33499c59-290e-410a-bda0-3e53077edfe9" LastKnownName="Menu" />
+            <elementDefinition Id="47d856cc-862d-4c8d-aab8-61a1ac57ece8" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="145e60b7-11fa-4db3-aaac-bbe9dba910e5" LastKnownName="TrayIconUsage" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="fe6c2224-64a6-4756-9618-1c8fba5ed9f7" name="MainWindow" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="22cff843-c86c-4b70-9f2f-98ebfce3f0a9" />
+        <additions>
+          <include Id="4fe2cf2d-2b62-4210-b612-e772625cdfca">
+            <useCaseMoniker Id="07876574-f8ec-4e49-81a2-3f60c12d8cd3" LastKnownName="ClientsView" />
+            <elementDefinition Id="8b593911-89b0-4800-8402-563d07f2ee45" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="145e60b7-11fa-4db3-aaac-bbe9dba910e5" LastKnownName="TrayIconUsage" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="33499c59-290e-410a-bda0-3e53077edfe9" name="Menu" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e2c5f248-015c-46a2-b25c-30640252ef85" />
+        <extendedCases>
+          <extend Id="1cb11ca1-fd36-4be0-9475-d98b7b20bbd7">
+            <useCaseMoniker Id="87142708-3d45-4a8c-939e-886867344c2c" LastKnownName="Configuration" />
+            <elementDefinition Id="a7bc3db9-a120-4912-b05d-dd39d77094c8" />
+          </extend>
+          <extend Id="00bd116d-4abe-476d-bccb-83344ce98089">
+            <useCaseMoniker Id="0c88057d-d531-4c42-bc99-134aceec53a4" LastKnownName="About" />
+            <elementDefinition Id="c3b5ce1d-ac02-415b-b02b-bdaa446f040c" />
+          </extend>
+          <extend Id="510dc0a2-0c6c-4fc7-80a7-5e0166046faa">
+            <useCaseMoniker Id="fdfee653-1966-4451-bf23-30303108c272" LastKnownName="Exit" />
+            <elementDefinition Id="34cb48c8-bace-4978-8140-504a2ae49e0b" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="145e60b7-11fa-4db3-aaac-bbe9dba910e5" LastKnownName="TrayIconUsage" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="87142708-3d45-4a8c-939e-886867344c2c" name="Configuration" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5a2ac82a-4cd6-4b0b-aff1-729ac8713eb3" />
+        <subjects>
+          <subsystemMoniker Id="145e60b7-11fa-4db3-aaac-bbe9dba910e5" LastKnownName="TrayIconUsage" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="fdfee653-1966-4451-bf23-30303108c272" name="Exit" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="97d83db7-06f8-442b-81ef-fed866279b7e" />
+        <subjects>
+          <subsystemMoniker Id="145e60b7-11fa-4db3-aaac-bbe9dba910e5" LastKnownName="TrayIconUsage" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="0c88057d-d531-4c42-bc99-134aceec53a4" name="About" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="47043b1c-f620-453b-ba33-dfa4d283c735" />
+        <subjects>
+          <subsystemMoniker Id="145e60b7-11fa-4db3-aaac-bbe9dba910e5" LastKnownName="TrayIconUsage" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="07876574-f8ec-4e49-81a2-3f60c12d8cd3" name="ClientsView" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eaa3e0d0-2b6b-4b71-87b2-1f91b0e3eb37" />
+        <subjects>
+          <subsystemMoniker Id="145e60b7-11fa-4db3-aaac-bbe9dba910e5" LastKnownName="TrayIconUsage" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="252902b4-a4d9-4a43-b91b-670e423fe74d" name="PCRemoteUML">
+    <elementDefinition Id="7fd33284-ed25-444a-a95d-ce26d1d0f46c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="331772d1-e1b8-4a6c-b41d-fcc1dd7acc85">
+        <profileInstance Id="17d771ae-bacf-43b7-bf3f-a5682478ebc7" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3bac7952-1420-4c65-8bcb-11d4c54efe3c">
+        <profileInstance Id="64b0bb65-6827-4cc5-b12a-5acc9be82bd7" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

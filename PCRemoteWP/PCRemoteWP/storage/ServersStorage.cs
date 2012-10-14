@@ -14,7 +14,7 @@ using PCRemoteWP.messages;
 
 namespace PCRemoteWP
 {
-    public class ServersStorage
+    public static class ServersStorage
     {
         private const string filename = @"servers.xml";
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="accb71de-e433-4622-b5f3-810b9bd71e7f"
   name="PCRemote.storage" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -195,7 +195,7 @@
             Id="cbe9b977-03fc-428d-84b7-8e2e221aca12"
             name="Save"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
@@ -204,7 +204,7 @@
             name="SerializeToXML"
             visibility="Private"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
@@ -213,7 +213,7 @@
             name="DeserializeFromXML"
             visibility="Private"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
@@ -221,7 +221,7 @@
             Id="9688dc12-689f-49e5-a098-e0e605133b3c"
             name="SelectedServer"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
@@ -244,7 +244,7 @@
             Id="424e085b-e96e-46fa-b4bc-b98f61897c17"
             name="ServerSocket"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">

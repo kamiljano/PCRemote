@@ -50,6 +50,20 @@
       <SubType>Content</SubType>
       <DependentUpon>PCRemoteWP.classdiagram</DependentUpon>
     </Content>
+    <Content Include="ServerMessageProcess.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ServerMessageProcess.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ServerMessageProcess.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="serverUsage.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="serverUsage.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>serverUsage.usecasediagram</DependentUpon>
+    </Content>
     <Content Include="WPPages.usecasediagram">
       <SubType>Content</SubType>
     </Content>
