@@ -1,6 +1,6 @@
-#include "tcpcommunicator.h"
+#include "networkcommunicator.h"
 
-TcpCommunicator::TcpCommunicator(QObject * parent) : AbstractCommunicator()
+NetworkCommunicator::NetworkCommunicator(QObject * parent) : AbstractCommunicator()
 {
     port = 1234;
     server = new QTcpServer;
@@ -8,13 +8,13 @@ TcpCommunicator::TcpCommunicator(QObject * parent) : AbstractCommunicator()
     connect(server, SIGNAL(newConnection()), this, SLOT(addClient()));
 }
 
-TcpCommunicator::~TcpCommunicator()
+NetworkCommunicator::~NetworkCommunicator()
 {
     delete server;
     delete udpSocket;
 }
 
-void TcpCommunicator::Listen()
+void NetworkCommunicator::Listen()
 {
     if (!server->listen(QHostAddress::Any, port)){}
        // throw std::exception("Failed to listen");
@@ -25,7 +25,7 @@ void TcpCommunicator::Listen()
 
 }
 
-QString TcpCommunicator::getLocalhostInfo()
+QString NetworkCommunicator::getLocalhostInfo()
 {
     cout<<"Host name: "<<QHostInfo::localHostName().toStdString()<<endl;
     QString ret = "Host name: " + QHostInfo::localHostName() + '\n';
@@ -63,7 +63,7 @@ QString TcpCommunicator::getLocalhostInfo()
     return ret;
 }
 
-void TcpCommunicator::addClient()
+void NetworkCommunicator::addClient()
 {
     cout<<"Client connected"<<endl;
     QTcpSocket *s = server->nextPendingConnection();
@@ -72,7 +72,7 @@ void TcpCommunicator::addClient()
     connect(s, SIGNAL(readyRead()), this, SLOT(process()));
 }
 
-void TcpCommunicator::removeClient()
+void NetworkCommunicator::removeClient()
 {
     QTcpSocket *s= qobject_cast<QTcpSocket*>(sender());
     cout<<"Client disconnected"<<endl;
@@ -80,7 +80,7 @@ void TcpCommunicator::removeClient()
     removeNoClient();
 }
 
-void TcpCommunicator::process()
+void NetworkCommunicator::process()
 {
     QTcpSocket *client = (QTcpSocket*) sender();
     char arr [BUFLEN];
@@ -143,7 +143,7 @@ void TcpCommunicator::process()
     }
 }
 
-void TcpCommunicator::processUDP()
+void NetworkCommunicator::processUDP()
 {
     while (udpSocket->hasPendingDatagrams())
     {

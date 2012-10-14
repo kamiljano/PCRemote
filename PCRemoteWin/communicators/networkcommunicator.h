@@ -1,5 +1,5 @@
-#ifndef TCPCOMMUNICATOR_H
-#define TCPCOMMUNICATOR_H
+#ifndef NETWORKCOMMUNICATOR_H
+#define NETWORKCOMMUNICATOR_H
 
 #include "abstractcommunicator.h"
 #include <QTcpServer>
@@ -17,17 +17,15 @@
 
 using namespace std;
 
-//QString getLocalhostInfo();
-
-class TcpCommunicator : public AbstractCommunicator
+class NetworkCommunicator : public AbstractCommunicator
 {
     Q_OBJECT
     QUdpSocket *udpSocket;
     int port;
     QTcpServer *server;
 public:
-    explicit TcpCommunicator(QObject *parent = 0);
-    ~TcpCommunicator();
+    explicit NetworkCommunicator(QObject *parent = 0);
+    ~NetworkCommunicator();
     void Listen();
     QString getLocalhostInfo();
 private slots:
@@ -37,4 +35,4 @@ private slots:
     void processUDP();
 };
 
-#endif // TCPCOMMUNICATOR_H
+#endif // NETWORKCOMMUNICATOR_H

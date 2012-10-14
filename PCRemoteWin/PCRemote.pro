@@ -19,7 +19,6 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     tray.cpp \
     communicators/abstractcommunicator.cpp \
-    communicators/tcpcommunicator.cpp \
     slidingwindow.cpp \
     messagewindow.cpp \
     Widgets/clientsview.cpp \
@@ -28,11 +27,11 @@ SOURCES += main.cpp\
     configdialog.cpp \
     Widgets/mediacontroller.cpp \
     adhocdialog.cpp \
-    PlayerCommunicators/winampcommunicator.cpp
+    PlayerCommunicators/winampcommunicator.cpp \
+    communicators/networkcommunicator.cpp
 
 HEADERS  += mainwindow.h \
     communicators/abstractcommunicator.h \
-    communicators/tcpcommunicator.h \
     slidingwindow.h \
     messagewindow.h \
     tray.h \
@@ -44,7 +43,8 @@ HEADERS  += mainwindow.h \
     Widgets/mediacontroller.h \
     export/ServerMediaPlugin.h \
     adhocdialog.h \
-    PlayerCommunicators/winampcommunicator.h
+    PlayerCommunicators/winampcommunicator.h \
+    communicators/networkcommunicator.h
 
 RESOURCES += \
     ResImages.qrc

@@ -21,7 +21,7 @@ Tray::Tray(QWidget *parent) :
     trayMenu->addAction(tr("Exit"), this, SLOT(exitClicked()));
     icon->setContextMenu(trayMenu);
     connect(icon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(activate(QSystemTrayIcon::ActivationReason)));
-    communicator = new TcpCommunicator;
+    communicator = new NetworkCommunicator;
     communicator->Listen();
 }
 

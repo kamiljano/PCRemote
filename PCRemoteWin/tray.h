@@ -9,7 +9,7 @@
 #include <QDesktopWidget>
 #include <QCursor>
 #include <iostream>
-#include "communicators/tcpcommunicator.h"
+#include "communicators/networkcommunicator.h"
 #include "Widgets/clientsview.h"
 #include "aboutdialog.h"
 #include "configdialog.h"
