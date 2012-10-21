@@ -12,6 +12,10 @@ public:
     static bool requirePassword();
     static bool allowAutodetect();
     static QString getPassword();
+    static QString getComputerName();
+    static int getDefaultPort();
+    static int getPort();
+    static QString getServerName();
 };
 
 #endif // CONFIGURATION_H

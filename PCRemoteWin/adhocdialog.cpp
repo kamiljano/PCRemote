@@ -25,7 +25,7 @@ void AdHocDialog::on_pushButton_2_clicked()
         QString params = ui->ssid->text() + " " + ui->passwd->text();
         wchar_t temp[82];
         params.toWCharArray(temp);
-        ShellExecute( NULL, L"runas",L"AdHoc.exe",temp,NULL,SW_HIDE);
+        ShellExecute( NULL, L"runas",L"AdHoc.exe",temp,NULL,SW_SHOW);
         this->setVisible(false);
     }
 }
@@ -51,5 +51,5 @@ bool AdHocDialog::isFilled()
 
 void AdHocDialog::CloseAdHoc()
 {
-    ShellExecute( NULL, L"runas",L"AdHoc.exe",L"close",NULL,SW_HIDE);
+    ShellExecute( NULL, L"runas",L"AdHoc.exe",L"close",NULL,SW_SHOW);
 }

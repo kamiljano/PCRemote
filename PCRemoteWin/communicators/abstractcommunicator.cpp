@@ -290,3 +290,29 @@ void AbstractCommunicator::removeNoClient()
     if (clientsView != 0 )
         clientsView->removeClient();
 }
+
+bool AbstractCommunicator::scan(char clientType)
+{
+    switch(clientType)
+    {
+        case 1:
+            if (Configuration::allowAutodetect() && Configuration::acceptAndroidClients())
+            {
+                cout<<"Android client scan accepted"<<endl;
+                return true;
+            }
+            cout<<"Android client scan rejected"<<endl;
+            return false;
+        case 2:
+            if (Configuration::allowAutodetect() && Configuration::acceptWPClients())
+            {
+                cout<<"WP client scan accepted"<<endl;
+                return true;
+            }
+            cout<<"WP client scan rejected"<<endl;
+            return false;
+        default:
+            cout<<"Unknown client scan rejected"<<endl;
+            return false;
+    }
+}

@@ -18,7 +18,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -35,7 +36,7 @@
                         <toolkit:ContextMenuService.ContextMenu>
                             <toolkit:ContextMenu>
                                 <toolkit:MenuItem Header="Remove" Click="MenuItem_Click_1" />
-                                <toolkit:MenuItem Header="Show" />
+                                <toolkit:MenuItem Header="Edit" />
                             </toolkit:ContextMenu>
                         </toolkit:ContextMenuService.ContextMenu>
                         <Button Click="Button_Click" Width="460">
@@ -64,7 +65,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Content="Add" Name="button1" Grid.Row="2" Click="button1_Click" />
-
+        <Button Content="Autodetect" Name="button2" Grid.Row="3" />
     </Grid>
 
 </phone:PhoneApplicationPage>

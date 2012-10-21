@@ -4,6 +4,7 @@
 #include <iostream>
 #include "../messagewindow.h"
 #include "../Widgets/clientsview.h"
+#include "../configuration.h"
 
 #include <Windows.h>
 
@@ -45,7 +46,7 @@ protected:
     virtual void useKeyboard(char state, char key);
     virtual void addNoClient();
     virtual void removeNoClient();
-
+    virtual bool scan(char clientType); //returns true if client can be informed about address of server
 };
 
 #endif // ABSTRACTCOMMUNICATOR_H

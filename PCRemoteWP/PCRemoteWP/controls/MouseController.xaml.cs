@@ -20,6 +20,7 @@ namespace PCRemoteWP.controls
         private bool killThread = false;
         private SocketAsyncEventArgs tcptoBeSent = new SocketAsyncEventArgs();
         Socket udpsocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+
         public MouseController()
         {
             InitializeComponent();

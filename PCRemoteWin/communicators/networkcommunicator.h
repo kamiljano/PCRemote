@@ -33,6 +33,8 @@ private slots:
     void removeClient();
     void process();
     void processUDP();
+private:
+    void scan(QByteArray & datagram,QHostAddress &sender,quint16 senderPort);
 };
 
 #endif // NETWORKCOMMUNICATOR_H

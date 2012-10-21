@@ -24,7 +24,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Button Content="Remote" Grid.Row="0" Grid.Column="0" Name="bremote" Click="bremote_Click" />
-        <Button Content="Preferences" Grid.Column="0" Grid.Row="1" Name="bconfig" />
+        <Button Content="Preferences" Grid.Column="0" Grid.Row="1" Name="bconfig" Click="bconfig_Click" />
         <Button Content="Servers" Grid.Column="1" Grid.Row="0" Name="bserver" Click="bserver_Click" />
         <Button Content="Help" Grid.Column="1" Grid.Row="1" Name="bhelp" Click="bhelp_Click" />
     </Grid>

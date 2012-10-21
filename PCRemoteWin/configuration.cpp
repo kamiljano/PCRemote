@@ -28,3 +28,24 @@ QString Configuration::getPassword()
 {
     return "";
 }
+
+QString Configuration::getComputerName()
+{
+
+    return "lol";
+}
+
+int Configuration::getDefaultPort()
+{
+    return 1234;
+}
+
+QString Configuration::getServerName()
+{
+    return getComputerName();
+}
+
+int Configuration::getPort()
+{
+    return getDefaultPort();
+}

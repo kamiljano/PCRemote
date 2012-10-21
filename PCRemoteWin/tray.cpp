@@ -13,7 +13,7 @@ Tray::Tray(QWidget *parent) :
     adhocSubMenu = new QMenu();
     adhocSubMenu->setTitle(tr("Ad Hoc Connection"));
     adhocSubMenu->addAction(tr("Start"), this, SLOT(adHocClicked()));
-    adhocSubMenu->addAction(tr("Stop"));
+    adhocSubMenu->addAction(tr("Stop"), this, SLOT(closeAdHocClicked()));
     trayMenu->addAction(tr("Options"), this, SLOT(optionsClicked()));
     trayMenu->addMenu(adhocSubMenu);
     trayMenu->addAction(tr("Server info"), this, SLOT(getInfoClicked()));

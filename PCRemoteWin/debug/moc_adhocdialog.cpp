@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'adhocdialog.h'
 **
-** Created: Sat Oct 13 17:12:42 2012
+** Created: Thu Oct 18 12:25:59 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

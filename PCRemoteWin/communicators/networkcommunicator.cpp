@@ -148,11 +148,17 @@ void NetworkCommunicator::processUDP()
     while (udpSocket->hasPendingDatagrams())
     {
         QByteArray datagram;
+        QHostAddress sender;
+        quint16 senderPort;
         datagram.resize(udpSocket->pendingDatagramSize());
-        udpSocket->readDatagram(datagram.data(), datagram.size());
+        udpSocket->readDatagram(datagram.data(), datagram.size(), &sender, &senderPort);
         //cout<<"mouse move: "<<(int)datagram.at(0)<<" "<<(int)datagram.at(1)<<" "<<(int)datagram.at(2)<<endl;
         switch(datagram.at(0))
         {
+        case 0:
+            if (datagram.length() == 2)
+                scan(datagram,sender, senderPort);
+            break;
         case 1:
             moveMouse(datagram.at(1), datagram.at(2));
             break;
@@ -160,4 +166,19 @@ void NetworkCommunicator::processUDP()
             cout<<"Unknown protocol over UDP"<<endl;
         }
    }
+}
+
+void NetworkCommunicator::scan(QByteArray &datagram,QHostAddress &sender,quint16 senderPort)
+{
+    if (AbstractCommunicator::scan(datagram.at(1)))
+    {
+        QByteArray pcname = Configuration::getComputerName().toUtf8();
+        QByteArray message;
+        message.append((char)0);
+        message.append((char)0);
+        message.append(pcname);
+        message.append((char)0);
+        message.append((char)0);
+        udpSocket->writeDatagram(message, sender, senderPort);
+    }
 }

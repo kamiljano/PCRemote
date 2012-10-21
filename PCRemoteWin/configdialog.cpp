@@ -23,6 +23,8 @@ void ConfigDialog::setValues()
     {
         ui->tpass->setText(Configuration::getPassword());
     }
+    ui->tname->setText(Configuration::getServerName());
+    ui->tport->setText(QString::number(Configuration::getPort()));
 }
 
 void ConfigDialog::setVisible(bool visible)
@@ -44,4 +46,14 @@ void ConfigDialog::on_checkPasswd_stateChanged(int arg1)
 void ConfigDialog::on_pushButton_clicked()
 {
     this->setVisible(false);
+}
+
+void ConfigDialog::on_pushButton_3_clicked()
+{
+    ui->tname->setText(Configuration::getComputerName());
+}
+
+void ConfigDialog::on_pushButton_4_clicked()
+{
+    ui->tport->setText(QString::number(Configuration::getDefaultPort()));
 }

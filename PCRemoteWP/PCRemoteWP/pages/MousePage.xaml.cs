@@ -14,9 +14,9 @@ using System.Diagnostics;
 
 namespace PCRemoteWP.pages
 {
-    public partial class Page1 : PhoneApplicationPage
+    public partial class MousePage : PhoneApplicationPage
     {
-        public Page1()
+        public MousePage()
         {
             InitializeComponent();
         }

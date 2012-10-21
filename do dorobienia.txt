@@ -7,3 +7,5 @@
 - niech to główne okienko może coś wyświetla!
 - na serwerze globalne skróty klawiszowe i obsługa mediów
 - może kafelek windowsowy? :P
+- przeglądarkę plików na kompie
+- menagera w drugą stronę (żeby można było obsługiwać telefon zdalniez komputera)

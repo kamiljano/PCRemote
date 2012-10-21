@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'slidingwindow.h'
 **
-** Created: Fri Oct 12 18:50:17 2012
+** Created: Thu Oct 18 12:25:56 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

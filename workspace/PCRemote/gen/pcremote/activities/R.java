@@ -24,6 +24,7 @@ public final class R {
         public static final int add=0x7f080012;
         public static final int addServerButton=0x7f080003;
         public static final int address=0x7f080005;
+        public static final int autodetect=0x7f080013;
         public static final int cursorSens=0x7f08000b;
         public static final int edit=0x7f080010;
         public static final int info=0x7f080011;

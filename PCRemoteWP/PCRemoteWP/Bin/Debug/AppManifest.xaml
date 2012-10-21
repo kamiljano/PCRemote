@@ -3,6 +3,7 @@
     <AssemblyPart x:Name="PCRemoteWP" Source="PCRemoteWP.dll" />
     <AssemblyPart x:Name="GalaSoft.MvvmLight.Extras.WP71" Source="GalaSoft.MvvmLight.Extras.WP71.dll" />
     <AssemblyPart x:Name="GalaSoft.MvvmLight.WP71" Source="GalaSoft.MvvmLight.WP71.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
     <AssemblyPart x:Name="Microsoft.Practices.ServiceLocation" Source="Microsoft.Practices.ServiceLocation.dll" />
     <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
