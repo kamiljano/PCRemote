@@ -29,12 +29,28 @@
     <Content Include="ModelDefinition\Package_1111.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_1840.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1901.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1917.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="MouseMove.sequencediagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="MouseMove.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>MouseMove.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="PCRemoteAndroid.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PCRemoteAndroid.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>PCRemoteAndroid.classdiagram</DependentUpon>
     </Content>
     <Content Include="PCRemoteServer.classdiagram">
       <SubType>Content</SubType>
