@@ -7,3 +7,6 @@ Clients connect to server and take the control over the cursor and keyboard of a
 If you're interested, you can read more at /Documentation/Documentation.docx
 
 This is supposed to be part of my bachelor thesis project I will present in January 2012 at Cracow University of Technology (Poland).
+
+BTW
+Please, don't blame me for using WinAPI in a Qt application. The reason is simply because neither Qt nor Ubuntu's (the linux distribution I use) native API supports simulation of keyboard or mouse clicks.
