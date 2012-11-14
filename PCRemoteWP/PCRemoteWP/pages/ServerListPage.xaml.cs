@@ -59,13 +59,7 @@ namespace PCRemoteWP.pages
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-           //ItemViewModel item = (sender as MenuItem).DataContext as ItemViewModel;
-            
-           // ListBoxItem item = sender as ListBoxItem;
-            //MessageBox.Show((sender as MenuItem).DataContext.ToString());
             ServersStorage.Servers.Remove(((sender as MenuItem).DataContext as ServerData));
-            listbox.ItemsSource = ServersStorage.Servers;
-            //toBeSaved = true;
             ServersStorage.Save();
         }
 
@@ -140,6 +134,12 @@ namespace PCRemoteWP.pages
                 ServersStorage.ServerSocket = _socket;
                 ServersStorage.SelectedServer = new ServerData(host, hostName, portNumber);
             }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            ServersStorage.ForEdit = ((sender as MenuItem).DataContext as ServerData);
+            NavigationService.Navigate(new Uri("/pages/NewServerPage.xaml", UriKind.Relative));
         }
     }
 }

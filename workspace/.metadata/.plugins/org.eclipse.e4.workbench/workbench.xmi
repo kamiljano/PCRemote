@@ -63,7 +63,7 @@
           <tags>persp.actionSet:adt.actionSet.avdManager</tags>
           <tags>persp.actionSet:adt.actionSet.lint</tags>
           <tags>persp.actionSet:com.googlecode.goclipse.hiddenActionSet</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_DFvrkcQaEeGox-OK9J8dkg" selectedElement="_DFwSpMQaEeGox-OK9J8dkg" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_DFvrkcQaEeGox-OK9J8dkg" selectedElement="_DFvrksQaEeGox-OK9J8dkg" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_DFvrksQaEeGox-OK9J8dkg" elementId="left" containerData="2445" selectedElement="_DFvrk8QaEeGox-OK9J8dkg">
               <tags>newtablook</tags>
               <tags>org.eclipse.e4.primaryNavigationStack</tags>

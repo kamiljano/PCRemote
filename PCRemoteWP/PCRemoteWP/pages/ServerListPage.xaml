@@ -29,14 +29,14 @@
         <!--<ScrollViewer Name="scrollViewer1" Grid.Row="1">
             <StackPanel Name="stack" />
         </ScrollViewer>-->
-        <ListBox Name="listbox" Grid.Row="1" Grid.Column="0">
+        <ListBox x:Name="listbox" Grid.Row="1" Grid.Column="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <toolkit:ContextMenuService.ContextMenu>
                             <toolkit:ContextMenu>
                                 <toolkit:MenuItem Header="Remove" Click="MenuItem_Click_1" />
-                                <toolkit:MenuItem Header="Edit" />
+                                <toolkit:MenuItem Header="Edit" Click="MenuItem_Click" />
                             </toolkit:ContextMenu>
                         </toolkit:ContextMenuService.ContextMenu>
                         <Button Click="Button_Click" Width="460">

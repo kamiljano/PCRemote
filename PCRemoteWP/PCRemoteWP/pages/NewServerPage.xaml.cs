@@ -44,7 +44,14 @@ namespace PCRemoteWP.pages
                 MessageBox.Show("In order to proceed, you have to fill the following fields first:\n" + emsg);
                 return;
             }
-            ServersStorage.Servers.Add(new ServerData(tName.Text, tAddress.Text, int.Parse(tPort.Text)));
+            if (ServersStorage.ForEdit == null)
+                ServersStorage.Servers.Add(new ServerData(tName.Text, tAddress.Text, int.Parse(tPort.Text)));
+            else
+            {
+                ServersStorage.ForEdit.Name = tName.Text;
+                ServersStorage.ForEdit.Address = tAddress.Text;
+                ServersStorage.ForEdit.Port = int.Parse(tPort.Text);
+            }
             try
             {
                 ServersStorage.Save();
@@ -65,6 +72,23 @@ namespace PCRemoteWP.pages
             }
             catch { }
             NavigationService.Navigate(new Uri("/pages/ServerListPage.xaml?rm=true", UriKind.Relative));
+        }
+
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            ServersStorage.ForEdit = null;
+            base.OnNavigatedFrom(e);
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            if (ServersStorage.ForEdit != null)
+            {
+                tName.Text = ServersStorage.ForEdit.Name;
+                tAddress.Text = ServersStorage.ForEdit.Address;
+                tPort.Text = ServersStorage.ForEdit.Port.ToString();
+            }
         }
     }
 }

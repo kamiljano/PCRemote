@@ -11,6 +11,7 @@ using System.Net;
 using System.Windows.Threading;
 using System.Windows;
 using PCRemoteWP.messages;
+using System.Collections.ObjectModel;
 
 namespace PCRemoteWP
 {
@@ -18,9 +19,12 @@ namespace PCRemoteWP
     {
         private const string filename = @"servers.xml";
 
-        private static List<ServerData> ss;
+        private static ObservableCollection<ServerData> ss;
 
-        public static List<ServerData> Servers {
+        public static ServerData ForEdit = null;
+
+        public static ObservableCollection<ServerData> Servers
+        {
             get
             {
                 if (ss == null)
@@ -31,7 +35,7 @@ namespace PCRemoteWP
                     }
                     catch
                     {
-                        ss = new List<ServerData>();
+                        ss = new ObservableCollection<ServerData>();
                     }
                 }
                 return ss;
@@ -52,7 +56,7 @@ namespace PCRemoteWP
         {
             IsolatedStorageFile myStore = IsolatedStorageFile.GetUserStoreForApplication();
 
-            XmlSerializer serializer = new XmlSerializer(typeof(List<ServerData>));
+            XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<ServerData>));
             using (var isoFileStream = new IsolatedStorageFileStream(filename, FileMode.OpenOrCreate, myStore))
             {
                 serializer.Serialize(isoFileStream, ss);
@@ -63,10 +67,10 @@ namespace PCRemoteWP
         {
             IsolatedStorageFile myStore = IsolatedStorageFile.GetUserStoreForApplication();
             XmlSerializer deserializer = new XmlSerializer(typeof(List<ServerData>));
-            List<ServerData> servers;
+            ObservableCollection<ServerData> servers;
             using (var isoFileStream = new IsolatedStorageFileStream(filename, FileMode.Open, myStore))
             {
-                servers = (List<ServerData>)deserializer.Deserialize(isoFileStream);
+                servers = (ObservableCollection<ServerData>)deserializer.Deserialize(isoFileStream);
             }
             ss = servers;
         }

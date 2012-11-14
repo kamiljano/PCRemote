@@ -110,9 +110,6 @@
     <Compile Include="pages\MediaControllerPage.xaml.cs">
       <DependentUpon>MediaControllerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\MousePage.xaml.cs">
-      <DependentUpon>MousePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="pages\RemotePage.xaml.cs">
       <DependentUpon>RemotePage.xaml</DependentUpon>
     </Compile>
@@ -173,10 +170,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\NewServerPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages\MousePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
