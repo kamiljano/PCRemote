@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'configdialog.h'
 **
-** Created: Wed Nov 14 20:15:23 2012
+** Created: Thu Nov 15 21:43:17 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_ConfigDialog[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,6 +35,7 @@ static const uint qt_meta_data_ConfigDialog[] = {
       52,   13,   13,   13, 0x08,
       76,   13,   13,   13, 0x08,
      102,   13,   13,   13, 0x08,
+     128,   13,   13,   13, 0x08,
 
        0        // eod
 };
@@ -44,6 +45,7 @@ static const char qt_meta_stringdata_ConfigDialog[] = {
     "on_pushButton_clicked()\0"
     "on_pushButton_3_clicked()\0"
     "on_pushButton_4_clicked()\0"
+    "on_pushButton_2_clicked()\0"
 };
 
 void ConfigDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -56,6 +58,7 @@ void ConfigDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: _t->on_pushButton_clicked(); break;
         case 2: _t->on_pushButton_3_clicked(); break;
         case 3: _t->on_pushButton_4_clicked(); break;
+        case 4: _t->on_pushButton_2_clicked(); break;
         default: ;
         }
     }
@@ -93,9 +96,9 @@ int ConfigDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

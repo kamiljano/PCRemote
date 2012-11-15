@@ -57,3 +57,12 @@ void ConfigDialog::on_pushButton_4_clicked()
 {
     ui->tport->setText(QString::number(Configuration::getDefaultPort()));
 }
+
+void ConfigDialog::on_pushButton_2_clicked()
+{
+    Configuration::setAcceptAndroidClients(ui->checkAcceptAndroid->checkState());
+    Configuration::setAcceptWPClients(ui->checkWPAccept->checkState());
+    Configuration::setRequirePassword(ui->checkPasswd->checkState());
+    Configuration::save();
+    this->setVisible(false);
+}

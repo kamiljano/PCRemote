@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     adhocdialog.cpp \
     PlayerCommunicators/winampcommunicator.cpp \
     communicators/networkcommunicator.cpp \
-    configuration.cpp
+    configuration.cpp \
+    DataStore/configinstance.cpp
 
 HEADERS  += mainwindow.h \
     communicators/abstractcommunicator.h \
@@ -46,7 +47,8 @@ HEADERS  += mainwindow.h \
     adhocdialog.h \
     PlayerCommunicators/winampcommunicator.h \
     communicators/networkcommunicator.h \
-    configuration.h
+    configuration.h \
+    DataStore/configinstance.h
 
 RESOURCES += \
     ResImages.qrc

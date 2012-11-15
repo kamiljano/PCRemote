@@ -1,32 +1,30 @@
 #include "configuration.h"
 
-Configuration::Configuration()
-{
-}
+ConfigInstance Configuration::instance;
 
 bool Configuration::acceptAndroidClients()
 {
-    return true;
+    return instance.acceptAndroidClients;
 }
 
 bool Configuration::acceptWPClients()
 {
-    return true;
+    return instance.acceptWPClients;
 }
 
 bool Configuration::requirePassword()
 {
-    return false;
+    return instance.requirePassword;
 }
 
 bool Configuration::allowAutodetect()
 {
-    return true;
+    return instance.allowAutodetect;
 }
 
 QString Configuration::getPassword()
 {
-    return "";
+    return instance.password;
 }
 
 QString Configuration::getComputerName()
@@ -37,15 +35,47 @@ QString Configuration::getComputerName()
 
 int Configuration::getDefaultPort()
 {
-    return 1234;
+    return instance.port;
 }
 
 QString Configuration::getServerName()
 {
-    return getComputerName();
+    return instance.name;
 }
 
 int Configuration::getPort()
 {
-    return getDefaultPort();
+    return instance.port;
+}
+
+void Configuration::load()
+{
+    ifstream in (CONFIGFILE);
+    if (in.is_open())
+    {
+        in>>instance;
+        in.close();
+    }
+}
+
+void Configuration::save()
+{
+    ofstream out (CONFIGFILE);
+    out<<instance;
+    out.close();
+}
+
+void Configuration::setAcceptAndroidClients(bool value)
+{
+    instance.acceptAndroidClients = value;
+}
+
+void Configuration::setAcceptWPClients(bool value)
+{
+    instance.acceptWPClients = value;
+}
+
+void Configuration::setRequirePassword(bool value)
+{
+    instance.requirePassword = value;
 }

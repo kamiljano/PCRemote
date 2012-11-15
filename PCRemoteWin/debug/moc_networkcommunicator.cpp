@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'networkcommunicator.h'
 **
-** Created: Wed Nov 14 20:15:23 2012
+** Created: Thu Nov 15 21:43:17 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
