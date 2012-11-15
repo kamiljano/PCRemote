@@ -54,6 +54,7 @@ namespace PCRemoteWP
 
         private static void SerializeToXML()
         {
+            var ss = Servers;
             IsolatedStorageFile myStore = IsolatedStorageFile.GetUserStoreForApplication();
 
             XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<ServerData>));

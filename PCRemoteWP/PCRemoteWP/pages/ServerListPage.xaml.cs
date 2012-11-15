@@ -60,7 +60,8 @@ namespace PCRemoteWP.pages
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             ServersStorage.Servers.Remove(((sender as MenuItem).DataContext as ServerData));
-            ServersStorage.Save();
+            //ServersStorage.Save();
+            toBeSaved = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -140,6 +141,11 @@ namespace PCRemoteWP.pages
         {
             ServersStorage.ForEdit = ((sender as MenuItem).DataContext as ServerData);
             NavigationService.Navigate(new Uri("/pages/NewServerPage.xaml", UriKind.Relative));
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

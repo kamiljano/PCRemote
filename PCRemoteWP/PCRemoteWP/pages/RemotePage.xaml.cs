@@ -84,7 +84,16 @@ namespace PCRemoteWP.pages
 
         private void ShowKeyboardClicked(object sender, RoutedEventArgs e)
         {
+            hiddenText.Focus();
+        }
 
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            //MessageBox.Show(e.OriginalSource.ToString());
+            
+            KeyboardEventMessage kem = new KeyboardEventMessage(e.PlatformKeyCode);
+            mouseController.AddMessageToSend(kem);
+            e.Handled = true;
         }
     }
 }

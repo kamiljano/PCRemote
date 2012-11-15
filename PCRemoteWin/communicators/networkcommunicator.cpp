@@ -172,13 +172,13 @@ void NetworkCommunicator::scan(QByteArray &datagram,QHostAddress &sender,quint16
 {
     if (AbstractCommunicator::scan(datagram.at(1)))
     {
-        QByteArray pcname = Configuration::getComputerName().toUtf8();
+        QByteArray pcname = (Configuration::getComputerName() + ";" + QString::number(Configuration::getPort()) ).toUtf8();
         QByteArray message;
         message.append((char)0);
         message.append((char)0);
         message.append(pcname);
         message.append((char)0);
         message.append((char)0);
-        udpSocket->writeDatagram(message, sender, senderPort);
+        udpSocket->writeDatagram(message, sender, 60606);
     }
 }

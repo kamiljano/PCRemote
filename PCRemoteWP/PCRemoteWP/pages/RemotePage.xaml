@@ -23,18 +23,19 @@
             <controls:PivotItem Header="mousepad">
                 <Grid x:Name="LayoutMouse" Background="Transparent">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="hiddenText" KeyDown="TextBox_KeyDown" Grid.Row="0" Grid.Column="1"/>
+                    <Button Content="Show Keyboard" Click="ShowKeyboardClicked" Grid.Row="0"/>
                     <local:MouseController Grid.Row="1" x:Name="mouseController" />
                 </Grid>
             </controls:PivotItem>
-
-                <controls:PivotItem Header="keyboard">
-                    <Grid x:Name="LayoutKeyboard" Background="Transparent">
-                    </Grid>
-                </controls:PivotItem>
-
-                <!--Pivot item two-->
+            
             <controls:PivotItem Header="media">
                 <Grid x:Name="MediaPanel" Grid.Row="1" Margin="12,0,12,0">
                     <Grid.RowDefinitions>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;pcremote.miscellaneous.NetworkMapper&apos; to &apos;NetworkScanner&apos;&#x0D;&#x0A;- Original project: &apos;PCRemote&apos;&#x0D;&#x0A;- Original element: &apos;pcremote.miscellaneous.NetworkMapper&apos;&#x0D;&#x0A;- Renamed element: &apos;pcremote.miscellaneous.NetworkScanner&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;NetworkMapper&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;pcremote.miscellaneous{NetworkMapper.java[NetworkMapper" matchStrategy="1" name="NetworkScanner" qualified="false" references="true" similarDeclarations="false" stamp="1352919930696" textual="false" version="1.0"/>
+</session>

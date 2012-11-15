@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'configdialog.h'
 **
-** Created: Fri Oct 19 16:59:00 2012
+** Created: Wed Nov 14 20:15:23 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

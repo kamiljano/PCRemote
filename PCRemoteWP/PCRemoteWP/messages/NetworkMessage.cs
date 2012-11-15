@@ -7,7 +7,7 @@ namespace PCRemoteWP.messages
 {
     public enum Protocol { TCP, UDP }
 
-    interface NetworkMessage
+    public interface NetworkMessage
     {
         sbyte[] Message() ;
 

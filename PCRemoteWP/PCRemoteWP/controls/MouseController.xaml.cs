@@ -47,6 +47,14 @@ namespace PCRemoteWP.controls
         public static float MouseSensitivity { get; set; }
         public static int TimeToRightClick { get; set; }
 
+        public void AddMessageToSend(NetworkMessage mes)
+        {
+            lock (messageQueue)
+            {
+                messageQueue.Enqueue(mes);
+            }
+        }
+
         public void processLeftDown()
         {
             Debug.WriteLine("Left mouse down");

@@ -65,7 +65,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Content="Add" Name="button1" Grid.Row="2" Click="button1_Click" />
-        <Button Content="Autodetect" Name="button2" Grid.Row="3" />
+        <Button Content="Autodetect" Name="button2" Grid.Row="3" Click="button2_Click" />
     </Grid>
 
 </phone:PhoneApplicationPage>
