@@ -32,6 +32,7 @@ namespace PCRemoteWP
                     try
                     {
                         DeserializeFromXML();
+                        //loadAsText();
                     }
                     catch
                     {
@@ -50,6 +51,51 @@ namespace PCRemoteWP
         {
             if (ss != null && ss.Count > 0)
                 SerializeToXML();
+                //saveAsText();
+        }
+
+        private static void saveAsText()
+        {
+            var ss = Servers;
+            IsolatedStorageFile myStore = IsolatedStorageFile.GetUserStoreForApplication();
+
+            
+            using (var isoFileStream = new IsolatedStorageFileStream(filename, FileMode.OpenOrCreate, myStore))
+            {
+                using (StreamWriter writer = new StreamWriter(isoFileStream))
+                {
+                    foreach (ServerData sd in ss)
+                    {
+                        string temp = sd.Name + "\r" + sd.Address + "\r" + sd.Port + "\n";
+                        writer.WriteLine(temp);
+                    }
+                }
+            }
+        }
+
+        private static void loadAsText()
+        {
+            IsolatedStorageFile myStore = IsolatedStorageFile.GetUserStoreForApplication();
+            ObservableCollection<ServerData> servers = new ObservableCollection<ServerData>() ;
+            using (var isoFileStream = new IsolatedStorageFileStream(filename, FileMode.Open, myStore))
+            {
+                using (StreamReader reader = new StreamReader(isoFileStream))
+                {
+                    string temp = reader.ReadToEnd();
+                    MessageBox.Show(temp);
+                    /*var arr = temp.Split('\n');
+                    foreach (string v in arr)
+                    {
+                        if (v.Length > 0)
+                        {
+                            var vals = v.Split('\r');
+                            ServerData sd = new ServerData(vals[0], vals[1], int.Parse(vals[2]));
+                            servers.Add(sd);
+                        }
+                    }*/
+                }
+            }
+            ss = servers;
         }
 
         private static void SerializeToXML()
@@ -68,12 +114,12 @@ namespace PCRemoteWP
         {
             IsolatedStorageFile myStore = IsolatedStorageFile.GetUserStoreForApplication();
             XmlSerializer deserializer = new XmlSerializer(typeof(List<ServerData>));
-            ObservableCollection<ServerData> servers;
+            List<ServerData> servers;
             using (var isoFileStream = new IsolatedStorageFileStream(filename, FileMode.Open, myStore))
             {
-                servers = (ObservableCollection<ServerData>)deserializer.Deserialize(isoFileStream);
+                servers = (List<ServerData>)deserializer.Deserialize(isoFileStream);
             }
-            ss = servers;
+            ss = new ObservableCollection<ServerData>(servers);
         }
 
         public static ServerData SelectedServer { set; get; }
