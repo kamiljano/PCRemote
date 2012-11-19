@@ -316,3 +316,240 @@ bool AbstractCommunicator::scan(char clientType)
             return false;
     }
 }
+
+void AbstractCommunicator::useKeyboard(QChar c)
+{
+    if (isUpperCharacter(c))
+    {
+        useKeyboard(1,LSHIFT);
+    }
+
+    char cc = c.toLower().toAscii();
+    switch (cc)
+    {
+    case 'a':
+        useKeyboard(3, A);
+        break;
+    case 'b':
+        useKeyboard(3, B);
+        break;
+    case 'c':
+        useKeyboard(3, C);
+        break;
+    case 'd':
+        useKeyboard(3, D);
+        break;
+    case 'e':
+        useKeyboard(3, E);
+        break;
+    case 'f':
+        useKeyboard(3, F);
+        break;
+    case 'g':
+        useKeyboard(3, G);
+        break;
+    case 'h':
+        useKeyboard(3, H);
+        break;
+    case 'i':
+        useKeyboard(3, I);
+        break;
+    case 'j':
+        useKeyboard(3, J);
+        break;
+    case 'k':
+        useKeyboard(3, K);
+        break;
+    case 'l':
+        useKeyboard(3, L);
+        break;
+    case 'm':
+        useKeyboard(3, M);
+        break;
+    case 'n':
+        useKeyboard(3, N);
+        break;
+    case 'o':
+        useKeyboard(3, O);
+        break;
+    case 'p':
+        useKeyboard(3, P);
+        break;
+    case 'q':
+        useKeyboard(3, Q);
+        break;
+    case 'r':
+        useKeyboard(3, R);
+        break;
+    case 's':
+        useKeyboard(3, S);
+        break;
+    case 't':
+        useKeyboard(3, T);
+        break;
+    case 'u':
+        useKeyboard(3, U);
+        break;
+    case 'v':
+        useKeyboard(3, V);
+        break;
+    case 'w':
+        useKeyboard(3, W);
+        break;
+    case 'x':
+        useKeyboard(3, X);
+        break;
+    case 'y':
+        useKeyboard(3, Y);
+        break;
+    case 'z':
+        useKeyboard(3, Z);
+        break;
+    case '0':
+        useKeyboard(3, B0);
+        break;
+    case '1':
+        useKeyboard(3, B1);
+        break;
+    case '2':
+        useKeyboard(3, B2);
+        break;
+    case '3':
+        useKeyboard(3, B3);
+        break;
+    case '4':
+        useKeyboard(3, B4);
+        break;
+    case '5':
+        useKeyboard(3, B5);
+        break;
+    case '6':
+        useKeyboard(3, B6);
+        break;
+    case '7':
+        useKeyboard(3, B7);
+        break;
+    case '8':
+        useKeyboard(3, B8);
+        break;
+    case '9':
+        useKeyboard(3, B9);
+        break;
+    case ',':
+        useKeyboard(3, COMA);
+        break;
+    case '.':
+        useKeyboard(3, DOT);
+        break;
+    case '/':
+        useKeyboard(3, SLASH);
+        break;
+    case ';':
+        useKeyboard(3, SEMICOLON);
+        break;
+    case '\'':
+        useKeyboard(3, QUOTATION);
+        break;
+    case '[':
+        useKeyboard(3, SQUAREBRACKET1);
+        break;
+    case ']':
+        useKeyboard(3, SQUAREBRACKET2);
+        break;
+    case '-':
+        useKeyboard(3, MINUS);
+        break;
+    case '=':
+        useKeyboard(3, EQUALS);
+        break;
+    case '\\':
+        useKeyboard(3, BACKSLASH);
+        break;
+    case '`':
+        useKeyboard(3, TILDA);
+        break;
+    case '!':
+        useKeyboard(3, B1);
+        break;
+    case '@':
+        useKeyboard(3, B2);
+        break;
+    case '#':
+        useKeyboard(3, B3);
+        break;
+    case '$':
+        useKeyboard(3, B4);
+        break;
+    case '%':
+        useKeyboard(3, B5);
+        break;
+    case '^':
+        useKeyboard(3, B6);
+        break;
+    case '&':
+        useKeyboard(3, B7);
+        break;
+    case '*':
+        useKeyboard(3, B8);
+        break;
+    case '(':
+        useKeyboard(3, B9);
+        break;
+    case ')':
+        useKeyboard(3, B0);
+        break;
+    case '_':
+        useKeyboard(3, MINUS);
+        break;
+    case '+':
+        useKeyboard(3, EQUALS);
+        break;
+    case '{':
+        useKeyboard(3, SQUAREBRACKET1);
+        break;
+    case '}':
+        useKeyboard(3, SQUAREBRACKET2);
+        break;
+    case '|':
+        useKeyboard(3, BACKSLASH);
+        break;
+    case '"':
+        useKeyboard(3, QUOTATION);
+        break;
+    case ':':
+        useKeyboard(3, SEMICOLON);
+        break;
+    case '?':
+        useKeyboard(3, SLASH);
+        break;
+    case '>':
+        useKeyboard(3, DOT);
+        break;
+    case '<':
+        useKeyboard(3, COMA);
+        break;
+    case ' ':
+        useKeyboard(3, SPACE);
+        break;
+    }
+
+    if (isUpperCharacter(c))
+    {
+        useKeyboard(2,LSHIFT);
+    }
+}
+
+bool AbstractCommunicator::isUpperCharacter(QChar c)
+{
+    if (c.isLetter())
+    {
+        if (c.isUpper())
+            return true;
+        return false;
+    }
+    if (c.isDigit())
+        return false;
+    if (c == '~' || c == '!' || c == '@' || c == '#' || c == '$' || c == '%' || c == '^' || c == '&' || c == '*' || c == '(' || c == ')' || c == '_' || c == '+' || c == '{' || c == '}' || c == ':' || c == '"' || c == '<' || c == '>' || c == '|' || c == '?')
+        return true;
+    return false;
+}

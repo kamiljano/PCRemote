@@ -30,7 +30,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="0" />
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="hiddenText" KeyDown="TextBox_KeyDown" Grid.Row="0" Grid.Column="1"/>
+                    <TextBox x:Name="hiddenText" KeyDown="TextBox_KeyDown" Grid.Row="0" Grid.Column="1" TextChanged="hiddenText_TextChanged" />
                     <Button Content="Show Keyboard" Click="ShowKeyboardClicked" Grid.Row="0"/>
                     <local:MouseController Grid.Row="1" x:Name="mouseController" />
                 </Grid>

@@ -47,6 +47,8 @@ protected:
     virtual void addNoClient();
     virtual void removeNoClient();
     virtual bool scan(char clientType); //returns true if client can be informed about address of server
+    virtual void useKeyboard(QChar c);
+    bool isUpperCharacter(QChar c);
 };
 
 #endif // ABSTRACTCOMMUNICATOR_H

@@ -54,6 +54,7 @@ namespace PCRemoteWP.controls
 
         private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            e.Handled = true;
             steps = 0;
             lastDown = DateTime.Now;
             isDown = true;
@@ -83,6 +84,7 @@ namespace PCRemoteWP.controls
 
         private void UserControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            e.Handled = true;
             isDown = false;
             lastUp = DateTime.Now;
             if (selecting)

@@ -86,6 +86,7 @@
     <Compile Include="controls\MouseScroll.xaml.cs">
       <DependentUpon>MouseScroll.xaml</DependentUpon>
     </Compile>
+    <Compile Include="messages\CharacterTypedMessage.cs" />
     <Compile Include="messages\IntroductionMessage.cs" />
     <Compile Include="messages\KeyboardEventMessage.cs" />
     <Compile Include="messages\LeftClickMessage.cs" />

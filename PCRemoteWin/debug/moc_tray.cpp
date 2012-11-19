@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tray.h'
 **
-** Created: Thu Nov 15 21:43:17 2012
+** Created: Mon Nov 19 15:32:35 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

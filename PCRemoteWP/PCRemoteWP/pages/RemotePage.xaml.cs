@@ -26,6 +26,8 @@ namespace PCRemoteWP.pages
         {
             base.OnNavigatedFrom(e);
             ServersStorage.OnConnectionFailed -= processConnectionFailed;
+            lastCode = 8;
+            hiddenText.Text = "";
             this.mouseController.Kill();
         }
 
@@ -87,13 +89,50 @@ namespace PCRemoteWP.pages
             hiddenText.Focus();
         }
 
+        private bool CharacterCode(int code)
+        {
+            if (code == 8 || code == 13 || code == 160 || code == 233)
+                return false;
+            return true;
+        }
+
+        private bool KeySkippable(int code)
+        {
+            if (code == 160 || code == 233)
+                return true;
+            return false;
+        }
+
+        private int lastCode;
+
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            //MessageBox.Show(e.OriginalSource.ToString());
-            
-            KeyboardEventMessage kem = new KeyboardEventMessage(e.PlatformKeyCode);
-            mouseController.AddMessageToSend(kem);
-            e.Handled = true;
+            MessageBox.Show(e.PlatformKeyCode.ToString());
+            NetworkMessage toSend;
+            lastCode = e.PlatformKeyCode;
+            if (!CharacterCode(e.PlatformKeyCode))
+            {
+                if (!KeySkippable(e.PlatformKeyCode))
+                {
+                    toSend = new KeyboardEventMessage(e.PlatformKeyCode);
+                    mouseController.AddMessageToSend(toSend);
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private int lastLen = 0;
+        private void hiddenText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (CharacterCode(lastCode) && hiddenText.Text.Length > lastLen)
+            {
+                mouseController.AddMessageToSend(new CharacterTypedMessage(this.hiddenText.Text[this.hiddenText.Text.Length - 1]));
+            }
+            else if (hiddenText.Text.Length == lastLen - 1)
+            {
+                mouseController.AddMessageToSend(new KeyboardEventMessage(KeyboardEventMessage.KeyCode.BACKSPACE));
+            }
+            lastLen = hiddenText.Text.Length;
         }
     }
 }

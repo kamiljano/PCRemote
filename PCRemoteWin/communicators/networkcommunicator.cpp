@@ -87,6 +87,8 @@ void NetworkCommunicator::process()
     for (int i = 0; i<BUFLEN; i++)
         arr[i] = 0;
     client->read(arr,500);
+    short wc;
+    QChar * qc;
     switch(arr[0])
     {
     case 1:
@@ -137,6 +139,12 @@ void NetworkCommunicator::process()
         break;
     case 6:
         useKeyboard(arr[1], arr[2]);
+        break;
+    case 7:
+        wc = *(arr+1);
+        qc = new QChar(wc);
+        useKeyboard(*qc);
+        delete qc;
         break;
     default:
         cout<<"unknown command: "<<(int)arr[0]<<endl;
