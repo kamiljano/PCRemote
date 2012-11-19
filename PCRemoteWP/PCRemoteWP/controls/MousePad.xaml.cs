@@ -43,7 +43,6 @@ namespace PCRemoteWP.controls
         private void LayoutRoot_MouseMove(object sender, MouseEventArgs e)
         {
             Point p = e.GetPosition(null);
-            
             if (OnMouseMoveEvent != null)
                 OnMouseMoveEvent((sbyte)(MouseController.MouseSensitivity * (p.X - this.last_x)), (sbyte)(MouseController.MouseSensitivity * (p.Y - this.last_y)));
 
@@ -95,6 +94,21 @@ namespace PCRemoteWP.controls
             }
             else if (OnLeftClick != null && steps < 5 && (DateTime.Now - lastDown).TotalMilliseconds < MouseController.TimeToRightClick)
                 OnLeftClick();
+        }
+
+        private void LayoutRoot_ManipulationStarted(object sender, ManipulationStartedEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void LayoutRoot_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void LayoutRoot_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

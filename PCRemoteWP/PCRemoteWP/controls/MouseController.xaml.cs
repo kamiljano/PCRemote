@@ -10,6 +10,7 @@ using PCRemoteWP.messages;
 using System.Net.Sockets;
 using System.Diagnostics;
 using System.Net;
+using PCRemoteWP.storage;
 
 namespace PCRemoteWP.controls
 {
@@ -36,16 +37,41 @@ namespace PCRemoteWP.controls
             st = new Thread(sendingThread);
         }
 
-        static MouseController()
+        public static byte ScrollSensitivity
         {
-            MouseController.ScorllSensitivity = 10;
-            MouseSensitivity = 0.5f;
-            TimeToRightClick = 1500;
+            get
+            {
+                return ConfigStorage.Instance.ScrollSensitivity;
+            }
+            set
+            {
+                ConfigStorage.Instance.ScrollSensitivity = value;
+            }
         }
 
-        public static byte ScorllSensitivity { get; set; }
-        public static float MouseSensitivity { get; set; }
-        public static int TimeToRightClick { get; set; }
+        public static float MouseSensitivity
+        {
+            get
+            {
+                return ConfigStorage.Instance.MouseSensitivity;
+            }
+            set
+            {
+                ConfigStorage.Instance.MouseSensitivity = value;
+            }
+        }
+
+        public static int TimeToRightClick
+        {
+            get
+            {
+                return ConfigStorage.Instance.TimeToRightClick;
+            }
+            set
+            {
+                ConfigStorage.Instance.TimeToRightClick = value;
+            }
+        }
 
         public void AddMessageToSend(NetworkMessage mes)
         {
@@ -97,7 +123,7 @@ namespace PCRemoteWP.controls
                 (d == MouseScroll.dir.Minus ? "minus" : "plus"));
             lock (messageQueue)
             {
-                messageQueue.Enqueue(new ScrollMessage(o, d == MouseScroll.dir.Plus ? (sbyte)MouseController.ScorllSensitivity : (sbyte)(-1 * MouseController.ScorllSensitivity)));
+                messageQueue.Enqueue(new ScrollMessage(o, d == MouseScroll.dir.Plus ? (sbyte)MouseController.ScrollSensitivity : (sbyte)(-1 * MouseController.ScrollSensitivity)));
             }
         }
 

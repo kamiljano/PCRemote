@@ -29,11 +29,11 @@
         <!--ContentPanel - place additional content here-->
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock Height="30" Name="textBlock1" Text="Mousepad sensitivity" VerticalAlignment="Top" />
-            <Slider Height="84" HorizontalAlignment="Left" Name="slider1" Width="460" />
+            <Slider Height="84" HorizontalAlignment="Left" Name="slider1" Width="460" Maximum="1" Minimum="0.1" Value="0.1" />
             <TextBlock Height="30" Name="textBlock2" Text="Scroll sensitivity" />
-            <Slider Height="84" Name="slider2" Width="460" />
+            <Slider Height="84" Name="slider2" Width="460" Maximum="100" Minimum="1" />
             <TextBlock Height="30" Name="textBlock3" Text="Right click time" />
-            <Slider Height="84" Name="slider3" Width="460" />
+            <Slider Height="84" Name="slider3" Width="460" Minimum="100" Value="0" Maximum="10000" />
         </StackPanel>
     </Grid>
  

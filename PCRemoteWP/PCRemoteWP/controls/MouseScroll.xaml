@@ -9,7 +9,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
 
-    <Grid x:Name="LayoutRoot" Background="#FF0D0D0D" MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown" MouseMove="LayoutRoot_MouseMove">
+    <Grid x:Name="LayoutRoot" Background="#FF0D0D0D" MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown" MouseMove="LayoutRoot_MouseMove" ManipulationStarted="LayoutRoot_ManipulationStarted" ManipulationDelta="LayoutRoot_ManipulationDelta" ManipulationCompleted="LayoutRoot_ManipulationCompleted">
 
     </Grid>
 </UserControl>

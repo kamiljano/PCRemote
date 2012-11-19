@@ -54,5 +54,20 @@ namespace PCRemoteWP.controls
             }
         }
 
+        private void LayoutRoot_ManipulationStarted(object sender, ManipulationStartedEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void LayoutRoot_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void LayoutRoot_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
+        {
+            e.Handled = true;
+        }
+
     }
 }

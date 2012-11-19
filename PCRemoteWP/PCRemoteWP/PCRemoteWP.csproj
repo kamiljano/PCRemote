@@ -115,6 +115,8 @@
     <Compile Include="messages\MouseMoveMessage.cs" />
     <Compile Include="messages\NetworkMessage.cs" />
     <Compile Include="messages\ScrollMessage.cs" />
+    <Compile Include="storage\ConfigData.cs" />
+    <Compile Include="storage\ConfigStorage.cs" />
     <Compile Include="storage\ServerData.cs" />
     <Compile Include="pages\ServerListPage.xaml.cs">
       <DependentUpon>ServerListPage.xaml</DependentUpon>
