@@ -76,7 +76,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\KeyboardButton.cs" />
     <Compile Include="controls\MouseController.xaml.cs">
       <DependentUpon>MouseController.xaml</DependentUpon>
     </Compile>
@@ -183,6 +182,7 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="graphics\Servers.png" />
     <Content Include="MVVMLight.Nuget.Readme.txt" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>

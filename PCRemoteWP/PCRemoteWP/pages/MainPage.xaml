@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="#FF404040">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -25,7 +25,18 @@
         </Grid.RowDefinitions>
         <Button Content="Remote" Grid.Row="0" Grid.Column="0" Name="bremote" Click="bremote_Click" />
         <Button Content="Preferences" Grid.Column="0" Grid.Row="1" Name="bconfig" Click="bconfig_Click" />
-        <Button Content="Servers" Grid.Column="1" Grid.Row="0" Name="bserver" Click="bserver_Click" />
+        <Button Grid.Column="1" Grid.Row="0" Name="bserver" Click="bserver_Click">
+            <Button.Content>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="/PCRemoteWP;component/graphics/Servers.png" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Servers" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP Semibold" FontSize="32" />
+                </Grid>
+            </Button.Content>
+        </Button>
         <Button Content="Help" Grid.Column="1" Grid.Row="1" Name="bhelp" Click="bhelp_Click" />
     </Grid>
     
