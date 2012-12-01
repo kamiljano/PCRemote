@@ -34,7 +34,6 @@ namespace PCRemoteWP.controls
             this.mousepad.OnLeftUp += processLeftUp;
             tcptoBeSent.RemoteEndPoint = ServersStorage.ServerSocket.RemoteEndPoint;
             tcptoBeSent.UserToken = null;
-            st = new Thread(sendingThread);
         }
 
         public static byte ScrollSensitivity
@@ -198,6 +197,13 @@ namespace PCRemoteWP.controls
         public void startSendingThread()
         {
             killThread = false;
+            try
+            {
+                st.Abort();
+            }
+            catch (Exception e)
+            {}
+            st = new Thread(sendingThread);
             st.Start();
         }
     }

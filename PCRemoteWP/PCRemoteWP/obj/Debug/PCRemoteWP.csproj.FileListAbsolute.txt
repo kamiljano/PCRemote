@@ -17,11 +17,13 @@ D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\Microsoft.Phone.Control
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\Bin\Debug\System.Windows.Interactivity.xml
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.csprojResolveAssemblyReference.cache
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\App.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\controls\MouseController.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\controls\MousePad.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\controls\MouseScroll.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\AboutPage.g.i.cs
+D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\ConfigPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\MainPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\MediaControllerPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\NewServerPage.g.i.cs
@@ -31,5 +33,3 @@ D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.g.resources
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.dll
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.pdb
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\XapCacheFile.xml
-D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\PCRemoteWP.csprojResolveAssemblyReference.cache
-D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\ConfigPage.g.i.cs

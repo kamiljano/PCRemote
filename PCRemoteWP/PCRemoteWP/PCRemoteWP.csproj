@@ -183,6 +183,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="graphics\Servers.png" />
+    <Resource Include="graphics\config.png" />
+    <Resource Include="graphics\Remote.png" />
+    <Resource Include="graphics\help.png" />
     <Content Include="MVVMLight.Nuget.Readme.txt" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>

@@ -23,8 +23,30 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="Remote" Grid.Row="0" Grid.Column="0" Name="bremote" Click="bremote_Click" />
-        <Button Content="Preferences" Grid.Column="0" Grid.Row="1" Name="bconfig" Click="bconfig_Click" />
+        <Button Grid.Row="0" Grid.Column="0" Name="bremote" Click="bremote_Click">
+            <Button.Content>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="/PCRemoteWP;component/graphics/Remote.png" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Remote" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP Semibold" FontSize="32" />
+                </Grid>
+            </Button.Content>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="1" Name="bconfig" Click="bconfig_Click">
+            <Button.Content>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="/PCRemoteWP;component/graphics/config.png" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Preferences" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP Semibold" FontSize="32" />
+                </Grid>
+            </Button.Content>
+        </Button>
         <Button Grid.Column="1" Grid.Row="0" Name="bserver" Click="bserver_Click">
             <Button.Content>
                 <Grid Grid.Column="1" Grid.Row="0">
@@ -37,7 +59,18 @@
                 </Grid>
             </Button.Content>
         </Button>
-        <Button Content="Help" Grid.Column="1" Grid.Row="1" Name="bhelp" Click="bhelp_Click" />
+        <Button Grid.Column="1" Grid.Row="1" Name="bhelp" Click="bhelp_Click">
+            <Button.Content>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="/PCRemoteWP;component/graphics/help.png" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Help" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP Semibold" FontSize="32" />
+                </Grid>
+            </Button.Content>
+        </Button>
     </Grid>
     
 </phone:PhoneApplicationPage>

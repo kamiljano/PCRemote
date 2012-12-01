@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'adhocdialog.ui'
 **
-** Created: Sat Nov 17 23:51:55 2012
+** Created: Sat Dec 1 11:53:26 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
