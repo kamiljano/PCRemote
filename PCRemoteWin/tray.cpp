@@ -3,7 +3,7 @@
 Tray::Tray(QWidget *parent) :
     QObject(parent)
 {
-    QIcon i("icon.svg");
+    QIcon i("PCRemoteIcon.png");
     aboutw = NULL;
     configDial = NULL;
     adhocdial = NULL;

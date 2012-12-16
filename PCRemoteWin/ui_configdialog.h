@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'configdialog.ui'
 **
-** Created: Sat Dec 1 11:53:26 2012
+** Created: Sat Dec 1 12:35:53 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -113,7 +113,6 @@ public:
         verticalLayout_4->addLayout(gridLayout);
 
         tabWidget->addTab(tab_3, QString());
-        checkAutodetect->raise();
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         verticalLayout_3 = new QVBoxLayout(tab_4);
@@ -199,7 +198,7 @@ public:
         pushButton_3->setText(QApplication::translate("ConfigDialog", "Default", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("ConfigDialog", "Port", 0, QApplication::UnicodeUTF8));
         pushButton_4->setText(QApplication::translate("ConfigDialog", "Default", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("ConfigDialog", "Netork", 0, QApplication::UnicodeUTF8));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("ConfigDialog", "Network", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("ConfigDialog", "Accept clients:", 0, QApplication::UnicodeUTF8));
         checkAcceptAndroid->setText(QApplication::translate("ConfigDialog", "Android", 0, QApplication::UnicodeUTF8));
         checkWPAccept->setText(QApplication::translate("ConfigDialog", "WindowsPhone", 0, QApplication::UnicodeUTF8));

@@ -23,7 +23,7 @@ public class KeyboardController extends ViewGroup{
 		S((byte)26),T((byte)27),U((byte)28),V((byte)29),W((byte)30),X((byte)31),Y((byte)32),Z((byte)33),
 		COMA((byte)34),DOT((byte)35),SLASH((byte)36),SEMICOLON((byte)37),QUOTATION((byte)38), SQUAREBRACKET1((byte)39), SQUAREBRACKET2((byte)40),
 		BACKSLASH((byte)41),TILDA((byte)42),B1((byte)43),B2((byte)44), B3((byte)45), B4((byte)46), B5((byte)47), B6((byte)48), B7((byte)49), B8((byte)50), B9((byte)51),B0((byte)52),
-		MINUS((byte)53), EQUALS((byte)54), BACKSPACE((byte)55), ENTER((byte)56), TAB((byte)57), CAPSLOCK((byte)58), VOLUP ((byte)59), VOLDOWN ((byte)60), MEDIANEXT((byte)62), MEDIAPREV((byte)61), MEDIAPLAY((byte)63);
+		MINUS((byte)53), EQUALS((byte)54), BACKSPACE((byte)55), ENTER((byte)56), TAB((byte)57), CAPSLOCK((byte)58), VOLUP ((byte)59), VOLDOWN ((byte)60), MEDIANEXT((byte)62), MEDIAPREV((byte)61), MEDIAPLAY((byte)63),ARROWLEFT((byte)64),ARROWRIGHT((byte)65);
 		private byte code;
 		enum State {DOWN, UP, CLICK}
 		State state = State.CLICK;

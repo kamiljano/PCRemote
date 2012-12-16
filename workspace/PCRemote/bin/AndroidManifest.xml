@@ -24,6 +24,7 @@
         <activity android:name=".AddServerActivity" android:noHistory="true"></activity>
         <activity android:name=".MouseActivity" android:noHistory="true"></activity>
         <activity android:name=".MediaActivity" android:noHistory="true"></activity>
+        <activity android:name=".PresentationActivity" android:noHistory="true"></activity>
         <activity android:name=".ServerListActivity"></activity>
         <activity android:name=".PreferencesActivity"></activity>
         <activity android:name=".AboutActivity"></activity>

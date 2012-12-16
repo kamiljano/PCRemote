@@ -21,7 +21,7 @@
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Netork</string>
+       <string>Network</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -70,9 +70,6 @@
         </layout>
        </item>
       </layout>
-      <zorder>groupBox</zorder>
-      <zorder>checkAutodetect</zorder>
-      <zorder>gridLayoutWidget</zorder>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">

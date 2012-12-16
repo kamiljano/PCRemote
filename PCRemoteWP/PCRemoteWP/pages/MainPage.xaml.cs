@@ -48,7 +48,10 @@ namespace PCRemoteWP.pages
         private void bremote_Click(object sender, RoutedEventArgs e)
         {
             //NavigationService.Navigate(new Uri("/pages/MousePage.xaml", UriKind.Relative));
-            NavigationService.Navigate(new Uri("/pages/RemotePage.xaml", UriKind.Relative));
+            if (ServersStorage.ServerSocket == null || !ServersStorage.ServerSocket.Connected)
+                MessageBox.Show("You need to connect to the server first");
+            else
+                NavigationService.Navigate(new Uri("/pages/RemotePage.xaml", UriKind.Relative));
         }
 
         private void bhelp_Click(object sender, RoutedEventArgs e)

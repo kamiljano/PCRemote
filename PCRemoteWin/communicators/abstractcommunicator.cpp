@@ -210,6 +210,10 @@ AbstractCommunicator::KeyRep AbstractCommunicator::translateKeycode(char c)
         return KeyRep(0xB0, 0);
     case MEDIAPLAY:
         return KeyRep(0xB3, 0);
+    case ARROWLEFT:
+        return KeyRep(VK_LEFT,0);
+    case ARROWRIGHT:
+        return KeyRep(VK_RIGHT,0);
     }
 
     return KeyRep(-1,-1);

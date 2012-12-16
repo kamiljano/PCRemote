@@ -20,7 +20,7 @@ class AbstractCommunicator : public QThread
     enum Keys{LSHIFT=1,RSHIFT,LALT,RALT,SPACE,RCTRL,LCTRL,A, B, C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,
             S,T,U,V,W,X,Y,Z,COMA,DOT,SLASH,SEMICOLON,QUOTATION, SQUAREBRACKET1, SQUAREBRACKET2,
             BACKSLASH,TILDA,B1,B2, B3, B4, B5, B6, B7, B8, B9,B0,MINUS, EQUALS, BACKSPACE, ENTER, TAB, CAPSLOCK,
-            VOLUP, VOLDOWN, MEDIAPREV, MEDIANEXT, MEDIAPLAY};
+            VOLUP, VOLDOWN, MEDIAPREV, MEDIANEXT, MEDIAPLAY, ARROWLEFT, ARROWRIGHT};
     struct KeyRep{int code; int scan;
                   KeyRep(int a, int b)
                    {

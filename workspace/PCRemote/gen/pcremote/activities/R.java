@@ -52,6 +52,7 @@ public final class R {
         public static final int media_activity=0x7f030006;
         public static final int mouse_activity=0x7f030007;
         public static final int preferences_activity=0x7f030008;
+        public static final int presentation_activity=0x7f030009;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
@@ -70,6 +71,7 @@ public final class R {
         public static final int connectionLost=0x7f050018;
         public static final int cursorSens=0x7f050023;
         public static final int edit=0x7f050019;
+        public static final int goToPresentation=0x7f050027;
         public static final int hello_world=0x7f050001;
         public static final int help=0x7f050007;
         public static final int info=0x7f050011;

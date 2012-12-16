@@ -40,4 +40,5 @@
     <string name="prefsStoreFail">Failed to store preferences</string>
     <string name="scrollSens">Scroll sensitivity</string>
     <string name="rightClickTime">Right click time</string>
+    <string name="goToPresentation">Presentation</string>
 </resources>

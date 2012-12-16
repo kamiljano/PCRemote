@@ -37,4 +37,8 @@ public class MouseActivity extends Activity{
 	{
 		startActivity(new Intent(this, MediaActivity.class));
 	}
+	public void goToPresentation(View v)
+	{
+		startActivity(new Intent(this, PresentationActivity.class));
+	}
 }

@@ -25,7 +25,6 @@ D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\controls\MouseScroll.g.
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\AboutPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\ConfigPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\MainPage.g.i.cs
-D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\MediaControllerPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\NewServerPage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\RemotePage.g.i.cs
 D:\MyFiles\code\PCRemote\PCRemoteWP\PCRemoteWP\obj\Debug\pages\ServerListPage.g.i.cs

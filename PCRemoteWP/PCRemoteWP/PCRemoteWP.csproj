@@ -101,9 +101,6 @@
     <Compile Include="pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\MediaControllerPage.xaml.cs">
-      <DependentUpon>MediaControllerPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="pages\RemotePage.xaml.cs">
       <DependentUpon>RemotePage.xaml</DependentUpon>
     </Compile>
@@ -150,10 +147,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages\MediaControllerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
