@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="de32f0d6-c91b-4ade-bb08-c627ddae4812" name="PCRemoteWP" linkedPackageId="7521749a-3e83-45ff-a4fb-688bfe7311d4" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="de32f0d6-c91b-4ade-bb08-c627ddae4812" name="PCRemoteWP" linkedPackageId="7521749a-3e83-45ff-a4fb-688bfe7311d4" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="07796f87-dd4a-44ed-868b-0336a932827a" name="PCRemote.messages">
@@ -289,11 +289,39 @@
             <class Id="76bf339c-d713-41f4-beb1-6cf6ac2abfb9" name="RightClickMessage" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="80e1c13f-ebd7-4b72-9b33-2047020fa1a6" />
               <suppliersInternal>
-                <dependency Id="026b236b-a48b-43f7-9f03-29ebc5e67dae">
+                <interfaceRealization Id="43bffb00-5598-4bdb-aa04-1061dcb61ab2">
                   <interfaceMoniker Id="0bf42840-4a84-4e86-a294-18d7453eecb0" LastKnownName="NetworkMessage" />
-                  <elementDefinition Id="dbc1da47-3069-4fa3-a112-f8329cbdd76b" />
-                </dependency>
+                  <elementDefinition Id="79a016af-a65d-4cd8-81d1-daf092fe0311" />
+                </interfaceRealization>
               </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="5052af92-4ac5-4be4-86b1-1e42533598fc" name="Message" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d1eb7460-40d5-43a5-a9f6-707fdaa3cb8b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b957cd0e-5f76-4ff7-a53d-0b7e85173a31" direction="Return">
+                        <elementDefinition Id="a397311f-9b3b-4288-9c8d-6de1e4cc9d7f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b5f63485-97a6-42fc-ae86-d1580a52b062" LastKnownName="byte[]" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="5bd6c9b5-2a7e-4ae4-977a-d4a2d29235bd" name="NetworkProtocol" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="60f5dbea-51be-48f6-8e50-84f67d895c27" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="0c4390cf-08d5-455a-b5df-67336c2f34d1" direction="Return" isUnique="false">
+                        <elementDefinition Id="c50cd839-692a-42d2-ba92-13daff78b19c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="37c7f1c2-2a88-47dc-9240-55403f6499e7" LastKnownName="Protocol" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>

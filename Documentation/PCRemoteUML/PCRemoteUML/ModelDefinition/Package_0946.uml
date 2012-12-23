@@ -492,14 +492,63 @@
         isLeaf="false"
         isActiveClass="false">
         <suppliersInternal>
-          <dependency
-            Id="dbc1da47-3069-4fa3-a112-f8329cbdd76b">
+          <interfaceRealization
+            Id="79a016af-a65d-4cd8-81d1-daf092fe0311">
             <interfaceMoniker
               Id="01acb8af-4293-4b67-93f0-14bea0ecbc04"
               LastKnownName="NetworkMessage"
               LastKnownLocation="Package_0946.uml" />
-          </dependency>
+          </interfaceRealization>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d1eb7460-40d5-43a5-a9f6-707fdaa3cb8b"
+            name="Message"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a397311f-9b3b-4288-9c8d-6de1e4cc9d7f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="15cbffef-eefa-4b6a-8454-36cd9f059415"
+                      LastKnownName="byte[]"
+                      LastKnownLocation="Package_0946.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="60f5dbea-51be-48f6-8e50-84f67d895c27"
+            name="NetworkProtocol"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c50cd839-692a-42d2-ba92-13daff78b19c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="8107bede-24cd-48d3-bb1a-050b33713fbc"
+                      LastKnownName="Protocol"
+                      LastKnownLocation="Package_0946.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
