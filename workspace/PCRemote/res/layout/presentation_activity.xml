@@ -27,17 +27,26 @@
             android:onClick="goToMedia"/>
             
     </LinearLayout>
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:text="@string/next" 
-            android:onClick="nextSlide"/>
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:text="@string/prev" 
-            android:onClick="prevSlide"/>
-
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+        <Button
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="@string/prev" 
+	            android:onClick="prevSlide"/>
+	    <Button
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="@string/next" 
+	            android:onClick="nextSlide"/>
+	</LinearLayout>
+	
+     <pcremote.custom.MouseController
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/mouseController"/>
 </LinearLayout>

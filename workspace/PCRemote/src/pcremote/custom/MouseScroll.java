@@ -1,6 +1,7 @@
 package pcremote.custom;
 
 import pcremote.activities.R;
+import pcremote.communication.messages.ScrollMessage;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,10 +10,9 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Toast;
 
-public class MouseScroll extends View{
+public class MouseScroll extends Controller{
 
 	public enum Orientation{Vertical, Horizontal};
 	private Orientation or = Orientation.Vertical;
@@ -82,7 +82,9 @@ public class MouseScroll extends View{
 				Log.v("trolololo", "Horizontal scroll move");
 				try
 				{
-					((MouseController)getParent()).getOutputStream().write(new byte[]{1,2, last < ev.getX() ? MouseController.getScrollSensitivity() : (byte)(MouseController.getScrollSensitivity() * (-1))}); // scroll, horizontal, up/down
+					//((MouseController)getParent()).getOutputStream().write(new byte[]{1,2, last < ev.getX() ? MouseController.getScrollSensitivity() : (byte)(MouseController.getScrollSensitivity() * (-1))}); // scroll, horizontal, up/down
+					sender.addMessage(new ScrollMessage(ScrollMessage.Orientation.Horizontal, last < ev.getX() ? MouseController.getScrollSensitivity() : (byte)(MouseController.getScrollSensitivity() * (-1))));
+					
 					last = ev.getX();
 				}
 				catch (Exception e)
@@ -102,7 +104,8 @@ public class MouseScroll extends View{
 				Log.v("trolololo", "Vertical scroll move");
 				try
 				{
-					((MouseController)getParent()).getOutputStream().write(new byte[]{1,1, last < ev.getY() ? MouseController.getScrollSensitivity() : (byte)(MouseController.getScrollSensitivity() * (-1))}); // scroll, horizontal, up/down
+					//((MouseController)getParent()).getOutputStream().write(new byte[]{1,1, last < ev.getY() ? MouseController.getScrollSensitivity() : (byte)(MouseController.getScrollSensitivity() * (-1))}); // scroll, horizontal, up/down
+					sender.addMessage(new ScrollMessage(ScrollMessage.Orientation.Vertical, last < ev.getY() ? MouseController.getScrollSensitivity() : (byte)(MouseController.getScrollSensitivity() * (-1))));
 					last = ev.getY();
 				}
 				catch (Exception e)

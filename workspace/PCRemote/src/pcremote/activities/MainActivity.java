@@ -1,5 +1,6 @@
 package pcremote.activities;
 
+import pcremote.communication.SendingThread;
 import pcremote.storage.Preferences;
 import pcremote.storage.PreferencesStorage;
 import pcremote.storage.ServersStorage;
@@ -87,6 +88,7 @@ public class MainActivity extends Activity {
     	try
     	{
     		ServersStorage.getSocket().close();
+    		SendingThread.getInstance().interrupt();
     	}
     	catch(Exception e){}
     }

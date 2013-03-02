@@ -1,7 +1,5 @@
 package pcremote.custom;
 
-import java.io.OutputStream;
-
 import pcremote.custom.MouseScroll.Orientation;
 import android.content.Context;
 import android.graphics.Color;
@@ -17,17 +15,6 @@ public class MouseController extends ViewGroup{
 	
 	private static float mouseSensitivity = 0.5f;
 	private static byte scrollSensitivity = 2;
-	
-	private OutputStream out;
-	public void setOutputStream(OutputStream out)
-	{
-		this.out = out;
-	}
-	
-	public OutputStream getOutputStream()
-	{
-		return out;
-	}
 	
 	public static void setMouseSensitivity(float s)
 	{

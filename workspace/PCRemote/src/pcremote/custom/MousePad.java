@@ -1,38 +1,32 @@
 package pcremote.custom;
 
-import java.io.OutputStream;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
 import java.util.Calendar;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import pcremote.activities.R;
-import pcremote.storage.CursorMovementData;
-import pcremote.storage.ServersStorage;
+import pcremote.communication.SendingThread;
+import pcremote.communication.messages.CursorMovementMessage;
+import pcremote.communication.messages.LeftButtonDownMessage;
+import pcremote.communication.messages.LeftButtonUpMessage;
+import pcremote.communication.messages.LeftClickMessage;
+import pcremote.communication.messages.RightClickMessage;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.os.Handler;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
-public class MousePad extends View {
+public class MousePad extends Controller {
 
 	private Paint paint;
 	private int w,h;
 	
-	private ArrayBlockingQueue <CursorMovementData> movements = new ArrayBlockingQueue<CursorMovementData>(20);
-	private Thread sendingThread;
-	
 	private static int longClickTime = 1000;
 	private static int buttonDownTime = 400;
-	private Handler handle = new Handler();
 	
 	public MousePad(Context context) {
 		super(context);
@@ -75,9 +69,7 @@ public class MousePad extends View {
 			public void onClick(View v) {
 				Log.i("trolololo", "Mousepad: left button clicked");
 				try{
-					OutputStream o =((MouseController)getParent()).getOutputStream();
-					o.write(new byte[]{3});
-					o.flush();
+					sender.addMessage(new LeftClickMessage());
 				}
 				catch(Exception e){
 					Toast.makeText(MousePad.this.getContext(), MousePad.this.getContext().getString(R.string.connectionLost), Toast.LENGTH_SHORT).show();
@@ -90,7 +82,7 @@ public class MousePad extends View {
 			public boolean onLongClick(View v) {
 				Log.i("trolololo", "Mousepad: right button clicked");
 				try{
-					((MouseController)getParent()).getOutputStream().write(new byte[]{4});
+					sender.addMessage(new RightClickMessage());
 				}
 				catch(Exception e){
 					Toast.makeText(MousePad.this.getContext(), MousePad.this.getContext().getString(R.string.connectionLost), Toast.LENGTH_SHORT).show();
@@ -98,58 +90,12 @@ public class MousePad extends View {
 				return true;
 			}
 		});
-		
-		this.sendingThread = new Thread(new Runnable(){
-
-			public void run() {
-				CursorMovementData cmd;
-				DatagramSocket clientSocket;
-				InetAddress IPAddress = null;
-				try
-				{
-					IPAddress = InetAddress.getByName(ServersStorage.getSelectedServer().Address());
-				}
-				catch(Exception e)
-				{
-					handle.post(new Runnable(){
-
-						public void run() {
-							Toast.makeText(MousePad.this.getContext(), MousePad.this.getContext().getString(R.string.connectionLost), Toast.LENGTH_SHORT).show();
-						}});
-					return;
-				}
-				while (!Thread.interrupted())
-				{
-					try
-					{
-					clientSocket = new DatagramSocket();
-					cmd = movements.take();
-				    DatagramPacket sendPacket = new DatagramPacket(new byte[] {1, cmd.x,cmd.y}, 3, IPAddress, 1234);
-				    clientSocket.send(sendPacket);
-				    clientSocket.close();
-					}
-					catch(Exception e)
-					{
-						handle.post(new Runnable(){
-
-							public void run() {
-								Toast.makeText(MousePad.this.getContext(), MousePad.this.getContext().getString(R.string.connectionLost), Toast.LENGTH_SHORT).show();
-							}});
-						
-						movements.clear();
-					}
-				}
-				
-			}});
-		sendingThread.start();
 	}
 	
 	private void leftButtonDown()
 	{
 		try{
-			OutputStream o =((MouseController)getParent()).getOutputStream();
-			o.write(new byte[]{2,2,1});
-			o.flush();
+			sender.addMessage(new LeftButtonDownMessage());
 			leftButtonDown = true;
 			Log.i("trolololo", "left button down");
 		}
@@ -160,9 +106,7 @@ public class MousePad extends View {
 	private void leftButtonUp()
 	{
 		try{
-			OutputStream o =((MouseController)getParent()).getOutputStream();
-			o.write(new byte[]{2,3,1});
-			o.flush();
+			sender.addMessage(new LeftButtonUpMessage());
 			leftButtonDown = false;
 			Log.i("trolololo", "left button up");
 		}
@@ -171,17 +115,10 @@ public class MousePad extends View {
 		}
 	}
 	
-	@Override
-	protected void finalize() throws Throwable
-	{
-		super.finalize();
-		sendingThread.interrupt();
-	}
-	
 	private float x,y;
 	private int lastAction = MotionEvent.ACTION_UP;
 	private long lastDownTime, lastUpTime;
-	private float downx, downy;
+	//private float downx, downy;
 	private int steps;
 	private Thread longClickThread;
 	private boolean leftButtonDown = false;
@@ -244,7 +181,7 @@ public class MousePad extends View {
 			float nx = ev.getX(), ny = ev.getY();
 			try
 			{
-				movements.offer(new CursorMovementData((byte)(MouseController.getMouseSensitivity() * (nx - x)), (byte)(MouseController.getMouseSensitivity() * (ny - y))));
+				SendingThread.getInstance().addMessage(new CursorMovementMessage((byte)(MouseController.getMouseSensitivity() * (nx - x)), (byte)(MouseController.getMouseSensitivity() * (ny - y))));
 			}
 			catch(Exception e){}
 			x = nx;

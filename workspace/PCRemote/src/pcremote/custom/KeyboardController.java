@@ -1,20 +1,19 @@
 package pcremote.custom;
 
 import java.io.OutputStream;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import pcremote.activities.R;
+import pcremote.communication.messages.KeyboardMessage;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-public class KeyboardController extends ViewGroup{
+public class KeyboardController extends ControllerGroup{
 
 	public enum Keys{
 		LSHIFT((byte)1),RSHIFT((byte)2),LALT((byte)3),RALT((byte)4),SPACE((byte)5),RCTRL((byte)6),LCTRL((byte)7),
@@ -25,8 +24,8 @@ public class KeyboardController extends ViewGroup{
 		BACKSLASH((byte)41),TILDA((byte)42),B1((byte)43),B2((byte)44), B3((byte)45), B4((byte)46), B5((byte)47), B6((byte)48), B7((byte)49), B8((byte)50), B9((byte)51),B0((byte)52),
 		MINUS((byte)53), EQUALS((byte)54), BACKSPACE((byte)55), ENTER((byte)56), TAB((byte)57), CAPSLOCK((byte)58), VOLUP ((byte)59), VOLDOWN ((byte)60), MEDIANEXT((byte)62), MEDIAPREV((byte)61), MEDIAPLAY((byte)63),ARROWLEFT((byte)64),ARROWRIGHT((byte)65);
 		private byte code;
-		enum State {DOWN, UP, CLICK}
-		State state = State.CLICK;
+		public enum State {DOWN, UP, CLICK}
+		public State state = State.CLICK;
 		Keys(byte code)
 		{
 			this.code = code;
@@ -186,10 +185,6 @@ public class KeyboardController extends ViewGroup{
 	private Button tab, q,w,e,r,t,y,u,i,o,p,squareBracket1, squareBracket2, backslash;
 	private Button tilda, b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,minus, equals, backspace;
 	
-	private OutputStream out;
-	private ArrayBlockingQueue <Keys> entered = new ArrayBlockingQueue<Keys>(20);
-	private Thread sendingThread;
-	
 	private boolean shift = false;
 	private boolean alt = false;
 	private boolean caps = false;
@@ -208,11 +203,6 @@ public class KeyboardController extends ViewGroup{
 	public KeyboardController(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		init();
-	}
-	
-	public void setOutputStream(OutputStream out)
-	{
-		this.out = out;
 	}
 	
 	private void init()
@@ -424,7 +414,7 @@ public class KeyboardController extends ViewGroup{
 				toggleShift();
 				Keys k = Keys.LSHIFT;
 				k.state = shift ? Keys.State.DOWN : Keys.State.UP;
-				entered.offer(k);
+				sender.addMessage(new KeyboardMessage(k));
 			}
 		});
 		rshift.setOnClickListener(new View.OnClickListener() {
@@ -433,27 +423,27 @@ public class KeyboardController extends ViewGroup{
 				toggleShift();
 				Keys k = Keys.RSHIFT;
 				k.state = shift ? Keys.State.DOWN : Keys.State.UP;
-				entered.offer(k);
+				sender.addMessage(new KeyboardMessage(k));
 			}
 		});
 		enter.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				entered.offer(Keys.ENTER);
+				sender.addMessage(new KeyboardMessage(Keys.ENTER));
 			}
 		});
 		lctrl.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				entered.offer(Keys.LCTRL);
+				sender.addMessage(new KeyboardMessage(Keys.LCTRL));
 			}
 		});
 		rctrl.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				entered.offer(Keys.RCTRL);
+				sender.addMessage(new KeyboardMessage(Keys.RCTRL));
 			}
 		});
 		lalt.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				entered.offer(Keys.LALT);
+				sender.addMessage(new KeyboardMessage(Keys.LALT));
 			}
 		});
 		ralt.setOnClickListener(new View.OnClickListener() {
@@ -461,60 +451,31 @@ public class KeyboardController extends ViewGroup{
 				Keys k = Keys.RALT;
 				alt = !alt;
 				k.state = alt ? Keys.State.DOWN : Keys.State.UP;
-				entered.offer(k);
+				sender.addMessage(new KeyboardMessage(k));
 			}
 		});
 		tab.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				entered.offer(Keys.TAB);
+				sender.addMessage(new KeyboardMessage(Keys.TAB));
 			}
 		});
 		backspace.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				entered.offer(Keys.BACKSPACE);
+				sender.addMessage(new KeyboardMessage(Keys.BACKSPACE));
 			}
 		});
 		space.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				entered.offer(Keys.SPACE);
+				sender.addMessage(new KeyboardMessage(Keys.SPACE));
 			}
 		});
 		capsLock.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Keys k = Keys.CAPSLOCK;
 				toggleCaps();
-				entered.offer(k);
+				sender.addMessage(new KeyboardMessage(k));
 			}
 		});
-		sendingThread = new Thread(new Runnable(){
-			public void run() {
-				Keys k;
-				while (!Thread.interrupted())
-				{
-					try
-					{
-						k = entered.take();
-						if (k.state == Keys.State.CLICK)
-							out.write(new byte[]{6,3,k.getCode()});
-						else if (k.state == Keys.State.DOWN)
-							out.write(new byte[]{6,1,k.getCode()});
-						else
-							out.write(new byte[]{6,2,k.getCode()});
-					}
-					catch(Exception e)
-					{
-						handle.post(new Runnable(){
-
-							public void run() {
-								Toast.makeText(KeyboardController.this.getContext(), KeyboardController.this.getContext().getString(R.string.connectionLost), Toast.LENGTH_SHORT).show();
-							}});
-						
-						entered.clear();
-					}
-				}
-			}
-		});
-		sendingThread.start();
 	}
 	
 	private View.OnClickListener charButtonListener = new View.OnClickListener() {
@@ -523,23 +484,16 @@ public class KeyboardController extends ViewGroup{
 			Button but = (Button)v;
 			String s = but.getText().toString();
 			Keys k = Keys.translate(s.toLowerCase().charAt(0));
-			entered.offer(k);
+			sender.addMessage(new KeyboardMessage(k));
 			if (shift)
 			{
 				toggleShift();
 				Keys k2 = Keys.LSHIFT;
 				k2.state = Keys.State.UP;
-				entered.offer(k2);
+				sender.addMessage(new KeyboardMessage(k2));
 			}
 		}
 	};
-	
-	@Override
-	protected void finalize() throws Throwable
-	{
-		super.finalize();
-		sendingThread.interrupt();
-	}
 	
 	private void toggleCaps()
 	{
