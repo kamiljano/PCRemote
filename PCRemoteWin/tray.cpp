@@ -15,7 +15,7 @@ Tray::Tray(QWidget *parent) :
     adhocSubMenu->addAction(tr("Start"), this, SLOT(adHocClicked()));
     adhocSubMenu->addAction(tr("Stop"), this, SLOT(closeAdHocClicked()));
     trayMenu->addAction(tr("Options"), this, SLOT(optionsClicked()));
-    trayMenu->addMenu(adhocSubMenu);
+    //trayMenu->addMenu(adhocSubMenu);
     trayMenu->addAction(tr("Server info"), this, SLOT(getInfoClicked()));
     trayMenu->addAction(tr("About"),this, SLOT(aboutClicked()));
     trayMenu->addAction(tr("Exit"), this, SLOT(exitClicked()));

@@ -29,6 +29,7 @@ public:
     static void setAcceptAndroidClients(bool value);
     static void setAcceptWPClients(bool value);
     static void setRequirePassword(bool value);
+    static void setPassword(QString password);
 };
 
 #endif // CONFIGURATION_H

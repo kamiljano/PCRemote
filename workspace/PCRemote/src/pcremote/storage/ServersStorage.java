@@ -2,6 +2,7 @@ package pcremote.storage;
 
 import java.io.FileInputStream;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -41,6 +42,11 @@ public class ServersStorage {
 	
 	public static void setSocket(Socket s)
 	{
+		/*try {
+			s.setSoTimeout(4000);
+		} catch (SocketException e) {
+			e.printStackTrace();
+		}*/
 		sock = s;
 	}
 	

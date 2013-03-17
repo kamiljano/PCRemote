@@ -29,7 +29,6 @@ QString Configuration::getPassword()
 
 QString Configuration::getComputerName()
 {
-
     return "lol";
 }
 
@@ -78,4 +77,14 @@ void Configuration::setAcceptWPClients(bool value)
 void Configuration::setRequirePassword(bool value)
 {
     instance.requirePassword = value;
+}
+
+void Configuration::setPassword(QString password)
+{
+    for (int i = 0; i < PASSWDMAX; i++) {
+        instance.password[i] = 0;
+    }
+    for (int i = 0; i < password.length() && i < 100; i++) {
+        instance.password[i] = password[i].toAscii();
+    }
 }

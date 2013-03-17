@@ -41,4 +41,16 @@
     <string name="scrollSens">Scroll sensitivity</string>
     <string name="rightClickTime">Right click time</string>
     <string name="goToPresentation">Presentation</string>
+    <string name="goToRemoteFileBrowser">File browser</string>
+    <string name="downloadingDirectories">Downloading list of directories</string>
+    <string name="failedDirectories">Failed to retrieve directory content</string>
+    <string name="downloadingFile">Downloading file:</string>
+    <string name="failedToDownloadFile">Failed to download file:</string>
+    <string name="cancel">Cancel</string>
+    <string name="receiveFail">Failed to receive message</string>
+    <string name="fileSaveFail">Failed to save file</string>
+    <string name="downloadComplete">Download complete</string>
+    <string name="connectionRejected">Connection rejected</string>
+    <string name="ok">OK</string>
+    <string name="enterPassword">Enter password</string>
 </resources>

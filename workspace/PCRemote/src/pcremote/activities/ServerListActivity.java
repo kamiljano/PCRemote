@@ -89,7 +89,7 @@ public class ServerListActivity extends ListActivity{
 				});
 				return;
 			}
-			ServersStorage.setSocket(sock);
+			//ServersStorage.setSocket(sock);
 			h.post(new Runnable(){
 				
 				public void run()

@@ -1,6 +1,6 @@
 package pcremote.activities;
 
-import pcremote.communication.SendingThread;
+import pcremote.communication.Communicator;
 import pcremote.storage.Preferences;
 import pcremote.storage.PreferencesStorage;
 import pcremote.storage.ServersStorage;
@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
     
     public void goToRemote(View v)
     {
-    	if (ServersStorage.getSelectedServer() == null)
+    	if (ServersStorage.getSelectedServer() == null || ServersStorage.getSocket() == null || ServersStorage.getSocket().isClosed() || !ServersStorage.getSocket().isConnected())
     	{
     		alertDialog = new AlertDialog.Builder(this).create();
 			alertDialog.setTitle("Error");
@@ -85,11 +85,10 @@ public class MainActivity extends Activity {
     public void onDestroy()
     {
     	super.onDestroy();
-    	try
-    	{
-    		ServersStorage.getSocket().close();
-    		SendingThread.getInstance().interrupt();
+    	try {
+    		Communicator.getCommunicator().stop();
+    	} catch(Throwable e){
+    		
     	}
-    	catch(Exception e){}
     }
 }

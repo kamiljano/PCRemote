@@ -25,6 +25,7 @@ void ConfigDialog::setValues()
     }
     ui->tname->setText(Configuration::getServerName());
     ui->tport->setText(QString::number(Configuration::getPort()));
+
 }
 
 void ConfigDialog::setVisible(bool visible)
@@ -63,6 +64,7 @@ void ConfigDialog::on_pushButton_2_clicked()
     Configuration::setAcceptAndroidClients(ui->checkAcceptAndroid->checkState());
     Configuration::setAcceptWPClients(ui->checkWPAccept->checkState());
     Configuration::setRequirePassword(ui->checkPasswd->checkState());
+    Configuration::setPassword(ui->tpass->text());
     Configuration::save();
     this->setVisible(false);
 }

@@ -13,18 +13,20 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="next" key="selection"/>
+		<item value="parent." key="selection"/>
 		<list key="findhistory">
-			<item value="next"/>
-			<item value="bit"/>
-			<item value="&lt; 100"/>
-			<item value="no server"/>
-			<item value="ofer"/>
-			<item value="offer"/>
-			<item value="try"/>
-			<item value="l.sette"/>
+			<item value="parent."/>
+			<item value="ok"/>
+			<item value="dismiss"/>
+			<item value="progressfil"/>
+			<item value="start"/>
+			<item value="sender"/>
+			<item value=".start"/>
+			<item value="cancel"/>
 		</list>
 		<list key="replacehistory">
+			<item value="sender.addMessage(new KeyboardMessage"/>
+			<item value="sender.addMessage(new KeyboardMessage(k));"/>
 			<item value="byte"/>
 		</list>
 	</section>

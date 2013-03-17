@@ -29,10 +29,10 @@ public class PresentationActivity extends ControllerActivity{
 	}
 	
 	public void nextSlide(View v){
-		sender.addMessage(new KeyboardMessage(Keys.ARROWRIGHT));
+		communicator.send(new KeyboardMessage(Keys.ARROWRIGHT));
 	}
 	
 	public void prevSlide(View v){
-		sender.addMessage(new KeyboardMessage(Keys.ARROWLEFT));
+		communicator.send(new KeyboardMessage(Keys.ARROWLEFT));
 	}
 }

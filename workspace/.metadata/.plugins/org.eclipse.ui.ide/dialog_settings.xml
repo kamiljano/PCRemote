@@ -8,7 +8,7 @@
 		<item value="false" key="ShowDerived"/>
 		<item value="true" key="ShowStatusLine"/>
 		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
-		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/ClowdyServer/rootCommons/rmi/actions/ClientLog.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/ClowdyServer/src/rmi/communication/ClientCommunicator.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/ClowdyServer/src/rmi/communication/Server.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/ClowdyServer/commons/rmi/communication/ClientSocket.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/PCRemote/AndroidManifest.xml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/PCRemote/src/pcremote/communication/ReceivingThread.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/PCRemote/src/pcremote/communication/SendingThread.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/PCRemote/src/pcremote/dialogs/ConnectionDialog.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/PCRemote/res/values/strings.xml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/PCRemote/src/pcremote/activities/MainActivity.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="44" key="DIALOG_Y_ORIGIN"/>
@@ -35,7 +35,7 @@
 		<item value="500" key="DIALOG_WIDTH"/>
 		<item value="148" key="DIALOG_Y_ORIGIN"/>
 		<item value="433" key="DIALOG_X_ORIGIN"/>
-		<item value="377" key="DIALOG_HEIGHT"/>
+		<item value="378" key="DIALOG_HEIGHT"/>
 		<item value="true" key="TOGGLE_SELECTED"/>
 	</section>
 </section>

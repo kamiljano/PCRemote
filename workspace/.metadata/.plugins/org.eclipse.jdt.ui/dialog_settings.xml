@@ -3,11 +3,19 @@
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
 	<item value="filter_imports;" key="filters_last_used"/>
 	<item value="false" key="delegateUpdating"/>
+	<item value="500" key="CallHierarchyViewPart.ratio3"/>
 	<item value="C:\Windows\Sun\Java\lib\ext" key="org.eclipse.jdt.ui.lastextjar"/>
-	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="500" key="CallHierarchyViewPart.ratio1"/>
+	<item value="3" key="CallHierarchyViewPart.orientation"/>
 	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
+	<item value="2" key="CallHierarchyViewPart.field_mode"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
+	<item value="0" key="CallHierarchyViewPart.call_mode"/>
 	<item value="C:\Users\milka\workspace\ClowdyServer\commons" key="org.eclipse.jdt.ui.last.external.project"/>
+	<list key="SearchScopeActionGroup.working_set">
+	</list>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
 	</section>
@@ -60,15 +68,39 @@
 	<section name="JavaSearchPage">
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="11" key="INCLUDE_MASK"/>
-		<item value="2" key="HISTORY_SIZE"/>
+		<item value="6" key="HISTORY_SIZE"/>
+		<section name="HISTORY2">
+			<item value="11" key="includeMask"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="scope"/>
+			<item value="" key="javaElement"/>
+			<item value="sendingthread.start" key="pattern"/>
+			<item value="0" key="matchLocations"/>
+			<item value="1" key="searchFor"/>
+			<item value="false" key="isCaseSensitive"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY3">
+			<item value="11" key="includeMask"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="scope"/>
+			<item value="" key="javaElement"/>
+			<item value="sendingthread.stop" key="pattern"/>
+			<item value="0" key="matchLocations"/>
+			<item value="1" key="searchFor"/>
+			<item value="false" key="isCaseSensitive"/>
+			<list key="workingSets">
+			</list>
+		</section>
 		<section name="HISTORY0">
 			<item value="11" key="includeMask"/>
 			<item value="2" key="limitTo"/>
 			<item value="0" key="scope"/>
-			<item value="Handler" key="pattern"/>
 			<item value="" key="javaElement"/>
-			<item value="0" key="searchFor"/>
+			<item value="introduce" key="pattern"/>
 			<item value="0" key="matchLocations"/>
+			<item value="1" key="searchFor"/>
 			<item value="false" key="isCaseSensitive"/>
 			<list key="workingSets">
 			</list>
@@ -77,10 +109,34 @@
 			<item value="11" key="includeMask"/>
 			<item value="2" key="limitTo"/>
 			<item value="0" key="scope"/>
-			<item value="handle" key="pattern"/>
 			<item value="" key="javaElement"/>
-			<item value="0" key="searchFor"/>
+			<item value="setsotimeout" key="pattern"/>
 			<item value="0" key="matchLocations"/>
+			<item value="1" key="searchFor"/>
+			<item value="false" key="isCaseSensitive"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item value="11" key="includeMask"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="scope"/>
+			<item value="" key="javaElement"/>
+			<item value="handle" key="pattern"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<item value="false" key="isCaseSensitive"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item value="11" key="includeMask"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="scope"/>
+			<item value="" key="javaElement"/>
+			<item value="Handler" key="pattern"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
 			<item value="false" key="isCaseSensitive"/>
 			<list key="workingSets">
 			</list>
@@ -91,6 +147,12 @@
 		<item value="600" key="width"/>
 	</section>
 	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="SourceActionDialog.methods">
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="FinalModifier"/>
 	</section>
 	<section name="ProblemSeveritiesConfigurationBlock">
 		<item value="false" key="expanded4"/>
@@ -147,6 +209,19 @@
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>
+	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
+		<item value="529" key="DIALOG_WIDTH"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+		<item value="427" key="DIALOG_X_ORIGIN"/>
+		<item value="696" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="SearchInDialog">
+		<item value="true" key="SearchInJRE"/>
+		<item value="true" key="SearchInProjects"/>
+		<item value="true" key="SearchInAppLibs"/>
+		<item value="true" key="SearchInSources"/>
+	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
@@ -166,5 +241,11 @@
 		<item value="350" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH"/>
 		<item value="300" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT"/>
 		<item value="false" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
+	<section name="AddGetterSetterDialog">
+		<item value="false" key="RemoveFinal"/>
+		<item value="false" key="SortOrdering"/>
+	</section>
+	<section name="CallHierarchySearchScope">
 	</section>
 </section>

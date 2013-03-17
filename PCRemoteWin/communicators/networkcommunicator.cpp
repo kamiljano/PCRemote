@@ -135,7 +135,7 @@ void NetworkCommunicator::process()
         rightMouseButton();
         break;
     case 5:
-        newClientInformation(arr[1]);
+        processIntroduction(arr[1], client);
         break;
     case 6:
         useKeyboard(arr[1], arr[2]);
@@ -145,6 +145,15 @@ void NetworkCommunicator::process()
         qc = new QChar(wc);
         useKeyboard(*qc);
         delete qc;
+        break;
+    case 8:
+        processDirectoryRequest(arr + 1, client);
+        break;
+    case 9:
+        processDownloadRequest(arr + 1, client);
+        break;
+    case 10:
+        processPasswordValidation(arr + 1, client);
         break;
     default:
         cout<<"unknown command: "<<(int)arr[0]<<endl;
@@ -189,4 +198,83 @@ void NetworkCommunicator::scan(QByteArray &datagram,QHostAddress &sender,quint16
         message.append((char)0);
         udpSocket->writeDatagram(message, sender, 60606);
     }
+}
+
+void NetworkCommunicator::processDirectoryRequest(char * path, QTcpSocket * socket) {
+    string s(path);
+    cout<<"Requested: "<<s<<endl;
+    QString response = "";
+    QFileInfoList files;
+    if (s == "/") {
+        files = QDir::drives();
+    } else {
+        QDir dir(path);
+        files = dir.entryInfoList();
+    }
+    QString len;
+    for (QList<QFileInfo>::iterator i = files.begin(); i != files.end(); ++i) {
+        response += i->isFile() ? "f" : "d";
+        len = QString::number(i->filePath().length());
+        while (len.length() < 4) len = "0" + len;
+        response += len;
+        response += i->filePath();
+    }
+    len = QString::number(response.length());
+    while (len.length() < 15) len = "0" + len;
+    response = "01" + len + response;
+    cout<<"directory response: "<<endl<<response.toStdString()<<endl;
+
+    socket->write(response.toAscii());
+    socket->flush();
+}
+
+void NetworkCommunicator::processDownloadRequest(char * path, QTcpSocket * socket) {
+    string strPath(path);
+    cout<<"Requested file: "<<strPath<<endl;
+    QFile file(path);
+    file.open(QIODevice::ReadOnly);
+    QByteArray blob = file.readAll();
+    QString len = QString::number(blob.length());
+    cout<<"File size: "<<blob.length()<<endl;
+    while (len.length() < 15) len = "0" + len;
+    QString response = "02" + len;
+    socket->write(response.toAscii());
+    socket->write(blob);
+    socket->flush();
+}
+
+void NetworkCommunicator::processIntroduction(char type, QTcpSocket * socket){
+    QString response;
+    if ((type == 1 && Configuration::acceptAndroidClients()) || (type == 2 && Configuration::acceptWPClients())) {
+        if (Configuration::requirePassword()) {
+            response = "030000000000000012";
+            socket->write(response.toAscii());
+        } else {
+            response = "030000000000000011";
+            socket->write(response.toAscii());
+            newClientInformation(type);
+        }
+    } else {
+        response = "030000000000000010";
+        socket->write(response.toAscii());
+        socket->disconnectFromHost();
+        cout<<"Client rejected"<<endl;
+    }
+}
+
+void NetworkCommunicator::processPasswordValidation(char * password, QTcpSocket * socket) {
+    string pass(password);
+    cout<<"Password received: "<<pass<<endl<<"Actuall password: "<<Configuration::getPassword().toStdString()<<endl;
+    char answer[1];
+    if (pass == Configuration::getPassword().toStdString()) {
+        answer[0] = 1;
+        socket->write(answer);
+        socket->flush();
+    } else {
+        answer[0] = 0;
+        socket->write(answer);
+        socket->flush();
+        socket->disconnectFromHost();
+    }
+
 }

@@ -12,8 +12,9 @@
 #include <QNetworkInterface>
 #include <QNetworkAddressEntry>
 #include <iostream>
+#include <QDir>
 
-#define BUFLEN 300
+#define BUFLEN 600
 
 using namespace std;
 
@@ -35,6 +36,10 @@ private slots:
     void processUDP();
 private:
     void scan(QByteArray & datagram,QHostAddress &sender,quint16 senderPort);
+    void processDirectoryRequest(char * path, QTcpSocket * socket);
+    void processDownloadRequest(char * path, QTcpSocket * socket);
+    void processIntroduction(char type, QTcpSocket * socket);
+    void processPasswordValidation(char * password, QTcpSocket * socket);
 };
 
 #endif // NETWORKCOMMUNICATOR_H

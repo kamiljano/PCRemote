@@ -10,7 +10,8 @@ MediaServer::MediaServer(QWidget *parent) :
     this->setLayout(layout);
 
     plugins = NULL;
-    listPlugins();
+    pluglen = 0;
+    //listPlugins();
 }
 
 void MediaServer::listPlugins()

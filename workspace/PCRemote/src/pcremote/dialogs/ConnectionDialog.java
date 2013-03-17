@@ -1,11 +1,11 @@
 package pcremote.dialogs;
 
-import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
 
 import pcremote.activities.R;
+import pcremote.communication.Communicator;
 import pcremote.storage.ServersStorage;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -76,29 +76,69 @@ public class ConnectionDialog extends ProgressDialog{
 					}
 					return;
 				}
-				ServersStorage.setSocket(sock);
-				introduce(sock);
-				h.post(new Runnable(){
-					
-					public void run()
-					{
-						Toast.makeText(parent, parent.getString(R.string.connected), Toast.LENGTH_SHORT).show();
-						ConnectionDialog.this.dismiss();
-						parent.finish();
-					}
-				});
+				boolean accepted = introduce(sock);
+				if (accepted) {
+					ServersStorage.setSocket(sock);
+					Communicator.getCommunicator().start();
+					h.post(new Runnable(){
+						
+						public void run()
+						{
+							Toast.makeText(parent, parent.getString(R.string.connected), Toast.LENGTH_SHORT).show();
+							ConnectionDialog.this.dismiss();
+							parent.finish();
+						}
+					});
+				} else {
+					h.post(new Runnable(){
+						
+						public void run()
+						{
+							Toast.makeText(parent, parent.getString(R.string.connectionRejected), Toast.LENGTH_SHORT).show();
+							ConnectionDialog.this.dismiss();
+						}
+					});
+				}
 				
 			}});
 		th.start();
 	}
 	
-	private void introduce(Socket s)
+	private boolean introduce(Socket s)
 	{
 		try
 		{
 			s.getOutputStream().write(new byte[]{5,1});
+			byte [] buff = new byte[18];
+			int read = 0;
+			while (read < 18)
+				read += s.getInputStream().read(buff, read, buff.length - read);
+			String answer = new String(buff);
+			if (answer.startsWith("03")) {
+				if (answer.endsWith("2")) {
+					requirePassword(s);
+				}
+				else
+					return answer.endsWith("1");
+			}
 		}
 		catch(Exception e)
 		{}
+		return false;
+	}
+	
+	private Socket sock;
+	private void requirePassword(Socket s) {
+		this.sock = s;
+		h.post(new Runnable(){
+
+			public void run() {
+				ConnectionDialog.this.hide();
+				PasswordDialog dialog = new PasswordDialog(parent, sock);
+				dialog.show();
+				
+			}
+			
+		});
 	}
 }
