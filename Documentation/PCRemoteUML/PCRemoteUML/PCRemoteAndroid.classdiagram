@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e2ed5fb0-a258-4291-b745-077648af7b0a" name="PCRemoteAndroid" linkedPackageId="4a90eb48-937b-4f4f-9e71-dcce72c3c649" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="c871c777-513c-487d-93d8-72d7ed6b7339">
-      <profileInstance Id="8d17a69d-e020-452b-b2fe-f00247ce4d5b" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="d1c42945-9ac7-4d13-b2b8-399028157ec8">
-      <profileInstance Id="7c0d8f71-03aa-447b-942f-05b45e6715aa" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="450768b4-0356-4390-80bf-80ae1b7e5611" name="pcremote.activities">
@@ -531,6 +517,22 @@
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="bd0617b7-694c-46c8-ac1c-8a6c88d5b205" name="RemoteFileBrowserActivity" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="bdf55b7e-c71e-4246-bab6-c7eb9ed1fb7d" />
+              <generalsInternal>
+                <generalization Id="4f0aec53-1a98-4202-a1f2-99e9ecc23689" isSubstitutable="false">
+                  <classMoniker Id="17442d30-1c83-4ce2-a5a0-f67882b546d8" LastKnownName="Activity" />
+                  <elementDefinition Id="0cfc3bcf-8d9d-46ba-9252-6b00b615ff66" />
+                </generalization>
+              </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="f4449b1b-f68c-4fd4-b476-89d3341dd10d" name="refreshFileZone" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4386bc52-15f4-4535-a01d-0ca742a2feb5" />
                 </operation>
               </ownedOperationsInternal>
             </class>
@@ -1193,5 +1195,19 @@
   </packagedElements>
   <package Id="4a90eb48-937b-4f4f-9e71-dcce72c3c649" name="PCRemoteUML">
     <elementDefinition Id="7fd33284-ed25-444a-a95d-ce26d1d0f46c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="c871c777-513c-487d-93d8-72d7ed6b7339">
+        <profileInstance Id="8d17a69d-e020-452b-b2fe-f00247ce4d5b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d1c42945-9ac7-4d13-b2b8-399028157ec8">
+        <profileInstance Id="7c0d8f71-03aa-447b-942f-05b45e6715aa" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

@@ -245,6 +245,12 @@ void NetworkCommunicator::processDownloadRequest(char * path, QTcpSocket * socke
 
 void NetworkCommunicator::processIntroduction(char type, QTcpSocket * socket){
     QString response;
+
+    if (type == 2) { //windows phone doesn't support this feature
+        newClientInformation(type);
+        return;
+    }
+
     if ((type == 1 && Configuration::acceptAndroidClients()) || (type == 2 && Configuration::acceptWPClients())) {
         if (Configuration::requirePassword()) {
             response = "030000000000000012";

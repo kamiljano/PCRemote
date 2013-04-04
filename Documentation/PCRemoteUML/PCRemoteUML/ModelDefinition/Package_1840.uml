@@ -1033,5 +1033,35 @@
         Id="2af43eae-a678-4b2c-9e04-3090b797db7e"
         name="ProgressDialog" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bdf55b7e-c71e-4246-bab6-c7eb9ed1fb7d"
+        name="RemoteFileBrowserActivity"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="0cfc3bcf-8d9d-46ba-9252-6b00b615ff66"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9c771437-ed10-43b5-9734-54683dc01c7f"
+              LastKnownName="Activity"
+              LastKnownLocation="Package_1840.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4386bc52-15f4-4535-a01d-0ca742a2feb5"
+            name="refreshFileZone"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
 </package>

@@ -76,6 +76,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="communication\Communicator.cs" />
+    <Compile Include="communication\ReceivingThread.cs" />
+    <Compile Include="communication\SendingThread.cs" />
     <Compile Include="controls\MouseController.xaml.cs">
       <DependentUpon>MouseController.xaml</DependentUpon>
     </Compile>
